@@ -10,7 +10,7 @@ What we want to see from you is your assessment of how we can achieve those prin
 
 ## Tasks
 __All tasks require:__ 
-1. You to work within a unique branch `git checkout -b my-unique-branch-name`
+1. You to work within a unique branch. Branched from master. (On master - `git checkout -b my-unique-branch-name`)
 2. Push any updates to your work associated with that task to this unique branch
 3. Create a PR on this repo when done with the task
 4. If you get stuck with anything or can't complete the task - Include this detail within the PR comment
