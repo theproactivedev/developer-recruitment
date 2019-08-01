@@ -2,7 +2,7 @@
 //
 // Displays the post featured image
 
-// @import '../html-elements/figcaption/figcaption.scss';
+@import '../html-elements/figcaption/figcaption.scss';
 
 @mixin post-featured-image($figcaption: true) {
 	.figcaption {
