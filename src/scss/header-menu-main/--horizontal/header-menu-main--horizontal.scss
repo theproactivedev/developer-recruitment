@@ -1,0 +1,22 @@
+// Header menu main horizontal
+//
+// Displays the header main menu horizontally
+
+@import '../../header-menu-main-children/--align-left/header-menu-main-children--align-left.scss';
+@import '../../list/--with-margin-right/list--with-margin-right.scss';
+
+@mixin header-menu-main--horizontal {
+	@include list--with-margin-right;
+
+	@include media($medium...) {
+		li {
+			// Align the last few submenus to left, to avoid overflowing the screen
+			&:nth-last-child(-n + 2) {
+				.header-menu-main-children {
+					// We need this for the Medium comp
+					@include header-menu-main-children--align-left;
+				}
+			}
+		}
+	}
+}

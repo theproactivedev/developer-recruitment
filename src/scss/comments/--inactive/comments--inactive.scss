@@ -1,0 +1,17 @@
+// Comments inactive
+//
+// Hides the comment list
+
+@import '../../icons-chevrons/--inactive/icons-chevrons--inactive.scss';
+
+@mixin comments--inactive {
+	.comments-body-title .icons {
+		@include icons-chevrons--inactive;
+	}
+
+	.comment-list,
+	.comment-respond,
+	.comments-subscribe {
+		display: none;
+	}
+}

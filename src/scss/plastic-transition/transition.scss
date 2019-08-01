@@ -1,0 +1,18 @@
+@keyframes PlasticEnter {
+	from {
+        opacity: 0;
+		transform: translateY(-1em);
+	}
+}
+
+@mixin plastic-transition {
+    .plastic-enter-active {
+        animation: PlasticEnter 1s ease;
+        animation-fill-mode: both;
+    }
+
+    .plastic-leave-active {
+        animation: PlasticEnter 1s ease reverse;
+        animation-fill-mode: both;
+    }
+}

@@ -1,0 +1,29 @@
+// Related posts for page
+//
+// Displays a list of related posts for a page
+//
+// It shares code with related posts for posts
+//
+// // NOTE:
+// It was never refactored. All related posts can be refactored and should be.
+
+// @import '../border/border.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../post-list/post-list.scss';
+@import '../related-posts-for-single/--thumb/related-posts-for-single--thumb.scss';
+@import '../related-posts-for-single/--link/related-posts-for-single--link.scss';
+
+@mixin related-posts-for-page {
+	@include border(border-top, 5);
+	@include responsive-spacing(padding-top, small);
+
+	// @include post-list;
+
+	@include media('<large-desktop') {
+		@include related-posts-for-single--thumb;
+	}
+
+	@include media($large...) {
+		@include related-posts-for-single--link;
+	}
+}

@@ -1,0 +1,41 @@
+// Post list
+//
+// Default styles for a list of posts
+//
+// // NOTE:
+// This special component was never refactored.
+// It is used many times, and causes redundant grid mixins
+
+// @import '../post/post.scss';
+// @import '../post-list-title/post-list-title.scss';
+// @import '../text-style/text-style.scss';
+
+@mixin post-list(
+	$title: '.post-list-title',
+	$subtitle: '.post-list-subtitle',
+	$items: '.post-list-items',
+	$title-selector: '.text',
+	$title-style: 'body-caps'
+) {
+	#{$title} {
+		@include post-list-title($title-selector, $title-style);
+	}
+
+	@if ($subtitle) {
+		// For Category / Index
+		// // TODO: replace with `post-title-and-subtitle` mixin
+		#{$subtitle} {
+			.text {
+				@include text-style(h2);
+			}
+		}
+	}
+
+	#{$items} {
+		.post {
+			// @include post;
+		}
+	}
+	/* Prevent post-list section from scrolling inside the container */
+	overflow-y: hidden;
+}

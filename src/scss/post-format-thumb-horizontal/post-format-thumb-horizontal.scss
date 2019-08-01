@@ -1,0 +1,27 @@
+// Post format thumb horizontal
+//
+// Displays a post thumb in a horizontal way
+
+// @import '../post-title/--thumb/post-title--thumb.scss';
+@import '../post-featured-image/post-featured-image.scss';
+@import '--vertical/post-format-thumb-horizontal--vertical.scss';
+@import '--horizontal/post-format-thumb-horizontal--horizontal.scss';
+
+@mixin post-format-thumb-horizontal {
+	.post-title {
+		@include post-title--thumb;
+	}
+
+	.post-featured-image {
+		@include post-featured-image(false);
+		order: -1;
+	}
+
+	@include media('>=tablet') {
+		@include post-format-thumb-horizontal--horizontal;
+	}
+
+	@include media('<tablet') {
+		@include post-format-thumb-horizontal--vertical;
+	}
+}

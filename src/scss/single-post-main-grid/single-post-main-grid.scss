@@ -1,0 +1,50 @@
+// Single post main grid
+//
+// Displays the grid for the single post main
+//
+// Shared by:
+// - Single review
+
+@import '--large/single-post-main-grid--large.scss';
+@import '--medium/single-post-main-grid--medium.scss';
+@import '--mobile/single-post-main-grid--mobile.scss';
+@import '--tablet/single-post-main-grid--tablet.scss';
+
+@mixin single-post-main-grid($variant: null) {
+	@include responsive-spacing(margin-top, large);
+
+	.post-list-items {
+		.post {
+			.post-title-and-subtitle {
+				.post-title + .post-subtitle {
+					@include responsive-spacing(margin-top, small);
+				}
+			}
+
+			.post-featured-image {
+				@include responsive-spacing(margin-top, large);
+			}
+
+			.post-content {
+				@include responsive-spacing(margin-top, small);
+			}
+		}
+	}
+
+	@include media($small...) {
+		@include single-post-main-grid--mobile;
+	}
+
+	@include media($tablet...) {
+		@include single-post-main-grid--tablet;
+	}
+	@if($variant != collection) {
+		@include media($medium...) {
+			@include single-post-main-grid--medium;
+		}
+	}
+
+	@include media($large...) {
+		@include single-post-main-grid--large;
+	}
+}

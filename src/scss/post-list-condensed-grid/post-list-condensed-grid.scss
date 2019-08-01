@@ -1,0 +1,32 @@
+@mixin post-list-condensed-grid($variant: null) {
+	$max-items-to-display-map: (
+		mobile: 3,
+		tablet: 8,
+		laptop: 9,
+		desktop: 9
+	);
+
+	@if($variant == specified-posts) {
+		$max-items-to-display-map: (
+			mobile: 25,
+			tablet: 25,
+			laptop: 25,
+			desktop: 25
+		);
+	}
+
+	$items-per-row-map: (
+		mobile: 1,
+		tablet: 2,
+		laptop: 3,
+		desktop: 3
+	);
+
+	@include responsive-post-list-grid($max-items-to-display-map, $items-per-row-map);
+
+	.post {
+		.post-excerpt {
+			display: none;
+		}
+	}
+}

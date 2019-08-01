@@ -1,0 +1,66 @@
+// Plastic homepage featured
+//
+// Displays the plastic homepage featured post
+
+@import '../background-image/background-image.scss';
+@import '../post-format-plastic/post-format-plastic.scss';
+@import '../post-format-plastic/--horizontal/post-format-plastic--horizontal.scss';
+@import '../post-format-plastic/--spaced/post-format-plastic--spaced.scss';
+@import '../post-format-plastic/--vertical/post-format-plastic--vertical.scss';
+// @import '../container/container.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+
+@mixin plastic-homepage-featured {
+	// The above section already provides a spacing
+	// This is a re-alignment spacing
+	margin-top: var(--spacer-8);
+
+	@include media($small...) {
+		@include responsive-spacing(margin-top, large);
+	}
+
+	@include background-image;
+	background-image: url('../../images/bg-white-waves.jpg');
+
+	// Center the content on the background image
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.container {
+		@include container;
+		@include responsive-spacing(padding-top, large);
+		@include responsive-spacing(padding-bottom, large);
+
+		.post-list {
+			@include responsive-section('.post-list-items');
+
+			.post-list-title {
+				@include text-style(body-caps);
+			}
+
+			.post {
+				@include post-format-plastic(homepage-featured);
+				@include post-format-plastic--spaced;
+
+				@include media($large...) {
+					@include post-format-plastic--horizontal(3);
+				}
+
+				@include media($medium...) {
+					@include post-format-plastic--horizontal(3);
+				}
+
+				@include media($tablet...) {
+					@include post-format-plastic--horizontal(2);
+				}
+
+				@include media($small...) {
+					@include post-format-plastic--vertical;
+					@include post-format-plastic--spaced(complete);
+				}
+			}
+		}
+	}
+}

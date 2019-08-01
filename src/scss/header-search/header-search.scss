@@ -1,0 +1,18 @@
+// Header search
+//
+// Displays the search in the header
+
+@import '../search/search.scss';
+@import '../search/--header/search--header.scss';
+
+@mixin header-search {
+	@include search;
+	@include search--header;
+
+	@include border(border-top);
+	@include responsive-spacing(padding-top, small);
+
+	// Will be displayed with JS
+	display: none;
+	flex-direction: column;
+}

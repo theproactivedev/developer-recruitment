@@ -1,0 +1,14 @@
+// List
+//
+// A reusable list component
+//
+// This is a framework component reused by many other components.
+//
+// Used by the menus in the header, footer, the tabs header and co.
+// All list styles must be defined here first and re-used later where needed
+
+// @import '--naked/list--naked.scss';
+
+@mixin list {
+	@include list--naked;
+}

@@ -1,0 +1,94 @@
+// Comment form
+//
+// Displays the comment form
+//
+// // NOTE:
+// Might leave traces from the old comment code provided by `rvn_XXX`
+
+// @import '../form/form.scss';
+// @import '../text-style/text-style.scss';
+// @import '../button/button.scss';
+// @import '../list/--with-margin-right/list--with-margin-right.scss';
+@import '--vertical/comment-form--vertical.scss';
+@import '--horizontal/comment-form--horizontal.scss';
+
+@mixin comment-form {
+	@include form;
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		display: flex;
+		flex-direction: column;
+
+		input {
+			order: 2;
+		}
+
+		label {
+			@include text-style(body-bold);
+		}
+	}
+
+	.logged-in-as {
+		a {
+			@include link(link);
+			@include link(transparent-background);
+		}
+	}
+
+	.comment-form-comment {
+		label[for='comment'] {
+			display: none;
+		}
+
+		textarea {
+			width: 100%;
+		}
+	}
+
+	.comment-form-cookies-consent {
+		display: flex;
+		flex-wrap: nowrap;
+
+		input {
+			min-width: var(--lem);
+		}
+
+		label {
+			margin-left: var(--spacer-8);
+		}
+		display: none;
+	}
+
+	.comment-form-notifications {
+		.label {
+			@include list--with-margin-right(nbsp, '.label-title', '.label-text');
+			@include responsive-spacing(margin-bottom, small);
+
+			display: block;
+
+			.label-title {
+				@include text-style(body-bold);
+			}
+		}
+
+		.buttons {
+			.button {
+				@include button(secondary-grey-2);
+			}
+		}
+	}
+
+	> * {
+		@include responsive-spacing(margin-top, small);
+	}
+
+	@include media('<tablet') {
+		@include comment-form--vertical;
+	}
+
+	@include media('>=tablet') {
+		@include comment-form--horizontal;
+	}
+}

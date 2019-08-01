@@ -1,0 +1,9 @@
+// Post format single card guide
+//
+// Displays the single Card Guide post
+
+@import '../post-format-single/post-format-single.scss';
+
+@mixin post-format-single-cardguide {
+	@include post-format-single;
+}

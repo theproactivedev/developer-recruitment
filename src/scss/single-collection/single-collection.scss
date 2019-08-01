@@ -1,0 +1,97 @@
+// Single collection
+//
+// Displays a CPT Collection page
+//
+// Note that we have handled the collection type as underscore or hyphen
+// not sure if the output of this creates a bigger css file
+
+@import '../single-post-main/single-post-main.scss';
+@import '../post-list/post-list.scss';
+@import '../post-excerpt/post-excerpt.scss';
+@import '../post-format-thumb/post-format-thumb.scss';
+@import '../post-format-deal/post-format-deal.scss';
+@import '../post-expiring-date/post-expiring-date.scss';
+
+@import '../collection-navigation/collection-navigation.scss';
+
+@import '--horizontal/single-collection--horizontal.scss';
+@import '--vertical/single-collection--vertical.scss';
+
+@mixin single-collection {
+	// Top intro to collection
+	.single-collection-main {
+		@include single-post-main(collection);
+	}
+
+	// navigation
+	.collection-navigation {
+		@include collection-navigation;
+	}
+
+	// Collection sections
+	.post-list-with-subtitle {
+		@include post-list;
+		@include container(margin);
+		@include responsive-spacing(margin-top, large);
+		@include responsive-spacing(padding-top, large);
+		@include border(border-top, 5);
+
+		.post-excerpt {
+			@include post-excerpt;
+		}
+
+		&.grid {
+			@include post-list-grid(deals);
+
+			.post-format-thumb {
+				@include post-format-thumb;
+			}
+
+			.post-format-deal {
+				@include post-format-deal;
+
+				@include media($small...) {
+					@include border();
+				}
+
+				.post-expiring-date {
+					@include post-expiring-date;
+				}
+			}
+		}
+
+		&.condensed_grid, &.condensed-grid {
+			// TODO: reduce this duplication
+			@include post-list-condensed-grid;
+			&.specified-posts {
+				@include post-list-condensed-grid(specified-posts);
+			}
+
+			.post-format-thumb {
+				@include post-format-thumb;
+			}
+		}
+
+		&.full_width, &.full-width {
+			@include post-list-full-width;
+		}
+
+		@include media($large...) {
+			@include single-collection--horizontal;
+		}
+
+		@include media('<=large-desktop') {
+			@include single-collection--vertical;
+		}
+
+		// Overwrites
+		//
+		// // TODO: Fix these overwrites
+		.post {
+			.post-date,
+			.post-author-and-comment-count {
+				display: none !important;
+			}
+		}
+	}
+}

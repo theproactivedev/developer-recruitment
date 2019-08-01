@@ -1,0 +1,22 @@
+// Comments body title
+//
+// The title of the comments body
+
+// @import '../text-style/text-style.scss';
+@import '../icons-chevrons/icons-chevrons.scss';
+
+@mixin comments-body-title {
+	display: flex;
+	align-items: center;
+
+	.title {
+		cursor: pointer;
+		@include post-title--thumb;
+	}
+
+	.icons {
+		@include icons-chevrons;
+		margin-left: var(--spacer-8);
+		margin-bottom: var(--spacer-8);
+	}
+}

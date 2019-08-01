@@ -1,0 +1,46 @@
+// Responsive grid
+//
+// Displays elements in a CSS Grid specific to this theme
+// - 4 elements in a row on Large screens
+// - 3 elments in a row for Medium screens
+// - 2 elements in a row for Tablet screens
+// - 1 element in a row for Mobile screens
+//
+// This re-usable component is used mainly to display thumbs;
+// But also other components might use it (tabs, footer, community, etc)
+//
+// This is a framework component reused by many other components.
+//
+// Originally the whole site planned to use this grid, aka the CSS Grid.
+// Then due to borders between columns, which are not supported by CSS Grid, a whole set of flexbox grid mixins were added.
+// Ideally only this grid should be necessary.
+
+//@import '../responsive-grid-columns/responsive-grid-columns.scss';
+
+@mixin responsive-grid {
+	display: grid;
+	grid-column-gap: var(--gutter-24);
+
+	$columns: 1;
+
+	@include media($small...) {
+		grid-template-columns: repeat($columns, 1fr);
+	}
+
+	@include media($tablet...) {
+		$columns: 2;
+		grid-template-columns: repeat($columns, 1fr);
+	}
+
+	@include media($medium...) {
+		$columns: 3;
+		grid-template-columns: repeat($columns, 1fr);
+	}
+
+	@include media($large...) {
+		$columns: 4;
+		grid-template-columns: repeat($columns, 1fr);
+	}
+
+	@include responsive-grid-columns;
+}

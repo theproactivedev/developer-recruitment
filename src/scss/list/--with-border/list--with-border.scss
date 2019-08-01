@@ -1,0 +1,19 @@
+// List with border
+//
+// Adds border and padding for list items
+
+// @import '../../border/border.scss';
+
+@mixin list--with-border($border, $last-border: true, $item: 'li') {
+	#{$item} {
+		+ #{$item} {
+			@include border($border);
+
+			@if ($last-border != true) {
+				&:last-of-type {
+					border: none;
+				}
+			}
+		}
+	}
+}

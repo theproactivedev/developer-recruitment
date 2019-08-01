@@ -1,0 +1,48 @@
+@mixin checkbox {
+  position: relative;
+
+  input[type=checkbox] {
+    width: 0;
+    height: 0;
+    opacity: 0; // Hide for browsers
+    position: absolute;
+    top: -100%;
+    left: -100%;
+  }
+
+  input[type=checkbox] + label {
+    display: block;
+    border: 1px solid var(--grey-2);
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  input[type=checkbox]:focus + label {
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 5px;
+  }
+
+  .icon {
+    width: 1em;
+    height: 1em;
+  }
+
+  label:last-child > svg {
+    display: block;
+    fill: currentColor;
+  }
+
+  input[type=checkbox]:not(:checked) + label + label {
+    display: none;
+  }
+
+  input[type=checkbox]:checked + label + label {
+    position: absolute;
+    top: .25em;
+    left: .25em;
+    width: 1.25em;
+    height: 1.25em;
+  }
+}

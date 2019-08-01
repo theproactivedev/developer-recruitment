@@ -1,0 +1,57 @@
+// Single post grid large
+//
+// Displays the grid for the post on the single page for Large screens
+
+// @import '../../responsive-page-grid/responsive-page-grid.scss';
+
+@mixin single-post-main-grid--large {
+	@include responsive-grid;
+
+	.post-list-title {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.post-list-items,
+	.post {
+		@include responsive-grid;
+
+		grid-column: 1 / -1;
+		grid-row: 1;
+	}
+
+	.post-list-items {
+		.post {
+			grid-column: 1 / -1;
+
+			> * {
+				grid-column: 2 / -1;
+				max-width: 700px;
+			}
+
+			.post-title-and-subtitle {
+				grid-row: 1;
+			}
+
+			.post-featured-image {
+				max-width: none;
+				// Push up the ad in sidebar
+				grid-row: 2 / 5;
+			}
+
+			.post-meta-box {
+				grid-column: 1;
+				grid-row: 2;
+				// Align with post-featured-image
+				@include responsive-spacing(margin-top, large);
+			}
+
+			// Push down to the end of content
+			.related-posts {
+				grid-column: 1;
+				grid-row: 5;
+				align-self: end;
+			}
+		}
+	}
+}

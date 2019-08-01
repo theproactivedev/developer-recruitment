@@ -1,0 +1,8 @@
+// List horizontal
+//
+// Displays list item horizontally with flexbox
+
+@mixin list--horizontal {
+	display: flex;
+	flex-direction: row;
+}

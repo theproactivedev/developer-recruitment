@@ -1,0 +1,46 @@
+// Featured and related posts
+//
+// Displays the featured post + the related posts on the homepage
+//
+// // NOTE:
+// The Featured `post-list` and `post` wrapper was removed
+// Othwerwise was unable to style the gird on Large screens
+
+// @import '../container/container.scss';
+// @import '../post-list-title/post-list-title.scss';
+// @import '../post-title/post-title.scss';
+@import '../post-author-and-comment-count/post-author-and-comment-count.scss';
+@import '../post-excerpt/post-excerpt.scss';
+@import '../post-featured-image/post-featured-image.scss';
+@import '../related-posts-on-homepage/related-posts-on-homepage.scss';
+@import '../featured-and-related-posts-grid/featured-and-related-posts-grid.scss';
+
+@mixin featured-and-related-posts {
+	@include container;
+
+	.post-list-title {
+		@include post-list-title;
+	}
+
+	.post-title {
+		@include post-title;
+	}
+
+	.post-author-and-comment-count {
+		@include post-author-and-comment-count;
+	}
+
+	.post-excerpt {
+		@include post-excerpt;
+	}
+
+	.post-featured-image {
+		@include post-featured-image;
+	}
+
+	.related-posts-on-homepage {
+		@include related-posts-on-homepage;
+	}
+
+	@include featured-and-related-posts-grid;
+}

@@ -1,0 +1,82 @@
+// Post
+//
+// Displays a post
+
+@import '../post-title/post-title.scss';
+@import '../post-comment-count/post-comment-count.scss';
+@import '../post-excerpt/post-excerpt.scss';
+@import '../post-featured-image/post-featured-image.scss';
+@import '../post-author/post-author.scss';
+@import '../post-author-and-comment-count/post-author-and-comment-count.scss';
+@import '../post-date/post-date.scss';
+@import '../post-subtitle/post-subtitle.scss';
+@import '../post-content/post-content.scss';
+@import '../post-share/post-share.scss';
+@import '../post-categories-and-tags/post-categories-and-tags.scss';
+@import '../post-meta-box/post-meta-box.scss';
+@import '../post-meta/post-meta.scss';
+@import '../post-format-thumb/post-format-thumb.scss';
+
+@mixin post {
+	.post-title {
+		@include post-title;
+	}
+
+	.post-subtitle {
+		@include post-subtitle;
+	}
+
+	.post-title-and-subtitle {
+		@include post-title-and-subtitle;
+	}
+
+	.post-excerpt {
+		@include post-excerpt;
+	}
+
+	.post-content {
+		@include post-content;
+	}
+
+	.post-featured-image {
+		@include post-featured-image;
+	}
+
+	.post-share {
+		@include post-share;
+	}
+
+	.post-categories-and-tags {
+		@include post-categories-and-tags;
+	}
+
+	.post-meta-box {
+		@include post-meta-box;
+	}
+
+	.post-author {
+		@include post-author;
+	}
+
+	.post-comment-count {
+		@include post-comment-count;
+	}
+
+	.post-author-and-comment-count {
+		@include post-author-and-comment-count;
+	}
+
+	.post-date {
+		@include post-date;
+	}
+
+	.post-meta {
+		@include post-meta;
+	}
+
+	/* Related posts */
+	&.post-format-thumb {
+		@include post-format-thumb;
+	}
+
+}

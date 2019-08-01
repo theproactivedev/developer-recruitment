@@ -1,0 +1,18 @@
+// Post format thumb to link
+//
+// Displays a thumb post as a link
+// Used also by the Deal post format
+
+@mixin post-format-thumb--to-link {
+	.post-featured-image,
+	.post-date,
+	.post-excerpt,
+	.post-author-and-comment-count,
+	.post-expiring-date {
+		display: none;
+	}
+
+	.post-title {
+		margin-bottom: 0;
+	}
+}

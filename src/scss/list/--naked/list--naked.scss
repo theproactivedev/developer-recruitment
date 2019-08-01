@@ -1,0 +1,7 @@
+// List naked
+//
+// Removes the bullets or numbers from a list
+
+@mixin list--naked {
+	list-style: none;
+}

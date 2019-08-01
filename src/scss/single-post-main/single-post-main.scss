@@ -1,0 +1,33 @@
+// Single post main
+//
+// Displays the main content of the single post template
+// Which is the post itself
+//
+// Shared by
+// - Single review
+
+// @import '../container/container.scss';
+@import '../post/post.scss';
+@import '../post-list/post-list.scss';
+@import '../post-featured-image/post-featured-image.scss';
+@import '../single-post-main-grid/single-post-main-grid';
+@import '../post-format-single/post-format-single.scss';
+
+@mixin single-post-main($variant: null) {
+	@include container(padding, auto);
+	@include post-list;
+	@include single-post-main-grid($variant);
+
+	.post-list-items {
+		.post {
+			@include post;
+			&.post-format-single {
+				@include post-format-single;
+
+				.post-featured-image {
+					@include post-featured-image(no-figcaption);
+				}
+			}
+		}
+	}
+}

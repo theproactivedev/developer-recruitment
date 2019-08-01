@@ -1,0 +1,110 @@
+// Quick links grid
+//
+// Displays the Quick Links grid
+
+// @import '../responsive-section/responsive-section.scss';
+// @import '../responsive-post-list-grid/responsive-post-list-grid.scss';
+
+@mixin quick-links-grid {
+	// Align title + menu
+	@include responsive-section('.quick-links-menu');
+
+	// On medium title + menu is aligned via an exception
+	@include media($medium...) {
+		.quick-links-menu {
+			grid-column: 2 / -1 !important;
+			margin-top: 0 !important;
+		}
+	}
+
+	// Align content
+	//
+	// This grid is completely ad-hoc
+	// It was revealed at the last minute it has a fixed column
+	// See: https://github.com/pointhacks/pointhacks/issues/1022
+	//
+	// A quick an dirty solution is applied which later must be refactored
+	//
+	.quick-links-content {
+		grid-column: 1 / -1;
+		align-items: flex-start;
+
+		@include responsive-grid;
+
+		.plastic-footer {
+			grid-column: -2 / -1;
+		}
+
+		.quick-link-content {
+			grid-column: 1 / -2;
+
+			@include responsive-grid;
+
+			@include media($large...) {
+				grid-template-columns: repeat(3, 1fr);
+
+				.quick-link-content-title {
+					grid-column: 1;
+				}
+
+				.quick-link-content-columns {
+					grid-column: 2 / -1;
+
+					@include responsive-grid;
+					grid-template-columns: repeat(2, 1fr) !important;
+				}
+			}
+
+			@include media($medium...) {
+				grid-template-columns: repeat(3, 1fr);
+
+				.quick-link-content-title {
+					grid-column: 1 / -1;
+				}
+
+				.quick-link-content-columns {
+					grid-column: 1 / -1;
+					grid-row: 2;
+
+					@include responsive-spacing(margin-top, small);
+					@include responsive-grid;
+					grid-template-columns: repeat(2, 1fr) !important;
+				}
+			}
+
+			@include media($tablet...) {
+				grid-template-columns: repeat(2, 1fr);
+
+				.quick-link-content-title {
+					grid-column: 1 / -1;
+				}
+
+				.quick-link-content-columns {
+					grid-column: 1 / -1;
+					grid-row: 2;
+
+					@include responsive-spacing(margin-top, small);
+					@include responsive-grid;
+					grid-template-columns: repeat(2, 1fr) !important;
+				}
+			}
+
+			@include media($small...) {
+				.quick-link-content-title {
+					display: none;
+				}
+
+				.quick-link-content-columns {
+					grid-column: 1 / -1;
+				}
+			}
+		}
+
+		@include media($tablet...) {
+			.quick-link-content,
+			.plastic-footer {
+				grid-column: 1 / -1;
+			}
+		}
+	}
+}

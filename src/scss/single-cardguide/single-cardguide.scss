@@ -1,0 +1,90 @@
+// Single Card Guide
+//
+// Displays the single Card Guide page
+
+@import '../single-post-main/single-post-main.scss';
+@import '../single-cardguide-main-grid/single-cardguide-main-grid.scss';
+@import '../post-format-single-cardguide/post-format-single-cardguide.scss';
+@import '../post-format-plastic/post-format-plastic.scss';
+@import '../plastic-content-single/plastic-content-single.scss';
+@import '../post-card-terms/post-card-terms.scss';
+@import '../post-featured-image-with-disclosure/post-featured-image-with-disclosure.scss';
+@import '../post-primary-card-sidebar/post-primary-card-sidebar.scss';
+@import '../related-posts-for-single/related-posts-for-single.scss';
+@import '../post-footer-banner/post-footer-banner.scss';
+@import '../comments/comments.scss';
+@import '../featured-video/featured-video.scss';
+@import '../points-destination-finder/points-destination-finder.scss';
+@import '../plastic-transition/transition.scss';
+
+@mixin single-cardguide {
+	.single-cardguide-main {
+		@include single-post-main;
+		@include single-cardguide-main-grid;
+
+		.post-list-items {
+			.post {
+				&.post-format-single-cardguide {
+					@include post-format-single-cardguide;
+				}
+
+				// Primary plastic placement
+				.post-primary-card {
+					&.featured-video-container {
+						@include featured-video;
+					}
+
+					@include featured-video-plastic-image-hide;
+
+					.plastic-content-single {
+						@include plastic-content-single;
+						@include plastic-transition;
+					}
+					// generic plastic styling
+					.post-format-plastic {
+						@include post-format-plastic(primary);
+					}
+				}
+
+				// Placement when in content
+				.text {
+					.plastic-content-single, .plastic-content-group {
+						@include plastic-content-single;
+					}
+					// generic plastic styling
+					.post-format-plastic {
+						@include post-format-plastic(content);
+					}
+				}
+
+				.post-card-terms {
+					@include post-card-terms;
+				}
+
+				.post-featured-image-with-disclosure {
+					@include post-featured-image-with-disclosure;
+				}
+
+				.points-destination-finder {
+					@include points-destination-finder;
+				}
+			}
+		}
+	}
+
+	.post-primary-card-sidebar {
+		@include post-primary-card-sidebar;
+	}
+
+	.related-posts-for-single {
+		@include related-posts-for-single;
+	}
+
+	.post-footer-banner {
+		@include post-footer-banner;
+	}
+
+	.comments {
+		@include comments;
+	}
+}

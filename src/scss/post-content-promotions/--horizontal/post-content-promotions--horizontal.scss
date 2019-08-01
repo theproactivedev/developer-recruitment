@@ -1,0 +1,26 @@
+// Post content promotions horizontal
+//
+// Displays promotions inside post content horizontally
+
+@mixin post-content-promotions--horizontal {
+	.row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		.promotions-content {
+			grid-column: 1;
+			grid-row: 1;
+
+			@include responsive-spacing(padding, small, content);
+
+			h3 {
+				@include responsive-spacing(margin-bottom, small, content);
+			}
+		}
+
+		.promotions-image {
+			grid-column: 2;
+			grid-row: 1;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+// Single review main grid mobile
+//
+// Displays the grid for the single review main - tablet and mobile screens
+
+@mixin single-review-main-grid--mobile {
+	.post-list-items {
+		.post {
+			.post-title-and-subtitle {
+				grid-row: 1;
+			}
+
+			.post-meta {
+				grid-row: 2;
+			}
+
+			.post-featured-image {
+				grid-row: 3;
+			}
+
+			.post-meta-box {
+				grid-row: 4;
+				@include responsive-spacing(margin-top, large);
+				@include responsive-spacing(margin-bottom, large);
+			}
+
+			.post-map {
+				margin-top: 0 !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+// Comment form horizontal
+//
+// Displays the comment form horizontally
+
+// @import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin comment-form--horizontal {
+	.comment-form-notifications {
+		.buttons {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-column-gap: var(--spacer-8);
+		}
+	}
+
+	.form-submit {
+		.submit {
+			width: calc(33% - var(--spacer-8));
+		}
+	}
+}

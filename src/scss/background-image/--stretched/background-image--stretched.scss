@@ -1,0 +1,7 @@
+// Stretched background image
+//
+// Makes an image fully fill the element's background
+
+@mixin background-image--stretched {
+	background-size: cover;
+}

@@ -1,0 +1,27 @@
+// Header default state
+//
+// Manages the default state of the header
+
+@import '../../header-icons/--default-state/header-icons--default-state.scss';
+
+@mixin header--default-state {
+	.header-icons {
+		@include header-icons--default-state;
+	}
+
+	.header-menu {
+		display: none;
+	}
+
+	.header-menu-close {
+		display: none;
+	}
+
+	.header-search {
+		display: none;
+	}
+
+	.social-icons {
+		display: none;
+	}
+}

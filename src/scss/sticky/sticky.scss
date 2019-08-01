@@ -1,0 +1,19 @@
+// Sticky
+//
+// Sticky general css and maybe animation
+
+@mixin StickyIn {
+  @keyframes StickyIn {
+    from {
+      opacity: 0;
+      transform: translateY(-1em);
+    }
+  }
+}
+
+@mixin Sticky {
+  &.is-stuck {
+		animation: StickyIn ease .5s;
+		animation-fill-mode: both;
+  }
+}

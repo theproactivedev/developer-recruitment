@@ -1,0 +1,29 @@
+// Responsive section
+//
+// Displays a section with title and content in a responsive way
+//
+// Used on:
+// - Homepage / Expiring Deals, Frequent Flyer Guides, Credit Cards, ..
+// - Category Index / all sections
+//
+// This is a framework component reused by many other components.
+//
+// // NOTE:
+// Again, this is a controversy.
+// I guess it can be merged into `post-list` or other construct.
+
+@mixin responsive-section($content) {
+	@include responsive-grid;
+
+	#{$content} {
+		grid-column: 1 / -1;
+		@include responsive-spacing(margin-top, small);
+	}
+
+	@include media($large...) {
+		#{$content} {
+			grid-column: 2 / -1;
+			margin-top: auto;
+		}
+	}
+}

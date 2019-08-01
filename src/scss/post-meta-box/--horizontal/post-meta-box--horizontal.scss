@@ -1,0 +1,91 @@
+// Post meta box horizontal
+//
+// Displays the post meta box horizontally
+//
+// This is a general display.
+// Some post meta box types have an individual display which might overwrite these settings.
+//
+// The design for this is utterly complicated:
+// - There can be 3-7 elements
+// - Some of them can be empty (placeholders)
+// - Sometimes their order is changed
+//
+// A Javascript helper was added to the rescue
+
+@mixin post-meta-box--horizontal {
+	.entries {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		// Ensure the last row has a complete bottom border.
+		// When there are 4,5,7 elements no cells are present where the bottom border can be added.
+		// This is a must-add property
+		@include border(border-bottom);
+
+		// Here we do the genral case
+		// Later all edge cases will be tackled
+		.entry {
+			// All items have left padding and left border ...
+			@include border(border-left);
+			padding-left: var(--spacer-8);
+
+			// ... except the first items in the row
+			&:nth-of-type(1),
+			&:nth-of-type(4),
+			&:nth-of-type(7) {
+				border-left: none;
+				padding-left: 0;
+			}
+
+			@include border(border-top);
+		}
+	}
+
+	// The edge cases
+	// 4
+	&.nr-of-entries-4 {
+		.entries {
+			.entry {
+				&:nth-of-type(2),
+				&:nth-of-type(3) {
+					@include border(border-bottom);
+				}
+
+				&:nth-of-type(4) {
+					@include border(border-right);
+				}
+			}
+		}
+	}
+
+	// 5
+	&.nr-of-entries-5 {
+		.entries {
+			.entry {
+				&:nth-of-type(3) {
+					@include border(border-bottom);
+				}
+
+				&:nth-of-type(5) {
+					@include border(border-right);
+				}
+			}
+		}
+	}
+
+	// 7
+	&.nr-of-entries-7 {
+		.entries {
+			.entry {
+				&:nth-of-type(5),
+				&:nth-of-type(6) {
+					@include border(border-bottom);
+				}
+
+				&:nth-of-type(7) {
+					@include border(border-right);
+				}
+			}
+		}
+	}
+}

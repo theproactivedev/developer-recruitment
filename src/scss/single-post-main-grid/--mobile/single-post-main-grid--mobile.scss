@@ -1,0 +1,32 @@
+// Single post grid mobile
+//
+// Displays the grid for the post on the single page for Mobile screens
+
+@mixin single-post-main-grid--mobile {
+	display: grid;
+
+	.post-list-title {
+		margin-bottom: var(--spacer-20);
+	}
+
+	.post-list-items,
+	.post {
+		display: grid;
+	}
+
+	.post-list-items {
+		.post {
+			.post-title-and-subtitle {
+				grid-row: 1;
+			}
+
+			.post-featured-image {
+				grid-row: 2;
+			}
+
+			.post-meta-box {
+				grid-row: 3;
+			}
+		}
+	}
+}

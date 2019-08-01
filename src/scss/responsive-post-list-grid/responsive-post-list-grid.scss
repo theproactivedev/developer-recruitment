@@ -1,0 +1,38 @@
+// Responsive post list grid
+//
+// Displays posts in a grid
+//
+// Used by:
+// - Homepage / {Expiring Deals, Frequent Flyer Guides}
+// - Category Index / Card Range, Earning Points
+//
+// This is a framework component reused by many other components.
+//
+// // NOTE:
+// It's a wrapper around the basic `responsive-flexbox-grid`
+// Extended with `responsive-section`
+// Perhaps it can be removed someday.
+
+// @import '../responsive-section/responsive-section.scss';
+// @import '../responsive-flexbox-grid/responsive-flexbox-grid.scss';
+
+@mixin responsive-post-list-grid(
+	$max-items-to-display-map,
+	$items-per-row-map,
+	$items: '.post-list-items',
+	$border: true,
+	$margin-right: var(--gutter-24),
+	$margin-bottom: var(--spacer-32)
+) {
+	@include responsive-section($items);
+
+	#{$items} {
+		@include responsive-flexbox-grid(
+			$margin-right,
+			$margin-bottom,
+			$border,
+			$max-items-to-display-map,
+			$items-per-row-map
+		);
+	}
+}

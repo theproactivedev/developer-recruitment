@@ -1,0 +1,34 @@
+// Quick Links
+//
+// Displays the Quick Links section
+
+// @import '../container/container.scss';
+// @import '../border/border.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../post-list-title/post-list-title.scss';
+@import '../quick-links-menu/quick-links-menu.scss';
+@import '../quick-links-content/quick-links-content.scss';
+@import '../quick-links-grid/quick-links-grid.scss';
+
+@mixin quick-links {
+	@include container(margin);
+	@include border(border-top, 5);
+	@include responsive-spacing(margin-top, large);
+	@include responsive-spacing(padding-top, large);
+
+	// This must come before `.quick-link-content`
+	// Because the tabs are hidden in the content
+	@include quick-links-grid;
+
+	.quick-links-title {
+		@include post-list-title;
+	}
+
+	.quick-links-menu {
+		@include quick-links-menu;
+	}
+
+	.quick-links-content {
+		@include quick-links-content;
+	}
+}

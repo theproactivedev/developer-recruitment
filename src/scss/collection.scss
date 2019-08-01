@@ -1,0 +1,9 @@
+@import 'single-collection/single-collection.scss';
+
+html {
+	body {
+		&.single-collection {
+			@include single-collection;
+		}
+	}
+}

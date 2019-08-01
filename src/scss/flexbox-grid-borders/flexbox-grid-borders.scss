@@ -1,0 +1,43 @@
+// Flexbox grid borders
+//
+// Adds borders to `flexbox-grid`
+//
+// This is a framework component reused by many other components.
+
+// @import '../border/border.scss';
+
+@mixin flexbox-grid-borders($items-per-row, $margin-right: 0, $grid-title: false) {
+	> * {
+		@include border(border-right);
+
+		// Make `padding` be counted in the box model.
+		box-sizing: content-box;
+		$width: calc((#{$margin-right} - 1px) / 2);
+
+		@if ($margin-right != 0) {
+			padding-right: $width;
+			margin-right: $width;
+		}
+	}
+
+	// Right margins
+	@if ($grid-title == true) {
+		> *:not(h3) {
+			&:nth-child(#{$items-per-row}n + 1) {
+				border-right: 0;
+				padding-right: 0;
+				margin-right: 0;
+				box-sizing: border-box;
+			}
+		}
+	} @else {
+		> * {
+			&:nth-child(#{$items-per-row}n) {
+				border-right: 0;
+				padding-right: 0;
+				margin-right: 0;
+				box-sizing: border-box;
+			}
+		}
+	}
+}

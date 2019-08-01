@@ -1,0 +1,34 @@
+// Single review main grid large
+//
+// Displays the grid for the single review main - large screens
+
+@mixin single-review-main-grid--large {
+	.post-list-items {
+		.post {
+			.post-title-and-subtitle {
+				grid-row: 1;
+			}
+
+			.post-meta {
+				grid-row: 2;
+			}
+
+			.post-featured-image,
+			.post-meta-box {
+				grid-row: 3;
+			}
+
+			.post-map {
+				grid-row: 4;
+			}
+
+			.post-bookings {
+				grid-row: 5;
+			}
+
+			.related-posts {
+				grid-row: 6;
+			}
+		}
+	}
+}

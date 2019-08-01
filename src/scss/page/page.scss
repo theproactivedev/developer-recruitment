@@ -1,0 +1,11 @@
+// Page
+//
+// Displays a page
+
+@import '../page-container/page-container';
+
+@mixin page {
+	.page-container {
+		@include page-container;
+	}
+}

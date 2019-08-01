@@ -1,0 +1,57 @@
+@import '../post-primary-card-sidebar/--single-line/post-primary-card-sidebar--single-line.scss';
+
+@mixin single-cardguide-main-grid {
+	.post-meta {
+		@include responsive-spacing(margin-top, small);
+
+		// align post-meta-box to post-featured-image
+		@include responsive-spacing(margin-bottom, large);
+	}
+
+	.post-featured-image {
+		margin-top: 0;
+	}
+
+	.post-card-terms {
+		@include border(default-top);
+		@include responsive-spacing(margin-top, large);
+		@include responsive-spacing(padding-top, small);
+	}
+
+	@include media($small...) {
+		.post-primary-card-sidebar {
+			display: none;
+		}
+	}
+
+	@include media($tablet...) {
+		.post-primary-card-sidebar {
+			@include post-primary-card-sidebar--single-line;
+			@include responsive-spacing(margin-top, large);
+		}
+	}
+
+	@include media($medium...) {
+		.post-primary-card-sidebar {
+			@include post-primary-card-sidebar--single-line;
+			@include responsive-spacing(margin-top, large);
+		}
+	}
+
+	@include media($large...) {
+		.post-meta {
+			grid-row: 2 !important;
+		}
+
+		.post-primary-card-sidebar {
+			@include responsive-spacing(margin-top, small);
+
+			grid-column: 1 !important;
+			grid-row: 3;
+		}
+
+		.related-posts-for-single {
+			grid-row: 4 !important;
+		}
+	}
+}

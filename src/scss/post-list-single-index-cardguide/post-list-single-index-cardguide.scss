@@ -1,0 +1,77 @@
+@import '../post-list-full-width-image-right/post-list-full-width-image-right.scss';
+@import '../post-format-thumb-single-index-cardguide/--vertical/post-format-thumb-single-index-cardguide--vertical.scss';
+@import '../post-format-thumb-single-index-cardguide/--horizontal/post-format-thumb-single-index-cardguide--horizontal.scss';
+
+@import '../post-format-thumb-single-index-cardguide/post-format-thumb-single-index-cardguide.scss';
+
+@mixin post-list-single-index-cardguide {
+	@include responsive-spacing(margin-top, large);
+	@include responsive-spacing(padding-top, large);
+	@include border(border-top, 5);
+
+	.post-list-title,
+	.post-list-subtitle {
+		max-width: 700px;
+
+		.text {
+			// TODO: Somehow reset should be incorporated into all text styles
+			@include text-style(reset);
+		}
+	}
+
+	.post-list-title {
+		@include post-list-title($text-style: 'h1');
+	}
+
+	.post-list-subtitle {
+		@include post-subtitle;
+		@include responsive-spacing(margin-top, small);
+		@include responsive-spacing(margin-bottom, small);
+	}
+
+	&.grid {
+		@include post-list-grid(cardguide);
+
+		.post-list-items {
+			.post {
+				@include post-format-thumb-single-index-cardguide;
+				@include post-format-thumb-single-index-cardguide--vertical;
+			}
+		}
+	}
+
+	&.condensed_grid {
+		@include post-list-condensed-grid;
+
+		.post-list-items {
+			.post {
+				@include post-format-thumb-single-index-cardguide--vertical;
+			}
+		}
+	}
+
+	&.full_width {
+		@include post-list-full-width-image-right;
+
+		&.hidden {
+			display: none !important;
+		}
+
+		.post-list-items {
+			.post {
+				@include post-format-thumb-single-index-cardguide;
+				+ .post {
+					@include responsive-spacing(margin-top, small);
+					@include responsive-spacing(padding-top, small);
+					@include border(border-top);
+				}
+			}
+		}
+	}
+
+	.post-list-items {
+		@include responsive-spacing(margin-top, small);
+		@include responsive-spacing(padding-top, small);
+		//@include border(border-top);
+	}
+}

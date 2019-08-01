@@ -1,0 +1,13 @@
+// Post title thumb
+//
+// Displays post title for thumbs
+
+// @import '../../text-style/text-style.scss';
+
+@mixin post-title--thumb {
+	.link,
+	.text {
+		@include text-style(h3);
+	}
+	margin-bottom: var(--spacer-16);
+}

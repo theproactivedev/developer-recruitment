@@ -1,0 +1,22 @@
+// Circle
+//
+// Draws a circle with a radius and fills with a color
+
+// @import '../colors/colors.scss';
+
+@mixin circle($radius: $lem * 3, $color-scheme: inverted) {
+	@include colors($color-scheme);
+
+	border-radius: $radius;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: $radius;
+	min-height: $radius;
+	min-width: $radius;
+	width: $radius;
+
+	overflow: hidden;
+}

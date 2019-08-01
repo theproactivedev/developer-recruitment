@@ -1,0 +1,21 @@
+// Related posts on homepage
+//
+// Displays a list of related posts for the homepage
+
+@import '../post-list/--vertical-bordered/post-list--vertical-bordered.scss';
+@import '--medium/related-posts-on-homepage--medium.scss';
+@import '../post-format-link/post-format-link.scss';
+
+@mixin related-posts-on-homepage {
+	@include post-list--vertical-bordered;
+
+	.post {
+		&.post-format-link {
+			@include post-format-link;
+		}
+	}
+
+	@include media($medium...) {
+		@include related-posts-on-homepage--medium;
+	}
+}

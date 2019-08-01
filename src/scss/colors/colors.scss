@@ -1,0 +1,83 @@
+// Colors
+//
+// Displays colors
+//
+// All color styles must be defined here first and re-used later where needed.
+//
+// From https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0be3b4e654bca8ceff1f
+//
+
+// Color pair mixins
+//
+// - Instead of setting colors directly this mixin must be used
+// - This makes sure colors are uniform accross the site
+//
+// From
+// - https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0be15c1db5628c0b4129
+//
+@mixin colors($variant) {
+	@if ($variant == init) {
+		// NOTE: In the `variables` folder there are these same colors defined as SASS variables for backward compatibility
+		// When updating here also the `variables` has to be updated
+		:root {
+			--white: #fff;
+			--black: #333;
+
+			--red-1: #cc0000;
+			--red-2: #fae5e8;
+
+			--grey-1: #f2f2f4;
+			--grey-2: #e0e0e0;
+			--grey-3: #999;
+		}
+	}
+
+	@if ($variant == default) {
+		color: var(--black);
+		background-color: var(--white);
+	}
+
+	@if ($variant == inverted) {
+		color: var(--white);
+		background-color: var(--black);
+	}
+
+	@if ($variant == red-on-white) {
+		color: var(--red-1);
+		background-color: var(--white);
+	}
+
+	@if ($variant == white-on-red) {
+		color: var(--white);
+		background-color: var(--red-1);
+	}
+
+	@if ($variant == red-on-red) {
+		color: var(--red-1);
+		background-color: var(--red-2);
+	}
+
+	@if ($variant == black-on-grey) {
+		color: var(--black);
+		background-color: var(--grey-1);
+	}
+
+	@if ($variant == black-on-grey-2) {
+		color: var(--black);
+		background-color: var(--grey-2);
+	}
+
+	@if ($variant == grey-on-white) {
+		color: var(	--grey-3);
+		background-color: var(--white);
+	}
+
+	// This fails the WCAG test: https://contrast-ratio.com/#%23999-on-%23f2f2f4
+	// Craig's note:
+	// "Given it's a disabled state, its intent is to act as a placeholder, and darker text might suggest it is selectable and not a disabled state, I'm okay with that."
+	// TODO: Fix this later
+	@if ($variant == grey-on-grey) {
+		color: var(--grey-3);
+		background-color: var(--grey-1);
+	}
+}

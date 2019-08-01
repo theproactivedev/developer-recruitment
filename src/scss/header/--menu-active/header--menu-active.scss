@@ -1,0 +1,28 @@
+// Header menu active
+//
+// Manages the state when the header menu is active
+
+@import '../../header-icons/--menu-active/header-icons--menu-active.scss';
+@import '../../header-menu/--active/header-menu--active.scss';
+
+@mixin header--menu-active {
+	.header-icons {
+		@include header-icons--menu-active;
+	}
+
+	.header-menu {
+		display: flex;
+	}
+
+	.header-menu-close {
+		display: flex;
+	}
+
+	.header-search {
+		display: none;
+	}
+
+	.social-icons {
+		display: flex;
+	}
+}

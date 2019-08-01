@@ -1,0 +1,34 @@
+// Comment list
+//
+// Displays a list of comments
+
+// @import '../list/list.scss';
+// @import '../list/--vertical/list--vertical.scss';
+// @import '../list/--with-border/list--with-border.scss';
+// @import '../border/border.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+@import '../comment/comment.scss';
+
+@mixin comment-list {
+	// Reset
+	margin: 0;
+	padding: 0;
+
+	// NOTE: Due to the WordPress comment system we had to move to grid instead of flexbox ...
+	// ... quick overwrites are put below ...
+
+	> * {
+		grid-column: 1 / -1;
+	}
+
+	@include list;
+	@include list--vertical;
+	@include list--with-border(border-top, true, '.comment');
+
+	@include border(border-bottom);
+	@include responsive-spacing(padding-bottom, small);
+
+	.comment {
+		@include comment;
+	}
+}

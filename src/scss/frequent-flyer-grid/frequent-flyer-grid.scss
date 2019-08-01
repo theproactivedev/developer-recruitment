@@ -1,0 +1,16 @@
+// Frequent flyer grid
+//
+// Displays the frequent flyer guides in a grid
+
+//@import '../responsive-post-list-grid/responsive-post-list-grid.scss';
+
+@mixin frequent-flyer-grid {
+	$items-per-row-map: (
+		mobile: 1,
+		tablet: 2,
+		laptop: 3,
+		desktop: 3
+	);
+
+	@include responsive-post-list-grid(null, $items-per-row-map, '.guides', false);
+}

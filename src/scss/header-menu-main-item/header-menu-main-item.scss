@@ -1,0 +1,29 @@
+// Header menu main item
+//
+// Displays an item in the main menu
+//
+// This is a nested list item
+// Major styling goes into `header-menu-main-children`
+
+@import '../header-menu-main-title/header-menu-main-title.scss';
+@import '../header-menu-main-children/header-menu-main-children.scss';
+@import '--horizontal/header-menu-main-item--horizontal.scss';
+@import '--vertical/header-menu-main-item--vertical.scss';
+
+@mixin header-menu-main-item {
+	.header-menu-main-title {
+		@include header-menu-main-title;
+	}
+
+	.header-menu-main-children {
+		@include header-menu-main-children;
+	}
+
+	@include media('>tablet') {
+		@include header-menu-main-item--horizontal;
+	}
+
+	@include media('<=tablet') {
+		@include header-menu-main-item--vertical;
+	}
+}

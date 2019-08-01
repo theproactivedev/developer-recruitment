@@ -1,0 +1,46 @@
+// Single Review
+//
+// Displays the single Review CPT page
+
+@import '../single-post-main/single-post-main.scss';
+@import '../single-review-main-grid/single-review-main-grid.scss';
+@import '../post-bookings/post-bookings.scss';
+@import '../post-format-single-review/post-format-single-review.scss';
+@import '../related-posts-for-reviews/related-posts-for-reviews.scss';
+@import '../post-format-plastic/post-format-plastic.scss';
+@import '../plastic-content-single/plastic-content-single.scss';
+@import '../comments/comments.scss';
+
+@mixin single-review {
+	.single-review-main {
+		@include single-post-main;
+		@include single-review-main-grid;
+
+		.post-bookings {
+			@include post-bookings;
+		}
+
+		.post-format-single-review {
+			@include post-format-single-review;
+		}
+
+		// TEMP: refactor this to it's own component
+		.post-list-items {
+			.plastic-content-single, .plastic-content-group {
+				@include plastic-content-single;
+			}
+			// generic plastic styling
+			.post-format-plastic {
+				@include post-format-plastic(content);
+			}
+		}
+	}
+
+	.related-posts-for-reviews {
+		@include related-posts-for-reviews;
+	}
+
+	.comments {
+		@include comments;
+	}
+}

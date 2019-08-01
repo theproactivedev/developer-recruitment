@@ -1,0 +1,8 @@
+// Header menu main children align left
+//
+// Aligns the last few submenus to left, to avoid overflowing the screen
+
+@mixin header-menu-main-children--align-left {
+	left: auto;
+	right: 0;
+}

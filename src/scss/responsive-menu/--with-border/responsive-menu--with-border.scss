@@ -1,0 +1,9 @@
+// Responsive menu with border
+//
+// Adds a border to the bottom of the menu
+
+//@import '../../border/border.scss';
+
+@mixin responsive-menu--with-border {
+	@include border;
+}

@@ -1,0 +1,48 @@
+// Table
+//
+// Displays a table inside long form content
+
+// @import '../../border/border.scss';
+// @import '../../text-style/text-style.scss';
+
+@mixin table {
+	// Depends on Tablepress styles
+	// TODO: Make table responsible
+
+	th,
+	td,
+	.th,
+	.td {
+		@include list-item(table);
+
+		// Overwrite Tablepress
+		padding-left: 0;
+
+		vertical-align: top;
+		text-align: left;
+		background-color: transparent !important;
+	}
+
+	thead th,
+	.thead .th {
+		@include border(border-bottom, 3);
+		@include text-style(body-bold-content);
+	}
+
+	tbody td,
+	.tbody .td,
+	.tr .td {
+		@include border(border-bottom);
+		@include text-style(body-content);
+
+		// Overwrite Tablepress
+		border-top: none;
+	}
+
+	// TODO: Add non-tablepress styles
+	&.wp-block-table > tbody {
+		tr:first-child {
+
+		}
+	}
+}

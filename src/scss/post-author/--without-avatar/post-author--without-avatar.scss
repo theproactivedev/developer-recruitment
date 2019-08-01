@@ -1,0 +1,9 @@
+// Post author without avatar
+//
+// Displays the post author without the avatar
+
+@mixin post-author--without-avatar {
+	.post-author-avatar {
+		display: none;
+	}
+}

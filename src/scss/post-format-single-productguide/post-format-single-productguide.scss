@@ -1,0 +1,9 @@
+// Post format single Product Guide
+//
+// Displays a Product Guide post
+
+@import '../post-format-single/post-format-single.scss';
+
+@mixin post-format-single-productguide {
+	@include post-format-single;
+}

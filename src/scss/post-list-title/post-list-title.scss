@@ -1,0 +1,14 @@
+// Post list title
+//
+// Displays a post list title
+
+// @import '../text-style/text-style.scss';
+
+// TODO: Rather replace these params with individual mixins
+// Like `post-list-title--for-index-cardguide`
+
+@mixin post-list-title($text: '.text', $text-style: 'body-caps') {
+	#{$text} {
+		@include text-style($text-style);
+	}
+}

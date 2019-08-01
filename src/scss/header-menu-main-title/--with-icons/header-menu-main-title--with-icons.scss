@@ -1,0 +1,19 @@
+// Header main menu title with icons
+//
+// Displayes the main menu title in the header with icons
+
+@import '../../header-menu-main-title-icons/header-menu-main-title-icons.scss';
+@import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin header-menu-main-title--with-icons {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	@include responsive-spacing(padding-top, small);
+	@include responsive-spacing(padding-bottom, small);
+
+	.header-menu-main-title-icons {
+		@include header-menu-main-title-icons;
+	}
+}

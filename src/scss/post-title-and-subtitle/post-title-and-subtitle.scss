@@ -1,0 +1,41 @@
+// Post title and subtitle
+//
+// Displays a post title and subtitle
+//
+// Used by:
+// - Homepage / Community
+// - Single page
+// - Credit cards page
+// - Category page
+//
+// This was never refactored and its usage might be misguiding sometimes
+
+//@import '../text-style/text-style.scss';
+
+@mixin post-title-and-subtitle(
+	$title: '.post-title',
+	$subtitle: '.post-subtitle',
+	$subtitle_text: '.text',
+	$title-style: 'h1',
+	$subtitle-style: 'h4'
+) {
+	display: flex;
+	flex-direction: column;
+
+	#{$title} {
+		.text,
+		a {
+			@include text-style($title-style);
+		}
+
+		+ #{$subtitle} {
+			margin-top: var(--spacer-8);
+		}
+	}
+
+	#{$subtitle} {
+		#{$subtitle_text} {
+			@include text-style($subtitle-style);
+		}
+	}
+}

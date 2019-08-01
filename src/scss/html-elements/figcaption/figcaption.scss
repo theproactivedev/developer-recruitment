@@ -1,0 +1,22 @@
+// Figcaption
+//
+// Displays a figcaption inside a long form content
+
+// @import '../../colors/colors.scss';
+// @import '../../text-style/text-style.scss';
+
+@mixin figcaption {
+	// Overwrite Gutenberg styles
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: left;
+
+	@include text-style(reset);
+	@include text-style(caption);
+
+	a,
+	.link {
+		@include link(figcaption);
+		display: inline;
+	}
+}

@@ -1,0 +1,23 @@
+// Newsletter
+//
+// Displays the newsletter signup section in the header
+
+// @import '../container/container.scss';
+// @import '../form/form.scss';
+// @import '../text-style/text-style.scss';
+// @import '../colors/colors.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+@import '../newsletter-grid/newsletter-grid.scss';
+
+@mixin newsletter {
+	@include container;
+	@include responsive-spacing(margin-top, large);
+
+	.form {
+		@include form;
+		@include text-style(body);
+		@include colors(black-on-grey);
+	}
+
+	@include newsletter-grid;
+}

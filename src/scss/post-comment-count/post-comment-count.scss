@@ -1,0 +1,11 @@
+// Post comment count
+//
+// Displays the post comment count
+
+// @import '../text-style/text-style.scss';
+
+@mixin post-comment-count {
+	.text {
+		@include text-style(small);
+	}
+}

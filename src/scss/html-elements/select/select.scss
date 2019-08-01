@@ -1,0 +1,21 @@
+// Select
+//
+// Displays a select box
+//
+// Original ideas:
+// - https://css-tricks.com/styling-a-select-like-its-2019/
+// - https://codepen.io/ericrasch/pen/zjDBx
+//
+// Note: it is not reset by `reset-form`
+
+@mixin select {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+	padding: var(--spacer-8);
+
+	@include colors(default);
+	@include border(border);
+	@include border($variant: radius);
+}

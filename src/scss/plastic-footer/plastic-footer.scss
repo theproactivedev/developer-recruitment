@@ -1,0 +1,36 @@
+// Plastic footer
+//
+// Displays the plastic footer post
+
+@import '../post-format-plastic/--spaced/post-format-plastic--spaced.scss';
+@import '../post-format-plastic/--vertical/post-format-plastic--vertical.scss';
+@import '../post-format-plastic/--horizontal/post-format-plastic--horizontal.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../border/border.scss';
+
+@mixin plastic-footer {
+	.post {
+
+		&.post-format-plastic {
+			@include post-format-plastic;
+			@include post-format-plastic--vertical;
+			@include post-format-plastic--spaced(default, complete);
+
+			@include media($tablet...) {
+				@include post-format-plastic--horizontal(2);
+				@include responsive-spacing(padding-top, large);
+				@include border(border-top);
+
+				.post-title {
+					margin-top: 0;
+				}
+			}
+
+			@include media($small...) {
+				@include responsive-spacing(margin-top, small);
+				@include responsive-spacing(padding-top, large);
+				@include border(border-top);
+			}
+		}
+	}
+}

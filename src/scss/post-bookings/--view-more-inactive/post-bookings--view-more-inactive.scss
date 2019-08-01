@@ -1,0 +1,9 @@
+@mixin post-bookings--view-more-inactive {
+	.line {
+		display: flex;
+	}
+
+	.view-more {
+		display: none;
+	}
+}

@@ -1,0 +1,23 @@
+// Header vertical
+//
+// Displays the header vertically
+
+@import '../--menu-active/header--menu-active.scss';
+@import '../--default-state/header--default-state.scss';
+@import '../--search-active/header--search-active.scss';
+
+@mixin header--vertical {
+	@include header--default-state;
+
+	&.menu-active {
+		@include header--menu-active;
+	}
+
+	&.search-active {
+		@include header--search-active;
+	}
+
+	.social-icons {
+		align-items: center;
+	}
+}

@@ -1,0 +1,24 @@
+// Header menu main
+//
+// Displays the main menu in the header
+//
+// This is a nested list managed by `header-menu-main-item`
+
+@import '../header-menu-main-item/header-menu-main-item.scss';
+
+@import '--vertical/header-menu-main--vertical.scss';
+@import '--horizontal/header-menu-main--horizontal.scss';
+
+@mixin header-menu-main {
+	.header-menu-main-item {
+		@include header-menu-main-item;
+	}
+
+	@include media('<=tablet') {
+		@include header-menu-main--vertical;
+	}
+
+	@include media('>tablet') {
+		@include header-menu-main--horizontal;
+	}
+}

@@ -1,0 +1,13 @@
+// Header icons search active
+//
+// Manages the search active state of the header icons
+
+@mixin header-icons--search-active {
+	.icon {
+		display: none;
+
+		&.icon-close {
+			display: flex;
+		}
+	}
+}

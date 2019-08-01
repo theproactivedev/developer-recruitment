@@ -1,0 +1,11 @@
+// Post format single review
+//
+// Displays a post for the single review template (Reviews)
+//
+// Source: https://app.zeplin.io/project/5c18a6aa62b80caee62dd4d0/screen/5c3ecb0a2c9f7852506a994f
+
+@import '../post-format-single/post-format-single.scss';
+
+@mixin post-format-single-review {
+	@include post-format-single;
+}

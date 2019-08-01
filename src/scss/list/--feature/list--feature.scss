@@ -1,0 +1,26 @@
+@mixin list--feature {
+	@include list--with-border(border-top);
+
+	li {
+		@include list-item($variant: with-icon);
+
+		.icon {
+			margin-top: var(--spacer-8);
+		}
+
+		.text {
+			@include text-style(text);
+		}
+
+		// Reset spacing which might come from elsewhere
+		padding-top: 0;
+		margin-top: 0;
+		padding-bottom: 0;
+		padding-top: 0;
+
+		+ li {
+			margin-top: var(--spacer-16);
+			padding-top: var(--spacer-16);
+		}
+	}
+}

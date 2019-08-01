@@ -1,0 +1,22 @@
+@mixin view-more {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	.text {
+		@include text-style(body-caps);
+	}
+
+	.icon {
+		@include icon;
+
+		display: flex;
+		margin-left: var(--spacer-8);
+
+		.svg {
+			background-color: transparent;
+		}
+	}
+}

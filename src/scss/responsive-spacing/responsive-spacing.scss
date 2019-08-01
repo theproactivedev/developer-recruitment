@@ -1,0 +1,72 @@
+// Responsive spacing
+//
+// Makes vertical and horizontal spacing of elements responsive.
+// The idea is to use this mixin across the entire site for spacing.
+//
+// This is a framework component reused by many other components.
+//
+// Notes:
+// - `spacer` is meant for vertical spacing
+// - `gutter` is meant for horizontal spacing
+//
+// Sources:
+// - https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0beb8663ddbcaec4be0b
+
+//@import '../breakpoints/breakpoints.scss';
+
+@mixin responsive-spacing-setup {
+	// Before items removed / modified make a search code-wide to see where these variables are used directly.
+	:root {
+		// Line height 16px
+		--spacer-4: 0.25em;
+		--spacer-8: 0.5em;
+		--spacer-12: 0.75em;
+		--spacer-16: 1em;
+		--spacer-24: 1.5em;
+		--spacer-32: 2em;
+		--gutter-16: 1em;
+		--gutter-24: 1.5em;
+
+		// Line height 20px
+		--spacer-24-20: 1.2em;
+		--spacer-32-20: 1.6em;
+
+		// Line height 18px;
+		--spacer-16-18: 1em;
+		--spacer-32-18: 1.778em;
+	}
+}
+
+@mixin responsive-spacing($selector: margin-bottom, $variant: large, $map-type: '') {
+	$line-height: '';
+	$line-height-mobile: '';
+
+	@if ($map-type == content) {
+		$line-height: '-20';
+		$line-height-mobile: '-18';
+	}
+
+	$map: (
+		large: var(--spacer-32#{$line-height}),
+		small: var(--spacer-24#{$line-height}),
+		smaller: var(--spacer-16#{$line-height}),
+		horizontal: var(--gutter-24),
+		none: 0
+	);
+
+	$map-mobile: (
+		large: var(--spacer-32#{$line-height-mobile}),
+		small: var(--spacer-16#{$line-height-mobile}),
+		smaller: var(--spacer-8#{$line-height-mobile}),
+		horizontal: var(--gutter-16),
+		none: 0
+	);
+
+	@include media('<tablet') {
+		#{$selector}: map-get($map-mobile, $variant);
+	}
+
+	@include media('>=tablet') {
+		#{$selector}: map-get($map, $variant);
+	}
+}

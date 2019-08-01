@@ -1,0 +1,9 @@
+@import 'single-productguide/single-productguide.scss';
+
+html {
+	body {
+		&.single-productguide {
+			@include single-productguide;
+		}
+	}
+}

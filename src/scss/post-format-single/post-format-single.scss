@@ -1,0 +1,39 @@
+// Post format single
+//
+// Displays a post for the single template (Article)
+//
+// The grid is set up elsewhere
+// Here we just style the elements
+//
+// Source: https://app.zeplin.io/project/5c18a6aa62b80caee62dd4d0/screen/5c18a877def00c2430633c00
+
+// @import '../border/border.scss';
+@import '../post-author/--with-description/post-author--with-description.scss';
+@import '../post-author/--with-avatar/post-author--with-avatar.scss';
+@import '../related-posts-for-single/related-posts-for-single.scss';
+
+@mixin post-format-single {
+	.post-featured-image {
+		figcaption {
+			display: none;
+		}
+	}
+
+	.post-author {
+		@include post-author--with-avatar;
+		@include post-author--with-description;
+	}
+
+	.post-share,
+	.post-categories-and-tags,
+	.post-author,
+	.post-card-terms {
+		@include border(border-top);
+		@include responsive-spacing(margin-top, large);
+		@include responsive-spacing(padding-top, small);
+	}
+
+	.related-posts {
+		@include related-posts-for-single;
+	}
+}

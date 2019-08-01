@@ -1,0 +1,13 @@
+// Header icons menu active
+//
+// Manages the menu active state of the header icons
+
+@mixin header-icons--menu-active {
+	.icon {
+		display: none;
+
+		&.icon-close {
+			display: flex;
+		}
+	}
+}

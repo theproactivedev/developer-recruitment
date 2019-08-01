@@ -1,0 +1,198 @@
+// Post format plastic
+//
+// Displays Plastic posts
+
+@import '../list/--breakout/list--breakout.scss';
+@import '../list/--subbreakout/list--subbreakout.scss';
+@import '../list/--feature/list--feature.scss';
+@import '../list/--subfeature/list--subfeature.scss';
+
+/*
+ Placements: [primary, content, sidebar, header, homepage-featured, footer]
+*/
+@mixin post-format-plastic($placement: content) {
+	.post-title {
+		@include post-title--thumb;
+		@if ($placement == primary) {
+			display: none;
+		} @else if ($placement == sidebar) {
+			margin-bottom: 0;
+		} @else if ($placement == header) {
+			margin-bottom: 0;
+		} @else if ($placement == content) {
+			@include text-style(small);
+		}
+
+		.link {
+			@include link(long-link);
+		}
+	}
+
+	.post-featured-image {
+		@include media($large...) {
+			max-width: 400px;
+		}
+		.link {
+			@include link(transparent-background);
+
+			@include media($medium...) {
+				justify-content: left;
+			}
+		}
+	}
+
+	.post-content-plastic,
+	.buttons {
+		// Buttons, shared accross all plastic items
+		.button {
+			&.primary {
+				@include text-style(body-caps);
+				@include button(secondary-red);
+			}
+
+			&.secondary {
+				@include button(secondary-grey-2);
+			}
+
+			&.small {
+				@include button(small-secondary-red);
+			}
+			// primary placement in card guide hides buttons and pushes to sidebar
+			@if ($placement == primary) {
+				@include media($large...) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.referral-commission {
+		// fix this hack used for relative sizing
+		font-size: 16px;
+		.text {
+			@include text-style(small);
+			font-size: 0.875em !important;
+			display: inline;
+		}
+		// primary placement on card guide hides referral
+		@if ($placement == primary) {
+			@include media($large...) {
+				display: none;
+			}
+		}
+	}
+
+	.post-content-plastic {
+		.summary {
+			.text {
+				@include text-style(text);
+
+				@if ($placement == content) {
+					font-size: 1em !important;
+					// could override it here
+				}
+			}
+		}
+
+		.list-primary {
+			@include list;
+			@include list--feature;
+
+			margin-top: var(--spacer-16) !important;
+			margin-left: 0 !important;
+
+			@if ($placement == content) {
+				li {
+					.icon,
+					.text {
+						font-size: 1em !important;
+					}
+				}
+			}
+		}
+
+		.list-secondary {
+			@include list;
+			@include list--subfeature;
+
+			margin-top: var(--spacer-16) !important;
+
+			@if ($placement == content) {
+				li {
+					@include text-style(text);
+					// TODO: refactor this text implementation
+					font-size: 0.875em;
+					line-height: 1.43;
+				}
+			}
+		}
+
+		// From `homepage-footer`
+		//
+		.topiclist {
+			margin-top: 0;
+
+			// This is a list not found in the design system
+			// It's style is adapted
+			@include list;
+			@include list--breakout;
+
+			.topic {
+				.icon,
+				.text {
+					font-weight: normal;
+				}
+			}
+		}
+
+		.disclosure {
+			.text,
+			.link {
+				@include text-style(small);
+			}
+
+			.link {
+				@include link(link);
+			}
+		}
+
+		// From `homepage-featured`
+		//
+		.post-featured-image,
+		.signup-bonus-text,
+		.featured-card-offer-benefit,
+		.travel-benefit-text,
+		.benefits,
+		.benefits-1 {
+			.link {
+				@include link(transparent-background);
+			}
+		}
+
+		.signup-bonus-text {
+			.link {
+				@include text-style(h3);
+			}
+		}
+
+		// From `header`
+		//
+		// All text is acting like title even if they are set to different text styles
+		// The `line-height` must adjusted individually to make text behave like a title
+		// Please add `line-height: 1` to all text elements below
+
+		.offer {
+			.text {
+				@include text-style(text-bold);
+				line-height: 1;
+			}
+		}
+
+		.offer-2 {
+			.text {
+				@include text-style(text);
+				line-height: 1;
+			}
+		}
+	}
+}

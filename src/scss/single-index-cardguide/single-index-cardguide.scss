@@ -1,0 +1,30 @@
+// Single index card guide
+//
+// Displays the Index Page for the Card Guide CPT
+
+@import '../single-post-main/single-post-main.scss';
+@import '../single-index-cardguide-lists/single-index-cardguide-lists.scss';
+@import '../single-index-cardguide-grid/single-index-cardguide-grid.scss';
+@import '../post-format-index-cardguide/post-format-index-cardguide.scss';
+
+@mixin single-index-cardguide {
+
+	// Top section before sections
+	.single-index-cardguide-main {
+		@include single-post-main;
+		@include post-format-index-cardguide;
+	}
+
+	// Main index sections
+	.single-index-cardguide-lists {
+		@include single-index-cardguide-lists;
+	}
+
+	.post-list-hidden {
+		.post {
+			display: none;
+		}
+	}
+
+	@include single-index-cardguide-grid;
+}

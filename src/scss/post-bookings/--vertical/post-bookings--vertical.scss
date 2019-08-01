@@ -1,0 +1,20 @@
+@mixin post-bookings--vertical {
+	.tr {
+		display: flex;
+		flex-direction: column;
+
+		> * {
+			width: 100%;
+		}
+
+		.text {
+			border: none;
+			padding-bottom: 0;
+		}
+
+		.buttons {
+			padding-left: 0;
+			padding-top: 0;
+		}
+	}
+}

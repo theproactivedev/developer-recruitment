@@ -1,0 +1,29 @@
+// Post author and comment count
+//
+// Displays the post author together with comment count
+// Used on Homepage / Featured
+
+@import '../post-author/post-author.scss';
+@import '../post-comment-count/post-comment-count.scss';
+@import '../post-author/--without-avatar/post-author--without-avatar.scss';
+
+@mixin post-author-and-comment-count {
+	display: flex;
+	flex-wrap: wrap;
+
+	.post-author {
+		@include post-author;
+		@include post-author--without-avatar;
+
+		// where does this occur?
+		+ .post-comment-count {
+			@include post-comment-count;
+			margin-left: var(--gutter-16);
+		}
+
+	}
+
+	.post-comment-count {
+		@include post-comment-count;
+	}
+}

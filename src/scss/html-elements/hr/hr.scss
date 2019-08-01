@@ -1,0 +1,11 @@
+// HR
+//
+// Displays a horizontal line inside a long form content
+
+@mixin hr {
+	margin-left: 0;
+	color: var(--grey-3);
+	background-color: var(--grey-3);
+	border: none;
+	height: 1px;
+}

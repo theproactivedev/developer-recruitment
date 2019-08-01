@@ -1,0 +1,48 @@
+// Header horizontal
+//
+// Displays the header horizontally
+
+// @import '../../responsive-grid/responsive-grid.scss';
+// @import '../../responsive-grid-columns/responsive-grid-columns.scss';
+// @import '../../list-item/list-item.scss';
+
+@mixin header--horizontal {
+	@include media($large...) {
+		display: grid;
+		$columns: 8;
+		grid-template-columns: repeat($columns, 1fr);
+
+		.logo {
+			grid-column: 1 / 3;
+		}
+
+		.header-menu {
+			grid-column: 3 / 8;
+		}
+
+		.social-icons {
+			grid-column: 8 / 9;
+		}
+	}
+
+	@include media($medium...) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.header-menu-close {
+		display: none;
+	}
+
+	.social-icons {
+		.list {
+			li {
+				// Align to menu items
+				@include list-item;
+			}
+		}
+	}
+
+	// Align menu bottom to header's border-bottom
+	align-items: flex-end;
+}

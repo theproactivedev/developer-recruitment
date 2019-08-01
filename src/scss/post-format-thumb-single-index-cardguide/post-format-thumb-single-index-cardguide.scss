@@ -1,0 +1,41 @@
+@mixin post-format-thumb-single-index-cardguide {
+	@include post-format-plastic;
+
+	.buttons {
+		.button {
+			&.primary {
+				@include button();
+			}
+			+ .button {
+				margin-top: var(--spacer-8);
+			}
+		}
+
+		.disclosure {
+			margin-top: 1em;
+		}
+	}
+
+	.post-title {
+		.text,
+		.link {
+			@include text-style(h3);
+		}
+	}
+
+	.post-excerpt {
+		@include post-excerpt;
+		@include text-style(small);
+	}
+
+	.disclosure {
+		.text,
+		.link {
+			@include text-style(small);
+		}
+
+		.link {
+			@include link(link);
+		}
+	}
+}

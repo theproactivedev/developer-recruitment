@@ -1,0 +1,13 @@
+// Post excerpt thumb
+//
+// Displays post excerpt for the thumb post format
+
+// @import '../../text-style/text-style.scss';
+
+@mixin post-excerpt--thumb {
+	.text {
+		@include text-style(reset);
+		@include text-style(body);
+	}
+	margin-bottom: var(--spacer-16);
+}

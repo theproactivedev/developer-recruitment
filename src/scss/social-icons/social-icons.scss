@@ -1,0 +1,63 @@
+// Social icons
+//
+// Displays a list of social icons in the header
+//
+// // NOTE:
+// Social icons for post share are in `post-share`
+// For post share we use Icomoon. Here we use the old trick.
+
+// @import '../list/list.scss';
+// @import '../list/--horizontal/list--horizontal.scss';
+// @import '../list/--with-margin-right/list--with-margin-right.scss';
+
+@mixin social-icons {
+	h3 {
+		display: none;
+	}
+
+	.list {
+		@include list;
+		@include list--horizontal;
+		@include list--with-margin-right(small);
+
+		justify-content: flex-end;
+		align-items: center;
+
+		li {
+			a {
+				color: transparent;
+				display: block;
+
+				&.facebook {
+					width: 21px;
+    				height: 21px;
+					background: url(../img/facebook-icon.svg) no-repeat;
+					background-size: 100%;
+				}
+
+				&.youtube {
+					width: 30px;
+    				height: 21px;
+					background: url(../img/youtube-icon.svg) no-repeat;
+					background-size: 100%;
+				}
+
+				&.twitter {
+					width: 24px;
+					height: 20px;
+					background: url(../img/tw.svg) no-repeat;
+				}
+
+				&.instagram {
+					width: 20px;
+					height: 20px;
+					background: url(../img/insta.svg) no-repeat;
+				}
+
+				&:hover {
+					opacity: 0.85;
+				}
+			}
+		}
+	}
+}

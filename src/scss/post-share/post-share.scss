@@ -1,0 +1,66 @@
+// Post share
+//
+// Displays the post share buttons
+
+// @import '../text-style/text-style.scss';
+// @import '../list/list.scss';
+
+@mixin post-share {
+	.post-share-title {
+		.text {
+			@include text-style(body-bold);
+		}
+	}
+
+	.list {
+		@include responsive-spacing(margin-top, small);
+
+		@include list;
+		@include list--horizontal;
+		@include list--with-margin-right(small);
+
+		justify-content: space-between;
+
+		.li {
+			.link {
+				display: flex;
+				align-items: center;
+
+				.icon {
+					display: block;
+					margin-right: var(--spacer-8);
+					width: 28px;
+					height: 28px;
+
+					&.icon-email {
+						background: url(../img/email.svg) no-repeat;
+					}
+
+					&.icon-facebook {
+						background: url(../img/facebook.svg) no-repeat;
+					}
+
+					&.icon-linkedin {
+						background: url(../img/linkedin.svg) no-repeat;
+					}
+
+					&.icon-twitter {
+						background: url(../img/twitter.svg) no-repeat;
+					}
+
+					&.icon-instagram {
+						background: url(../img/instagram.svg) no-repeat;
+					}
+				}
+
+				.text {
+					@include text-style(body-caps);
+
+					@include media($small...) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

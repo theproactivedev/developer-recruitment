@@ -1,0 +1,9 @@
+// H4
+//
+// Displays a heading level 4
+
+@import '../../text-style/text-style.scss';
+
+@mixin h4 {
+	@include text-style(h4-content);
+}

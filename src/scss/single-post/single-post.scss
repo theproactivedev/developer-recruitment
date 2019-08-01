@@ -1,0 +1,29 @@
+// Single post
+//
+// Displays the single post page
+
+@import '../single-post-main/single-post-main.scss';
+@import '../post-format-plastic/post-format-plastic.scss';
+@import '../plastic-content-single/plastic-content-single.scss';
+@import '../comments/comments.scss';
+
+@mixin single-post {
+	.single-post-main {
+		@include single-post-main;
+
+		// TEMP: refactor this to it's own component
+		.post-list-items {
+			.plastic-content-single, .plastic-content-group {
+				@include plastic-content-single;
+			}
+			// generic plastic styling
+			.post-format-plastic {
+				@include post-format-plastic(content);
+			}
+		}
+	}
+
+	.comments {
+		@include comments;
+	}
+}

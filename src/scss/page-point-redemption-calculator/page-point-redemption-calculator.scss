@@ -1,0 +1,87 @@
+// Page Point redemption calculator
+//
+//// TODO: Merge styles from various calculators
+//
+// Displays the Point redemption calculator form
+
+@mixin page-point-redemption-calculator {
+	@include form(border, var(--spacer-8));
+
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		.column-inputs {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: var(--spacer-24);
+
+			@include media($small...) {
+				grid-template-columns: 1fr;
+
+				.column {
+					+ .column {
+						@include responsive-spacing(margin-top, small);
+					}
+				}
+			}
+
+			h4 {
+				@include text-style(reset);
+				@include text-style(body-bold);
+
+				span {
+					@include colors(red-on-white);
+				}
+			}
+
+			.field-list {
+				display: flex;
+				flex-direction: column;
+
+				@include responsive-spacing(margin-top, small);
+
+				.field-body {
+					.single-field {
+						display: grid;
+						align-items: center;
+						grid-template-columns: 2fr 1fr;
+						grid-column-gap: var(--spacer-8);
+
+						.input {
+							width: 100%;
+						}
+
+						@include media($small...) {
+							grid-template-columns: 1fr 1fr;
+							grid-column-gap: var(--spacer-16);
+						}
+					}
+
+					+ .field-body {
+						@include responsive-spacing(margin-top, small);
+					}
+				}
+			}
+		}
+
+		.column-note {
+			@include responsive-spacing(margin-top, small);
+
+			.message {
+				@include responsive-spacing(margin-top, small);
+				@include responsive-spacing(padding, small);
+				@include colors(black-on-grey);
+				@include border(border-left, 3);
+
+				.message-body {
+					p {
+						+ p {
+							margin-top: var(--lem);
+						}
+					}
+				}
+			}
+		}
+	}
+}

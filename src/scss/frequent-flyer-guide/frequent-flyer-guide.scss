@@ -1,0 +1,24 @@
+// Frequent flyer guide
+//
+// Displays a frequent flyer guide
+
+// @import '../colors/colors.scss';
+// @import '../border/border.scss';
+// @import '../text-style/text-style.scss';
+@import '../post-list/--vertical-bordered/post-list--vertical-bordered.scss';
+
+@mixin frequent-flyer-guide {
+	display: flex;
+	flex-direction: column;
+
+	@include border(border-top, 5);
+	@include post-list--vertical-bordered('.items', '.item');
+
+	// We should set background color because we have a background image here
+	@include colors(default);
+	padding: var(--spacer-16);
+
+	.title {
+		@include text-style(h3);
+	}
+}

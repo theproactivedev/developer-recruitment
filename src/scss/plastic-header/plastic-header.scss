@@ -1,0 +1,36 @@
+// Plastic header
+//
+// Displays the Plastic ad in the header panel
+
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../border/border.scss';
+@import '../post-format-plastic/post-format-plastic.scss';
+@import '../post-title/--plastic-header/post-title--plastic-header.scss';
+@import '../post-format-plastic/--horizontal-small/post-format-plastic--horizontal-small.scss';
+@import '../post-format-plastic/--vertical/post-format-plastic--vertical.scss';
+@import '../post-format-plastic/--spaced/post-format-plastic--spaced.scss';
+
+
+@mixin plastic-header {
+	.post {
+
+		&.post-format-plastic {
+			@include post-format-plastic(header);
+
+			.post-title {
+				@include post-title--plastic-header;
+			}
+
+			@include post-format-plastic--horizontal-small;
+			@include post-format-plastic--spaced(dense);
+
+			@include media($small...) {
+				@include responsive-spacing(margin-top, small);
+				@include responsive-spacing(padding-top, small);
+				@include responsive-spacing(padding-bottom, small);
+				@include border(border-top);
+				@include border(border-bottom);
+			}
+		}
+	}
+}

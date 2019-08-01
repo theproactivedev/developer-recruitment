@@ -1,0 +1,75 @@
+// Expiring deals
+//
+// Displays the expiring deals posts
+
+//@import '../container/container.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+//@import '../responsive-post-list-grid/responsive-post-list-grid.scss';
+@import '../post-list/post-list.scss';
+@import '../post-title/post-title.scss';
+@import '../post-featured-image/post-featured-image.scss';
+@import '../post-excerpt/post-excerpt.scss';
+@import '../post-author-and-comment-count/post-author-and-comment-count.scss';
+@import '../post-date/post-date.scss';
+@import '../post-expiring-date/post-expiring-date.scss';
+@import '--mobile/expiring-deals--mobile.scss';
+@import '../post-format-deal/post-format-deal.scss';
+
+@mixin expiring-deals {
+	@include container;
+	@include responsive-spacing(margin-top, large);
+	@include post-list;
+
+	.post-list-items {
+		.post {
+
+			.post-title {
+				@include post-title;
+			}
+
+			.post-featured-image {
+				@include post-featured-image;
+			}
+
+			.post-excerpt {
+				@include post-excerpt;
+			}
+
+			.post-author-and-comment-count {
+				@include post-author-and-comment-count;
+			}
+
+			.post-date {
+				@include post-date;
+			}
+
+			.post-expiring-date {
+				@include post-expiring-date;
+			}
+
+			&.post-format-deal {
+				@include post-format-deal;
+			}
+		}
+	}
+
+	$max-items-to-display-map: (
+		mobile: 3,
+		tablet: 2,
+		laptop: 3,
+		desktop: 3
+	);
+
+	$items-per-row-map: (
+		mobile: 1,
+		tablet: 2,
+		laptop: 3,
+		desktop: 3
+	);
+
+	@include responsive-post-list-grid($max-items-to-display-map, $items-per-row-map);
+
+	@include media($small...) {
+		@include expiring-deals--mobile;
+	}
+}

@@ -1,0 +1,12 @@
+@import '../../post-format-thumb/--to-link/post-format-thumb--to-link.scss';
+@import '../../post-list/--vertical-bordered/post-list--vertical-bordered.scss';
+
+@mixin latest-posts--mobile {
+	@include post-list--vertical-bordered;
+
+	.post-list-items {
+		.post {
+			@include post-format-thumb--to-link;
+		}
+	}
+}

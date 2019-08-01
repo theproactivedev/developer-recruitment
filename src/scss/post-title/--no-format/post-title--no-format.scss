@@ -1,0 +1,12 @@
+// Post title no format
+//
+// Displays the post title without formatting, ie with basic style
+
+// @import '../../text-style/text-style.scss';
+
+@mixin post-title--no-format {
+	.link {
+		@include text-style(reset);
+		@include text-style(body);
+	}
+}

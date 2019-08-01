@@ -1,0 +1,15 @@
+@mixin list--subfeature {
+	list-style-type: disc;
+	margin-left: var(--lem);
+
+	li {
+		.icon,
+		.text {
+			@include text-style(text);
+		}
+
+		+ li {
+			margin-top: var(--lem);
+		}
+	}
+}

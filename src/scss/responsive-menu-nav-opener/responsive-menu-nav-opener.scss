@@ -1,0 +1,15 @@
+// Responsive nav opener
+//
+// Part of the responsive menu component
+// Styles the menu opener element
+
+//@import '../list-item/list-item.scss';
+
+@mixin responsive-menu-nav-opener {
+	@include list-item;
+
+	cursor: pointer;
+
+	// Vertically align to whatever is on the left side
+	align-self: center;
+}

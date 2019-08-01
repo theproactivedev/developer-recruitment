@@ -1,0 +1,43 @@
+// Single review main grid
+//
+// Displays the grid for the single review main
+//
+// Built on:
+// - Single post main grid
+
+@import '--large/single-review-main-grid--large.scss';
+@import '--medium/single-review-main-grid--medium.scss';
+@import '--mobile/single-review-main-grid--mobile.scss';
+
+@mixin single-review-main-grid {
+	.post-list-items {
+		.post {
+			.post-title-and-subtitle + .post-meta {
+				@include responsive-spacing(margin-top, small);
+			}
+
+			// Post bookings margin top is set in the component.
+
+			.post-meta + .post-featured-image,
+			.post-featured-image + .post-map {
+				@include responsive-spacing(margin-top, large);
+			}
+		}
+	}
+
+	@include media($small...) {
+		@include single-review-main-grid--mobile;
+	}
+
+	@include media($tablet...) {
+		@include single-review-main-grid--mobile;
+	}
+
+	@include media($medium...) {
+		@include single-review-main-grid--medium;
+	}
+
+	@include media($large...) {
+		@include single-review-main-grid--large;
+	}
+}

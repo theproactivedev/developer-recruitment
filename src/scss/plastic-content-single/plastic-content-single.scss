@@ -1,0 +1,12 @@
+@import '../post-format-plastic/--vertical/post-format-plastic--vertical.scss';
+@import '../post-format-plastic/--spaced/post-format-plastic--spaced.scss';
+
+@mixin plastic-content-single {
+
+	.post {
+		&.post-format-plastic {
+			@include post-format-plastic--spaced(dense, complete);
+			@include post-format-plastic--vertical;
+		}
+	}
+}

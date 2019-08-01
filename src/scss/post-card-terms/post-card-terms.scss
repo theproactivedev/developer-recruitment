@@ -1,0 +1,19 @@
+// Post card terms
+//
+// Displays the post card terms
+
+// @import '../text-style/text-style.scss';
+
+@mixin post-card-terms {
+	.title {
+		margin-bottom: var(--spacer-8);
+
+		.text {
+			@include text-style(small-bold);
+		}
+	}
+
+	.terms {
+		@include text-style(small);
+	}
+}

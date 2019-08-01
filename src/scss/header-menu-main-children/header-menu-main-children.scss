@@ -1,0 +1,25 @@
+// Header menu main children
+//
+// Displays a nested menu item in the header
+//
+// This is the most important mixin in the header menu
+
+@import '../list/list.scss';
+@import '../list/--vertical/list--vertical.scss';
+
+@import '--vertical/header-menu-main-children--vertical.scss';
+@import '--horizontal/header-menu-main-children--horizontal.scss';
+
+@mixin header-menu-main-children {
+	@include list;
+	@include list--vertical;
+	z-index: 10;
+
+	@include media('<=tablet') {
+		@include header-menu-main-children--vertical;
+	}
+
+	@include media('>tablet') {
+		@include header-menu-main-children--horizontal;
+	}
+}

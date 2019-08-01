@@ -1,0 +1,6 @@
+@mixin post-title--h2 {
+	.text,
+	.link {
+		@include text-style(h2);
+	}
+}

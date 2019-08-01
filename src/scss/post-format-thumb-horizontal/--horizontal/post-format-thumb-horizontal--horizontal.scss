@@ -1,0 +1,26 @@
+// Post format thumb horizontal
+//
+// Displays the post format thumb horizontal horizontally
+
+// @import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin post-format-thumb-horizontal--horizontal {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: var(--gutter-24);
+
+	.post-featured-image {
+		grid-column: 1 / 2;
+		grid-row: 1 / 4;
+	}
+
+	.post-title,
+	.post-excerpt {
+		grid-column: 2 / -1;
+	}
+
+	.post-featured-image,
+	.post-excerpt {
+		margin-bottom: 0;
+	}
+}

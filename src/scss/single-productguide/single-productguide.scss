@@ -1,0 +1,34 @@
+// Single Product Guide
+//
+// Displays the single Product Guide CPT page
+
+@import '../single-productguide-main-grid/single-productguide-main-grid.scss';
+@import '../single-post-main/single-post-main.scss';
+@import '../post-format-single-productguide/post-format-single-productguide.scss';
+@import '../single-review-main-grid/single-review-main-grid.scss';
+@import '../related-posts-for-single/related-posts-for-single.scss';
+@import '../post-footer-banner/post-footer-banner.scss';
+@import '../comments/comments.scss';
+
+@mixin single-productguide {
+	.single-productguide-main {
+		@include single-post-main;
+		@include single-productguide-main-grid;
+
+		.post-format-single-productguide {
+			@include post-format-single-productguide;
+		}
+	}
+
+	.related-posts-for-single {
+		@include related-posts-for-single;
+	}
+
+	.post-footer-banner {
+		@include post-footer-banner;
+	}
+
+	.comments {
+		@include comments;
+	}
+}

@@ -1,0 +1,43 @@
+// Page container
+//
+// Displays the content of a page
+
+@import '../post/post.scss';
+@import '../related-posts-for-page/related-posts-for-page.scss';
+@import '../page-container-grid/page-container-grid.scss';
+@import '../page-credit-card-reward-program-conversion-calculator/page-credit-card-reward-program-conversion-calculator.scss';
+@import '../page-points-vs-cash-calculator/page-points-vs-cash-calculator.scss';
+@import '../page-point-redemption-calculator/page-point-redemption-calculator.scss';
+
+@mixin page-container {
+	@include container;
+	@include responsive-spacing(margin-top, large);
+
+	.page-container-title {
+		display: none;
+	}
+
+	// Inherit all styles from posts
+	.post {
+		@include post;
+
+		// Custom styles - to be refactored
+		&.page-credit-card-reward-program-conversion-calculator {
+			@include page-credit-card-reward-program-conversion-calculator;
+		}
+
+		#points-vs-cash-calculator {
+			@include page-points-vs-cash-calculator;
+		}
+
+		#point-redemption-calculator {
+			@include page-point-redemption-calculator;
+		}
+	}
+
+	.related-posts-for-page {
+		@include related-posts-for-page;
+	}
+
+	@include page-container-grid;
+}

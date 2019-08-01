@@ -1,0 +1,39 @@
+// Comments subscribe
+//
+// Displays a comment subscribe form
+
+// @import '../colors/colors.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../text-style/text-style.scss';
+// @import '../form/form.scss';
+@import '--vertical/comments-subscribe--vertical.scss';
+@import '--horizontal/comments-subscribe--horizontal.scss';
+
+@mixin comments-subscribe {
+	@include colors(black-on-grey);
+	@include responsive-spacing(padding, small);
+
+	display: flex;
+	flex-direction: column;
+
+	.comments-subscribe-title {
+		@include text-style(h3);
+	}
+
+	.comments-subscribe-form {
+		@include form;
+
+		.description {
+			@include responsive-spacing(margin-top, small);
+			@include responsive-spacing(margin-bottom, small);
+		}
+	}
+
+	@include media('<tablet') {
+		@include comments-subscribe--vertical;
+	}
+
+	@include media('>=tablet') {
+		@include comments-subscribe--horizontal;
+	}
+}

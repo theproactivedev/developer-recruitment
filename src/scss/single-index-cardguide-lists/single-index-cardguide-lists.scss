@@ -1,0 +1,13 @@
+@import '../post-list-toc/post-list-toc.scss';
+@import '../post-list-single-index-cardguide/post-list-single-index-cardguide.scss';
+
+@mixin single-index-cardguide-lists {
+
+	.post-list {
+		@include post-list-single-index-cardguide;
+	}
+
+	.post-list-toc {
+		@include post-list-toc;
+	}
+}

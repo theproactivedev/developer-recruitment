@@ -1,0 +1,11 @@
+// Link as button
+//
+// Styles a link to look like a button
+
+@mixin link-as-button {
+	// Do not overlap multi line text
+	display: block;
+
+	// Remove text-decoration
+	text-decoration: none;
+}

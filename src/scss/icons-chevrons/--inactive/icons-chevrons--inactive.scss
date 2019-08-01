@@ -1,0 +1,13 @@
+// Icons chevrons inactive
+//
+// Displays the chevron down icon, hides the chevron up icon
+//
+@mixin icons-chevrons--inactive {
+	.icon-chevron-down {
+		display: flex;
+	}
+
+	.icon-chevron-up {
+		display: none;
+	}
+}

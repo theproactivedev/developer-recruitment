@@ -1,0 +1,51 @@
+// Post categories and tags
+//
+// Displays post categories and tags
+
+// @import '../text-style/text-style.scss';
+// @import '../link-as-button/link-as-button.scss';
+
+@mixin post-categories-and-tags {
+	.post-categories-title,
+	.post-tags-title {
+		.text {
+			@include text-style(body-bold);
+		}
+	}
+
+	.post-category-list,
+	.post-tag-list {
+		// TODO: No mixins found to reuse here ...
+		display: flex;
+		flex-wrap: wrap;
+
+		margin-top: var(--lem);
+
+		a {
+			@include text-style(tag);
+			@include link-as-button;
+
+			margin-right: var(--spacer-8);
+			margin-bottom: var(--spacer-8);
+		}
+	}
+
+	@include media('<tablet') {
+		display: flex;
+		flex-direction: column;
+
+		.post-tags {
+			margin-top: var(--spacer-8);
+		}
+	}
+
+	@include media('>=tablet') {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: var(--gutter-24);
+
+		.post-tags {
+			grid-column: 2;
+		}
+	}
+}

@@ -1,0 +1,61 @@
+// Footer
+//
+// Displays the site footer
+//
+// Features a custom grid
+
+// @import '../container/container.scss';
+// @import '../border/border.scss';
+// @import '../text-style/text-style.scss';
+
+// @import '../logo/logo.scss';
+@import '../logo/--footer/logo--footer.scss';
+
+@import '../responsive-menu/responsive-menu.scss';
+@import '../responsive-menu/--with-border/responsive-menu--with-border.scss';
+
+@import '../footer-grid/footer-grid.scss';
+
+@mixin footer {
+	@include container;
+
+	.holder {
+		@include border(border-top, 5);
+		@include responsive-menu('', '.menu-container');
+		@include responsive-menu--with-border;
+		align-items: center;
+
+		@include responsive-section('.menu-container');
+
+		.logo {
+			@include logo;
+			@include logo--footer;
+		}
+
+		// TODO: Merge with `responsive-menu`, or with quick links and header menu
+		.menu {
+			@include list;
+
+			.menu-item {
+				@include list-item;
+
+				&.active,
+				&:hover {
+					@include list-item(selected);
+				}
+			}
+		}
+	}
+
+	.info {
+		@include responsive-section('.text');
+		@include responsive-spacing(margin-top, small);
+		@include responsive-spacing(margin-bottom, large);
+
+		.text {
+			@include text-style(small);
+		}
+	}
+
+	@include footer-grid;
+}

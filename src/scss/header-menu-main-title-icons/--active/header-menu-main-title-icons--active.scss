@@ -1,0 +1,9 @@
+@mixin header-menu-main-title-icons--active {
+	.icon-chevron-down {
+		display: none;
+	}
+
+	.icon-chevron-up {
+		display: flex;
+	}
+}

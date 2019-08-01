@@ -1,0 +1,44 @@
+@mixin single-index-cardguide-grid--tablet {
+	.single-index-cardguide-lists {
+		display: flex;
+		flex-direction: column;
+
+		.post-list {
+			&.full_width,
+			&.grid,
+			&.condensed_grid {
+				.post-list-title,
+				.post-list-subtitle {
+					grid-column: 1 / -1;
+				}
+
+				.post-list-subtitle {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.post-list-toc {
+			order: 1;
+			@include responsive-spacing(margin-top, small);
+
+			.post-list-toc-title {
+				@include responsive-spacing(margin-bottom, small);
+			}
+		}
+
+		.post-list {
+			&.full_width {
+				order: 2;
+			}
+		}
+
+		.post-list {
+			&.grid,
+			&.condensed_grid {
+				order: 3;
+			}
+		}
+
+	}
+}

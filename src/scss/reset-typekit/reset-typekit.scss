@@ -1,0 +1,40 @@
+// Reset typekit
+//
+// Resets typekit
+// The typekit loader is styling arbitrarily some elements which are removed here
+// See: https://use.typekit.net/xwm8ruj.css
+
+//@import '../text-style/_text-style.scss';
+
+@mixin reset-typekit {
+	#content header nav li,
+	.tk-calluna,
+	address blockquote,
+	caption,
+	cite,
+	code,
+	dl,
+	fig,
+	h2,
+	h6,
+	label,
+	legend,
+	ol,
+	p,
+	pre,
+	table,
+	ul,
+	.mapp-overlay a,
+	.mapp-overlay-body,
+	.tk-calluna-sans,
+	a.more-link,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	input {
+		font-family: inherit;
+	}
+}

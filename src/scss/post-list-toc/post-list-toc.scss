@@ -1,0 +1,45 @@
+// Post list toc
+//
+// Displays a post list like a Table of Contents
+
+@import '--vertical/post-list-toc--vertical.scss';
+@import '--horizontal/post-list--horizontal.scss';
+
+@mixin post-list-toc {
+	//@include container;
+
+	.post-list-toc-title {
+		@include post-list-title;
+	}
+
+	.post-list-toc-items {
+		@include list;
+
+		.item {
+			@include list-item(table);
+			@include link(default);
+
+			&.active {
+				@include text-style(body-bold);
+			}
+		}
+	}
+
+	@include media($small...) {
+		@include post-list-toc--vertical;
+		@include responsive-spacing(padding-top, small);
+	}
+
+	@include media($tablet...) {
+		@include post-list--horizontal;
+		@include responsive-spacing(padding-top, small);
+	}
+
+	@include media($medium...) {
+		@include post-list--horizontal;
+	}
+
+	@include media($large...) {
+		@include post-list-toc--vertical;
+	}
+}

@@ -1,0 +1,35 @@
+// Search container
+//
+// Displays the content of the search page
+
+@mixin search-container {
+	@include container(margin);
+	@include responsive-spacing(margin-top, large);
+	@include responsive-spacing(padding-top, large);
+	@include border(border-top, 5);
+
+	#algolia-search-box {
+		.search-icon {
+			fill: var(--black);
+		}
+		.ais-search-box--input {
+			border-bottom: 2px solid var(--black);
+		}
+	}
+
+	.widgettitle {
+		@include text-style(h3-content);
+	}
+
+	.ais-menu--count,
+	.ais-hierarchical-menu--count,
+	.ais-refinement-list--count {
+		@include text-style(tag);
+	}
+
+	.ais-hits--content {
+		h2 {
+			@include text-style(h2-content);
+		}
+	}
+}

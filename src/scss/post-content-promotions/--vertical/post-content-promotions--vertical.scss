@@ -1,0 +1,20 @@
+// Post content promotions vertical
+//
+// Displays promotions inside post content vertically
+
+@mixin post-content-promotions--vertical {
+	.row {
+		display: grid;
+
+		.promotions-content {
+			padding: var(--spacer-20-body-text);
+
+			h3 {
+				margin-bottom: var(--spacer-20-body-text);
+			}
+		}
+
+		.promotions-image {
+		}
+	}
+}

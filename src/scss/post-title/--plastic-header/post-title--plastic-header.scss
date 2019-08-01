@@ -1,0 +1,11 @@
+// Post title plastic header
+//
+// Displays the post title for the Plastic header
+
+//@import '../../text-style/text-style.scss';
+
+@mixin post-title--plastic-header {
+	.link {
+		@include text-style(small-caps);
+	}
+}

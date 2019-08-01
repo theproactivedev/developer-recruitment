@@ -1,0 +1,67 @@
+// Latest posts
+//
+// Displays the latest posts list
+
+@import '../post-list/post-list.scss';
+@import '../post-title/post-title.scss';
+@import '../post-featured-image/post-featured-image.scss';
+@import '../post-excerpt/post-excerpt.scss';
+@import '../post-author-and-comment-count/post-author-and-comment-count.scss';
+@import '../post-date/post-date.scss';
+@import '--mobile/latest-posts--mobile.scss';
+@import '../post-format-thumb/post-format-thumb.scss';
+// @import '../responsive-flexbox-grid/responsive-flexbox-grid.scss';
+
+@mixin latest-posts {
+	@include post-list;
+
+	.post-list-items {
+		.post {
+
+			.post-title {
+				@include post-title;
+			}
+
+			.post-featured-image {
+				@include post-featured-image;
+			}
+
+			.post-excerpt {
+				@include post-excerpt;
+			}
+
+			.post-author-and-comment-count {
+				@include post-author-and-comment-count;
+			}
+
+			.post-date {
+				@include post-date;
+			}
+
+			// Override the defaults with the post-format-thumb
+			&.post-format-thumb {
+				@include post-format-thumb;
+			}
+		}
+	}
+
+	.post-list-items {
+		$max-items-to-display-map: (
+			mobile: 6,
+			tablet: 4,
+			laptop: 6,
+			desktop: 8
+		);
+
+		@include responsive-flexbox-grid(
+			var(--gutter-24),
+			var(--spacer-24),
+			true,
+			$max-items-to-display-map
+		);
+	}
+
+	@include media($small...) {
+		@include latest-posts--mobile;
+	}
+}

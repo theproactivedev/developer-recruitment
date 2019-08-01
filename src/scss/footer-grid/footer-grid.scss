@@ -1,0 +1,62 @@
+// Footer grid
+//
+// Displays the footer in a responsive grid
+
+// @import '../flexbox-grid/flexbox-grid';
+// @import '../responsive-grid/responsive-grid.scss';
+
+@mixin footer-grid {
+	.holder {
+		@include responsive-section('.menu-container');
+		@include responsive-spacing(padding-top, small);
+
+		@include media($large...) {
+			// The margin is given from the section above
+			// The padding is added to the menu. This way the logo will be vertically aligned to menu.
+			padding-top: 0;
+
+			.menu {
+				@include list--horizontal;
+				@include list--with-margin-right;
+				@include responsive-spacing(padding-top, large);
+			}
+		}
+
+		@include media($medium...) {
+			.menu {
+				@include list--horizontal;
+				@include list--with-margin-right;
+			}
+		}
+
+		@include media('<=tablet') {
+			.menu {
+				@include list--vertical;
+				@include list--with-border(border-top, true, '.menu-item');
+
+				.menu-item {
+					@include responsive-spacing(padding-top, small);
+				}
+			}
+		}
+
+		@include media($tablet...) {
+			.menu-container {
+				grid-column: 2 / 3;
+				margin-top: 0;
+			}
+		}
+
+		@include media($small...) {
+			@include responsive-spacing(margin-top, large);
+		}
+	}
+
+	.info {
+		@include media($medium...) {
+			.text {
+				margin-top: 0;
+			}
+		}
+	}
+}

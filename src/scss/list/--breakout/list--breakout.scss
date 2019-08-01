@@ -1,0 +1,28 @@
+// List breakout
+//
+// A breakout style list
+// See https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0be286d8b862922b9b5a
+
+// @import '../../list-item/list-item.scss';
+// @import '../../text-style/text-style.scss';
+
+@mixin list--breakout {
+	li {
+		@include list-item($variant: with-icon, $icon-size: smaller);
+
+		.icon,
+		.text {
+			@include text-style(body-bold);
+		}
+
+		// Reset spacing which might come from elsewhere
+		padding-top: 0;
+		margin-top: 0;
+		padding-bottom: 0;
+		padding-top: 0;
+
+		+ li {
+			margin-top: var(--spacer-16);
+		}
+	}
+}

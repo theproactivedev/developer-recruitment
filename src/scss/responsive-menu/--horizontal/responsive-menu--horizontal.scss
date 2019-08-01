@@ -1,0 +1,12 @@
+// Responsive menu horizontal
+//
+// Hides the menu opener
+// Used on large screens mostly
+
+@mixin responsive-menu--horizontal($opener, $items) {
+	@if ($opener != '') {
+		#{$opener} {
+			display: none;
+		}
+	}
+}

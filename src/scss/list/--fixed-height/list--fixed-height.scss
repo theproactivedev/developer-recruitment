@@ -1,0 +1,13 @@
+// List fixed height
+//
+// Sets list item height to a fixed value
+// Use together with `list--active-item-underlined`
+// If item has no fixed height on hover the list item will flick
+
+@import '../../list-item/list-item.scss';
+
+@mixin list--fixed-height {
+	li {
+		//@include list-item;
+	}
+}

@@ -1,0 +1,14 @@
+@mixin mortgage-points-calculator--mobile {
+	.wrapper {
+		padding-left: var(--spacer-8);
+		padding-right: var(--spacer-8);
+
+		.vue-slider-component {
+			.vue-slider {
+				.loan-size-label {
+					left: calc(var(--lem) * -5);
+				}
+			}
+		}
+	}
+}

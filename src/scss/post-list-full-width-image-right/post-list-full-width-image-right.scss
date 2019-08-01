@@ -1,0 +1,13 @@
+@import '../post-format-thumb-horizontal-right/post-format-thumb-horizontal-right.scss';
+
+@mixin post-list-full-width-image-right {
+	@include responsive-section('.post-list-items');
+
+	.post {
+		@include post-format-thumb-horizontal-right;
+
+		+ .post {
+			@include responsive-spacing(margin-top, large);
+		}
+	}
+}

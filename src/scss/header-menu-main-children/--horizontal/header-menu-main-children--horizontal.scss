@@ -1,0 +1,59 @@
+// Header menu main children horizontal
+//
+// Displays the header submenu horizontally
+
+@import '../../list/--with-border/list--with-border';
+@import '../../colors/colors.scss';
+@import '../../border/border.scss';
+
+@mixin header-menu-main-children--horizontal {
+	@include list--with-border(border-top);
+
+	// Make sure the background is not transparent
+	@include colors(default);
+
+	// Draw border around child menu
+	@include border(border);
+
+	// TODO: If the page height is less than the menu height a horizontal scrollbar is added on hover, which flicks the layout
+	// TODO: If the menu item is too long this must be adjusted accordingly
+	width: calc(var(--lem) * 15);
+
+	display: none;
+	position: absolute;
+	// header-menu-main-title + list-item() + header border + offset
+	// offset is manually adjusted
+	top: calc(var(--lem) + var(--lem) + 3px + 1px + 7px);
+
+	li {
+		@include list-item(reset);
+		@include list-item(dropdown);
+
+		&:hover,
+		&:active {
+			@include list-item(dropdown-selected);
+		}
+
+		// Overwrite the settings coming from `header-menu-main-title`
+		.header-menu-main-title {
+			height: auto;
+		}
+
+		+ li {
+			// Overwrite the settings coming from the responsive menu
+			margin-left: 0 !important;
+		}
+	}
+
+	// Quick fixes for https://github.com/pointhacks/pointhacks/issues/1030
+	.header-menu-main-item {
+		padding: 0;
+
+		.header-menu-main-title {
+			.link {
+				padding: var(--spacer-16);
+				width: 100%;
+			}
+		}
+	}
+}

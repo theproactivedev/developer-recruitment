@@ -1,0 +1,41 @@
+// Quick links menu
+//
+// Displays the Quick Links menu
+
+@import '../html-elements/select/select.scss';
+
+@mixin quick-links-menu {
+	@include border(border-bottom);
+
+	.quick-links-menu-title {
+		display: none;
+	}
+
+	.quick-links-menu-items {
+		@include list;
+		@include list--horizontal;
+		@include list--with-margin-right;
+
+		.item {
+			@include list-item;
+
+			&.active,
+			&:hover {
+				@include list-item(selected);
+			}
+		}
+
+		@include media($small...) {
+			display: none;
+		}
+	}
+
+	.quick-links-menu-select {
+		@include select;
+		display: none;
+
+		@include media($small...) {
+			display: block;
+		}
+	}
+}

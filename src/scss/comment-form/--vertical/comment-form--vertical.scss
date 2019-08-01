@@ -1,0 +1,28 @@
+// Comment form vertical
+//
+// Displays the comment form vertically
+
+//@import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin comment-form--vertical {
+	display: flex;
+	flex-direction: column;
+
+	@include responsive-spacing(margin-top, small);
+
+	.comment-form-notifications {
+		.buttons {
+			.button {
+				+ .button {
+					margin-top: 1px;
+				}
+			}
+		}
+	}
+
+	.form-submit {
+		.submit {
+			width: 100%;
+		}
+	}
+}

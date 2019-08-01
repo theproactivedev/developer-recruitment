@@ -1,0 +1,14 @@
+// Responsive menu vertical
+//
+// Makes menu items to be displayed in a new row
+
+@mixin responsive-menu--vertical($opener, $items) {
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	@if ($items != '') {
+		#{$items} {
+			width: 100%;
+		}
+	}
+}

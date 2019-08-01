@@ -1,0 +1,58 @@
+// Page container grid
+//
+// Displays the page container grid
+
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../responsive-grid/responsive-grid.scss';
+// @import '../responsive-page-grid/responsive-page-grid.scss';
+
+@mixin page-container-grid {
+	.post-content {
+		@include responsive-spacing(margin-top, small);
+	}
+
+	.related-posts-for-page {
+		@include responsive-spacing(margin-top, small);
+	}
+
+	@include media($large...) {
+		@include responsive-grid;
+
+		.post {
+			grid-column: 2 / -1;
+		}
+
+		.related-posts-for-page {
+			@include responsive-spacing(margin-top, none);
+
+			grid-column: 1;
+			grid-row: 1;
+			align-self: center;
+		}
+	}
+
+	@include media($medium...) {
+		@include responsive-page-grid(medium);
+
+		.post {
+			grid-column: 2 / -1;
+		}
+
+		.related-posts-for-page {
+			grid-column: 1 / -1;
+		}
+	}
+
+	&.full-width {
+		display: flex;
+		flex-direction: column;
+
+		.post-content {
+			.text {
+				> * {
+					max-width: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+// Search
+//
+// Displays a search form
+
+@import '../search-grid/search-grid.scss';
+// @import '../container/container.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../form/form.scss';
+// @import '../colors/colors.scss';
+// @import '../text-style/text-style.scss';
+// @import '../icon/icon.scss';
+// @import '../border/border.scss';
+
+@mixin search {
+	@include container;
+	@include responsive-spacing(margin-top, smaller);
+
+	.title {
+		// Used only to make the site semantically valid in the W3C checker
+		display: none;
+	}
+
+	.search-form {
+		@include border(border-top, 5);
+		@include form;
+		@include text-style(body);
+		@include colors(black-on-grey);
+		@include icon(large, black-on-grey);
+	}
+
+	@include search-grid;
+}

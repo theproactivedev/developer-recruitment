@@ -1,0 +1,13 @@
+@import 'single-review/single-review.scss';
+@import 'sticky/sticky.scss';
+
+// Animation
+@include StickyIn;
+
+html {
+	body {
+		&.single-review {
+			@include single-review;
+		}
+	}
+}

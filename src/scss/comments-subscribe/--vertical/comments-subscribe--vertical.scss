@@ -1,0 +1,16 @@
+// Comments subscribe vertical
+//
+// Displays the comment subscribe vertically
+
+// @import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin comments-subscribe--vertical {
+	.comments-subscribe-form {
+		display: flex;
+		flex-direction: column;
+
+		.email {
+			@include responsive-spacing(margin-bottom, small);
+		}
+	}
+}

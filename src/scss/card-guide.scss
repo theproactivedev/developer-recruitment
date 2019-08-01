@@ -1,0 +1,13 @@
+@import 'single-cardguide/single-cardguide.scss';
+@import 'sticky/sticky.scss';
+
+// Animation
+@include StickyIn;
+
+html {
+	body {
+		&.single-cardguide {
+			@include single-cardguide;
+		}
+	}
+}

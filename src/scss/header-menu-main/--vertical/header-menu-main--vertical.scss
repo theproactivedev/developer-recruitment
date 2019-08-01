@@ -1,0 +1,9 @@
+// Header menu main vertical
+//
+// Displays the main header menu vertically
+
+@import '../../list/--with-border/list--with-border.scss';
+
+@mixin header-menu-main--vertical {
+	@include list--with-border(border-top);
+}

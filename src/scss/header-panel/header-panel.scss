@@ -1,0 +1,28 @@
+// Header panel
+//
+// Displays the panel with the site title and subtitle
+
+// @import '../container/container.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+@import '../post-title-and-subtitle/post-title-and-subtitle.scss';
+@import '../header-panel-grid/header-panel-grid.scss';
+@import '../plastic-header/plastic-header.scss';
+@import '../plastic-transition/transition.scss';
+
+@mixin header-panel {
+	@include container;
+	@include responsive-spacing(margin-top, small);
+
+	overflow-y: hidden;
+
+	.title-and-subtitle {
+		@include post-title-and-subtitle('.title', '.subtitle', '.text', 'logo-header', 'h2-serif');
+	}
+
+	.plastic-header {
+		@include plastic-header;
+		@include plastic-transition;
+	}
+
+	@include header-panel-grid;
+}

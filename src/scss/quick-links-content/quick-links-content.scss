@@ -1,0 +1,52 @@
+// Quick links content
+//
+// Displays a Quick Links tab
+
+@import '../plastic-footer/plastic-footer.scss';
+@import '../plastic-transition/transition.scss';
+
+@mixin quick-links-content {
+	@include responsive-spacing(padding-bottom, small);
+
+	.plastic-footer {
+		@include plastic-footer;
+		@include plastic-transition;
+		@include responsive-spacing(margin-top, small);
+	}
+
+	.quick-link-content {
+		@include border(border-top);
+		@include responsive-spacing(padding-top, small);
+
+		display: none;
+		&.active {
+			display: grid;
+		}
+
+		.quick-link-content-title {
+			.text {
+				@include text-style(h2);
+			}
+		}
+
+		.quick-link-content-columns {
+			// This list / HTML is so nasty the `list` component cannot be applied
+			// // TODO: Fix this after the launch
+			.col {
+				h4 {
+					@include text-style(body-bold);
+				}
+
+				ul {
+					@include list;
+					@include list--vertical;
+
+					li {
+						@include list-item(table);
+						padding-top: 0;
+					}
+				}
+			}
+		}
+	}
+}

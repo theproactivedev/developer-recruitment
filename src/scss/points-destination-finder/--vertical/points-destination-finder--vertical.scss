@@ -1,0 +1,10 @@
+@mixin points-destination-finder--vertical {
+	display: flex;
+	flex-direction: column;
+
+	.points-destination-finder-filter {
+		+ .points-destination-finder-filter {
+			margin-top: var(--spacer-16);
+		}
+	}
+}

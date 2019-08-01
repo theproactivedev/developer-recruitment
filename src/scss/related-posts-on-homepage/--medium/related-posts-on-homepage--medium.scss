@@ -1,0 +1,19 @@
+// Related posts on homepage medium
+//
+// Displays a list of related posts for the homepage for the Medium breakpoint
+
+@mixin related-posts-on-homepage--medium {
+	grid-column: 1 / 3;
+
+	.post-list-items {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: var(--gutter-24);
+
+		.post {
+			&:last-of-type {
+				border-top: none;
+			}
+		}
+	}
+}

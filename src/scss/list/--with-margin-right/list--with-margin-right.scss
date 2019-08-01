@@ -1,0 +1,17 @@
+// List with margin right
+//
+// Adds a right margin for list items displayed horizontally
+
+@mixin list--with-margin-right($variant: default, $item1: 'li', $item2: 'li') {
+	$map: (
+		default: var(--gutter-24),
+		small: var(--gutter-16),
+		nbsp: var(--spacer-8)
+	);
+
+	#{$item1} {
+		+ #{$item2} {
+			margin-left: map-get($map, $variant);
+		}
+	}
+}

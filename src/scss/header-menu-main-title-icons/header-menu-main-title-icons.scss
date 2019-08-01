@@ -1,0 +1,18 @@
+// Header menu main title icons
+//
+// Displays icon in header menu main title
+
+@import '../icon/icon.scss';
+@import '../colors/colors.scss';
+
+@mixin header-menu-main-title-icons {
+	position: relative;
+
+	.icon {
+		@include icon(small, default);
+
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}

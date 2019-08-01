@@ -1,0 +1,72 @@
+// List item
+//
+// Displays a list item
+//
+// This is a framework component reused by many other components.
+//
+// From
+// - https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0be15c1db5628c0b4129
+// - https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0bdab4e654bca8cefef8
+
+// @import '../border/border.scss';
+// @import '../colors/colors.scss';
+// @import '../link/link.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+
+@mixin list-item(
+	$variant: default,
+	$icon-size: small,
+	$icon-colors: default,
+	$icon-margin: var(--spacer-8)
+) {
+	cursor: pointer;
+
+	@if ($variant == reset) {
+		padding: auto;
+		border: none;
+	}
+
+	@if ($variant == default) {
+		@include responsive-spacing(padding-bottom, small);
+		@include border(border-bottom, 3);
+		border-color: transparent;
+	}
+
+	@if ($variant == selected) {
+		@include responsive-spacing(padding-bottom, small);
+		@include border(border-bottom, 3);
+	}
+
+	@if ($variant == dropdown) {
+		padding: var(--spacer-16);
+	}
+
+	@if ($variant == dropdown-selected) {
+		@include colors(black-on-grey);
+
+		a {
+			@include link(transparent-background);
+		}
+	}
+
+	@if ($variant == table) {
+		cursor: default;
+		padding-top: var(--spacer-8);
+		padding-bottom: var(--spacer-8);
+	}
+
+	// `list--feature`, `list--subfeature`, etc will use this
+	@if ($variant == with-icon) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+
+		.icon {
+			@include icon($icon-size, $icon-colors);
+
+			+ .text {
+				margin-left: $icon-margin;
+			}
+		}
+	}
+}

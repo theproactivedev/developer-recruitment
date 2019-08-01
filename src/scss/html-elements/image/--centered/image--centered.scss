@@ -1,0 +1,8 @@
+// Image centered
+//
+// Displays an image centered inside long form content
+
+@mixin image--centered {
+	display: flex;
+	justify-content: center;
+}

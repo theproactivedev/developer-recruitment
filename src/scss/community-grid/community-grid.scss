@@ -1,0 +1,36 @@
+// Community grid
+//
+// Displays the grid for the community section
+//
+// The content part features a totally custom grid
+
+// @import '../responsive-section/responsive-section.scss';
+@import '--vertical/community-grid--vertical.scss';
+@import '--horizontal/community-grid--horizontal.scss';
+
+@mixin community-grid {
+	@include responsive-section('.community-content');
+	@include responsive-spacing(margin-top, large);
+
+	.ad {
+		grid-column: 1 / -1;
+	}
+
+	.community-title {
+		grid-column: 1 / 2;
+	}
+
+	.community-content {
+		.description {
+			@include responsive-spacing(margin-bottom, small);
+		}
+
+		@include media('<=tablet') {
+			@include community-grid--vertical;
+		}
+
+		@include media('>tablet') {
+			@include community-grid--horizontal;
+		}
+	}
+}

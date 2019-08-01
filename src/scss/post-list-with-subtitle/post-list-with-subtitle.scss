@@ -1,0 +1,10 @@
+@mixin post-list-with-subtitle {
+	.post-list-subtitle {
+		grid-column: 2 / -1;
+	}
+
+	.post-list-items {
+		grid-row: 2;
+		@include responsive-spacing(margin-top, small);
+	}
+}

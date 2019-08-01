@@ -1,0 +1,10 @@
+// Logo
+//
+// Dispalys the site logo
+
+@mixin logo {
+	img {
+		width: 160px;
+		height: 40px;
+	}
+}

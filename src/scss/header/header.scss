@@ -1,0 +1,65 @@
+// Header
+//
+// Displays the site header
+
+// @import '../container/container.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../logo/logo.scss';
+@import '../header-menu/header-menu.scss';
+@import '../header-menu-close/header-menu-close.scss';
+@import '../header-search/header-search.scss';
+@import '../header-icons/header-icons.scss';
+@import '../social-icons/social-icons.scss';
+@import '../list-item/list-item.scss';
+@import '../responsive-menu/responsive-menu.scss';
+@import '../responsive-menu/--with-border/responsive-menu--with-border.scss';
+@import '--horizontal/header--horizontal.scss';
+@import '--vertical/header--vertical.scss';
+
+@mixin header {
+	// The header overflows because of the submenus
+	// By default overflows are hidden, but we will make an exception here
+	@include container($variant: margin, $overflow: auto);
+
+	@include responsive-spacing(margin-top, large);
+	@include responsive-menu('.header-icons', '.header-menu-main');
+	@include responsive-menu--with-border;
+
+	.logo {
+		@include logo;
+		@include list-item;
+		@include border(border-bottom, none);
+
+		.link {
+			@include list-item(selected);
+		}
+	}
+
+	.header-icons {
+		@include header-icons;
+	}
+
+	.header-menu {
+		@include header-menu;
+	}
+
+	.header-menu-close {
+		@include header-menu-close;
+	}
+
+	.social-icons {
+		@include social-icons;
+	}
+
+	.header-search {
+		@include header-search;
+	}
+
+	@include media('>tablet') {
+		@include header--horizontal;
+	}
+
+	@include media('<=tablet') {
+		@include header--vertical;
+	}
+}

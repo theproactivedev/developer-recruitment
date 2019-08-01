@@ -1,0 +1,15 @@
+// Responsive grid columns
+//
+// Displays elements in CSS Grid columns
+// First of all the grid has to be set up with the `responsive-grid` mixin
+// Then grid elements placed with this mixin
+//
+// This is a framework component reused by many other components.
+
+@mixin responsive-grid-columns($start-at-column: 1, $columns: 4) {
+	@for $i from 1 to $columns {
+		> :nth-child(#{$i + $start-at-column - 1}) {
+			grid-column: #{$i} / #{$i + 1};
+		}
+	}
+}

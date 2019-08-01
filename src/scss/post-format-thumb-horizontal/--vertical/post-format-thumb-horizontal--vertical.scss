@@ -1,0 +1,8 @@
+// Post format thumb horizontal vertical
+//
+// Displays the post formatthumb horizontal vertically
+
+@mixin post-format-thumb-horizontal--vertical {
+	display: flex;
+	flex-direction: column;
+}

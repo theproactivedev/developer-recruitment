@@ -1,0 +1,24 @@
+// Post format plastic spaced
+//
+// Vertical spacing for the plastic podt format
+
+@mixin post-format-plastic--spaced($spacing: default, $variant: simple) {
+	$map: (
+		default: var(--lem),
+		dense: var(--spacer-4)
+	);
+
+	// It seems in all cases here we need spacing
+	.post-content-plastic {
+		> * {
+			margin-top: map-get($map, $spacing);
+		}
+	}
+
+	// This is intented for use to space title, featured image and content
+	@if ($variant == complete) {
+		> * + * {
+			margin-top: map-get($map, $spacing);
+		}
+	}
+}

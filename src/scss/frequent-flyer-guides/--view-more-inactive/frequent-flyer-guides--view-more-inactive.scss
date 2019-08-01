@@ -1,0 +1,13 @@
+@mixin frequent-flyer-guides--view-more-inactive {
+	.container {
+		.guides {
+			.guide {
+				display: flex;
+			}
+		}
+
+		.view-more {
+			display: none;
+		}
+	}
+}

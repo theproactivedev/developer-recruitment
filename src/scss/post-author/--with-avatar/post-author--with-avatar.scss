@@ -1,0 +1,10 @@
+// Post author with avatar
+//
+// Displays the post author with an avatar
+
+@mixin post-author--with-avatar {
+	.post-author-avatar {
+		display: flex;
+		@include responsive-spacing(margin-bottom, small);
+	}
+}

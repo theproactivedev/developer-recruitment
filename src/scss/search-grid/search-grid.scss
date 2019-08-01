@@ -1,0 +1,34 @@
+// Search grid
+//
+// Displays the search grid
+//
+//// NOTE:
+// Ugly, but couldn't found a reusable component here
+
+@import '--horizontal/search-grid--horizontal.scss';
+
+@mixin search-grid {
+	.search-form {
+		.search__area {
+			@include media('>=tablet') {
+				@include search-grid--horizontal;
+			}
+
+			@include media($small...) {
+				display: flex;
+				flex-direction: column;
+				padding: var(--spacer-16);
+
+				.button {
+					margin-top: var(--spacer-8);
+				}
+			}
+		}
+	}
+
+	// Search will be displayed in header
+	@include media($small...) {
+		display: none;
+		flex-direction: column;
+	}
+}

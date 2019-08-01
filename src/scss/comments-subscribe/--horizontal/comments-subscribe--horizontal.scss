@@ -1,0 +1,23 @@
+// Comments subscribe horizontal
+//
+// Displays the comment subscribe horizontally
+
+@mixin comments-subscribe--horizontal {
+	.comments-subscribe-form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: var(--gutter-24);
+
+		.description {
+			grid-column: 1 / -1;
+		}
+
+		.email {
+			grid-column: 1;
+		}
+
+		.button {
+			grid-column: 2;
+		}
+	}
+}

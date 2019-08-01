@@ -1,0 +1,27 @@
+@mixin featured-video {
+  width: 100%;
+  margin-bottom: var(--lem);
+
+  > div { // This holds and scales to 4:3
+    width: 100%;
+    height: auto;
+    padding-bottom: 56.25%;
+    position: relative;
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+@mixin featured-video-plastic-image-hide {
+  &.featured-video-container + .post-primary-card .plastic-content-single .post-featured-image {
+		display: none; // hide when featured video is present
+	}
+}

@@ -1,0 +1,9 @@
+@mixin points-destination-finder--horizontal {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: var(--gutter-24);
+
+	.points-destination-finder-table {
+		grid-column: 1 / -1;
+	}
+}

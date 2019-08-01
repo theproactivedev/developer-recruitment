@@ -1,0 +1,13 @@
+// Header icons default state
+//
+// Manages the default state of the header icons
+
+@mixin header-icons--default-state {
+	.icon {
+		display: flex;
+
+		&.icon-close {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+// Table responsive
+//
+// Overwrites for Tablepress
+
+// @import '../../form/form.scss';
+
+@mixin table-responsive {
+	@include form(border);
+
+	// Give tables a max width on mobile only - Scroll will be auto
+	@include media('<tablet') {
+		max-width: calc(100vw - 2em);
+		overflow-x: auto;
+	}
+}

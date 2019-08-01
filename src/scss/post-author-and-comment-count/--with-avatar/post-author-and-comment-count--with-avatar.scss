@@ -1,0 +1,26 @@
+// Post author and comment count with avatar
+//
+// Displays the post author together with comment count and avatar
+
+@import '../../border/border.scss';
+@import '../../post-author/--with-avatar/post-author--with-avatar.scss';
+
+@mixin post-author-and-comment-count--with-avatar {
+	display: flex;
+	flex-direction: column;
+
+	.post-author {
+		@include post-author--with-avatar;
+
+		+ .post-comment-count {
+			@include border(border-top);
+
+			margin-top: var(--spacer-8);
+			padding-top: var(--spacer-8);
+			margin-left: 0;
+
+			// Make sure border-top spans only the comment count text
+			display: inline-table;
+		}
+	}
+}

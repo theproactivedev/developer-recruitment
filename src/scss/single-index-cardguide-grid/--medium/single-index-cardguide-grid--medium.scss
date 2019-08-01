@@ -1,0 +1,39 @@
+@mixin single-index-cardguide-grid--medium {
+	.single-index-cardguide-lists {
+		display: flex;
+		flex-direction: column;
+
+		.post-list {
+			&.full_width,
+			&.grid,
+			&.condensed_grid {
+				@include responsive-page-grid(medium);
+
+				> * {
+					grid-column: 2 / -1 !important;
+				}
+			}
+		}
+
+		.post-list-toc {
+			@include responsive-page-grid(medium);
+			@include responsive-spacing(padding-top, large);
+			@include responsive-spacing(margin-top, large);
+			order: 1;
+		}
+
+		.post-list {
+			&.full_width {
+				order: 2;
+			}
+		}
+
+		.post-list {
+			&.grid,
+			&.condensed_grid {
+				order: 3;
+			}
+		}
+
+	}
+}

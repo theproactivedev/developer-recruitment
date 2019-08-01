@@ -1,0 +1,51 @@
+// Points destination finder
+//
+// Displays the pointsDestinationFinder Vue component
+
+// @import '../text-style/text-style.scss';
+// @import '../html-elements/select/select.scss';
+// @import '../html-elements/table/table.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+@import '--vertical/points-destination-finder--vertical.scss';
+@import '--horizontal/points-destination-finder--horizontal.scss';
+
+@mixin points-destination-finder {
+	.points-destination-finder-filter {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.points-destination-finder-filter-title {
+			@include text-style(body-content);
+		}
+
+		.points-destination-finder-filter-select {
+			margin-top: var(--spacer-16);
+
+			.select {
+				select {
+					@include select;
+					@include text-style(body-content);
+				}
+			}
+		}
+	}
+
+	.points-destination-finder-table {
+		margin-top: var(--spacer-16);
+
+		table {
+			@include table;
+
+			width: 100%;
+		}
+	}
+
+	@include media($small...) {
+		@include points-destination-finder--vertical;
+	}
+
+	@include media('>=tablet') {
+		@include points-destination-finder--horizontal;
+	}
+}

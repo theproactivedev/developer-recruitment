@@ -1,0 +1,15 @@
+// Post featured image
+//
+// Displays the post featured image
+
+// @import '../html-elements/figcaption/figcaption.scss';
+
+@mixin post-featured-image($figcaption: true) {
+	.figcaption {
+		@include figcaption;
+
+		@if ($figcaption != true) {
+			display: none;
+		}
+	}
+}

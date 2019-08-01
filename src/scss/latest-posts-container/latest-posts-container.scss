@@ -1,0 +1,22 @@
+// Latest posts container
+//
+// Displays the latest posts with navigation
+
+// @import '../container/container.scss';
+@import '../latest-posts/latest-posts.scss';
+@import '../latest-posts-navigation/latest-posts-navigation.scss';
+@import '../latest-posts-grid/latest-posts-grid.scss';
+
+@mixin latest-posts-container {
+	@include container;
+
+	.latest-posts-navigation {
+		@include latest-posts-navigation;
+	}
+
+	.latest-posts {
+		@include latest-posts;
+	}
+
+	@include latest-posts-grid;
+}

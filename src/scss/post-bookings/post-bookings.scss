@@ -1,0 +1,67 @@
+// Posts bookings
+//
+// Displays the post bookings
+
+@import '../html-elements/table/table.scss';
+@import '../view-more/view-more.scss';
+@import '../view-more/--small/view-more--small.scss';
+@import '../text-style/text-style.scss';
+@import '../link/link.scss';
+@import '../responsive-spacing/responsive-spacing.scss';
+@import '--view-more-active/post-bookings--view-more-active.scss';
+@import '--view-more-inactive/post-bookings--view-more-inactive.scss';
+@import '--vertical/post-bookings--vertical.scss';
+
+@mixin post-bookings {
+	@include table;
+
+	.post-bookings-title {
+		// The post bookings are displayed even if empty to preserve the grid.
+		// We put margin top here instead of the main grid.
+		// This way when the post bookings is empty there is no extra top margin.
+		@include responsive-spacing(margin-top, small);
+	}
+
+	.thead .td {
+		display: block;
+		@include text-style(body-bold);
+		@include border(border-bottom, 3);
+	}
+
+	.tr .td {
+		@include text-style(reset);
+		@include text-style(body);
+	}
+
+	.tr {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		.buttons {
+			padding-left: var(--spacer-24);
+
+			display: flex;
+			flex-direction: column;
+
+			.link {
+				@include link(link);
+			}
+		}
+	}
+
+	.view-more {
+		@include view-more;
+		@include view-more--small;
+		@include responsive-spacing(margin-top, small);
+		display: none;
+	}
+
+	@include media($small...) {
+		@include post-bookings--vertical;
+		@include post-bookings--view-more-active;
+
+		&.view-more-inactive {
+			@include post-bookings--view-more-inactive;
+		}
+	}
+}

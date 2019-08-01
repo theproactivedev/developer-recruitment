@@ -1,0 +1,9 @@
+// Figure
+//
+// Displays a figure element
+
+@mixin figure {
+	// This makes sure there is no space between figcaption and img
+	display: flex;
+	flex-direction: column;
+}

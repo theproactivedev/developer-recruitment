@@ -1,0 +1,19 @@
+@mixin single-productguide-main-grid {
+	.post-meta {
+		@include responsive-spacing(margin-top, small);
+	}
+
+	.post-card-terms {
+		@include responsive-spacing(margin-top, small);
+	}
+
+	@include media($large...) {
+		.post-meta {
+			grid-row: 2 !important;
+		}
+
+		.post-featured-image {
+			grid-row: 3 !important;
+		}
+	}
+}

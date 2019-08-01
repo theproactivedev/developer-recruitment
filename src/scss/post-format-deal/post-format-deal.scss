@@ -1,0 +1,9 @@
+// Post format deal
+//
+// Displays a post for expiring deals
+
+@import '../post-format-thumb/post-format-thumb.scss';
+
+@mixin post-format-deal {
+	@include post-format-thumb;
+}

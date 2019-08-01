@@ -1,0 +1,81 @@
+// Breakpoints
+//
+// The old approach seems to increase the size of the final CSS file generated.
+// See the plugin at http://include-media.com
+//
+// Now we try to replicate the plugin functionality with simple code.
+
+// Use aliases if possible instead of breakpoints
+$breakpoints: (
+	'tablet': 768px,
+	'small-desktop': 1024px,
+	'large-desktop': 1280px
+);
+
+// Aliases
+// - Wherever possible use aliases
+// - Usage: @include media($small...)
+// - !!! watch out for the three dots next to the variable name in the mixin call
+$small: '<tablet';
+$tablet: '>=tablet', '<small-desktop';
+$medium: '>=small-desktop', '<=large-desktop';
+$large: '>large-desktop';
+
+// Once the breakpoints / aliases updated these should be too
+$queries: (
+	'<tablet': (
+		max-width: 767px
+	),
+	'<=tablet': (
+		max-width: 768px
+	),
+	'>tablet': (
+		min-width: 769px
+	),
+	'>=tablet': (
+		min-width: 768px
+	),
+	'<small-desktop': (
+		max-width: 1023px
+	),
+	'<=small-desktop': (
+		max-width: 1024px
+	),
+	'>small-desktop': (
+		min-width: 1025px
+	),
+	'>=small-desktop': (
+		min-width: 1024px
+	),
+	'<large-desktop': (
+		max-width: 1279px
+	),
+	'<=large-desktop': (
+		max-width: 1280px
+	),
+	'>large-desktop': (
+		min-width: 1281px
+	),
+	'>=large-desktop': (
+		min-width: 1280px
+	)
+);
+
+@mixin media($conditions...) {
+	$query: '';
+	$index: 0;
+
+	@each $condition in $conditions {
+		$q: map-get($queries, $condition);
+		$query: '#{$query}#{$q}';
+		$index: $index + 1;
+
+		@if ($index < length($conditions)) {
+			$query: $query + ' and ';
+		}
+	}
+
+	@media #{unquote($query)} {
+		@content;
+	}
+}

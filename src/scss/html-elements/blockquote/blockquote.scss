@@ -1,0 +1,25 @@
+// Blockquote
+//
+// Displays block quote element
+
+@mixin blockquote {
+	@include text-style(reset);
+	@include text-style(body-emphasis);
+	@include colors(grey-on-white);
+
+	// TODO: Add something like this
+	/*
+	  border-left: black 3px solid;
+		padding-left: 15px;
+	*/
+
+	p {
+		margin-bottom: 15px;
+	}
+
+	a,
+	.link {
+		@include link();
+		display: inline;
+	}
+}

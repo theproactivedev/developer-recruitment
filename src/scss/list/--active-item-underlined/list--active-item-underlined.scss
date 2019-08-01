@@ -1,0 +1,28 @@
+// List active item underlined
+//
+// Displays the active item in a list with an underline
+// It must be used together with the `--fixed-height` mixin
+
+@import '../--active-item-not-underlined/list--active-item-not-underlined.scss';
+
+@mixin list--active-item-underlined {
+	li {
+		// TODO: Add animation ....
+		&.active,
+		&.current_page_item,
+		&:hover {
+			a,
+			.tab-title {
+				// TODO: `a`, `tab-title` must be refactored into a variable
+				// TODO: this must be shared with the responsive menu opener ...
+				@include border(3);
+				padding-bottom: var(--lem);
+				display: inline-block;
+				cursor: pointer;
+			}
+
+			// Do not ripple on submenu items ....
+			@include list--active-item-not-underlined;
+		}
+	}
+}

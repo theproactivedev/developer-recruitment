@@ -1,0 +1,8 @@
+// List vertical
+//
+// Displays list item vertically with flexbox
+
+@mixin list--vertical {
+	display: flex;
+	flex-direction: column;
+}

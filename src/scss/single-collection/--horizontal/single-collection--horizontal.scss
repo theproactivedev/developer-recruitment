@@ -1,0 +1,10 @@
+@mixin single-collection--horizontal {
+	.post-list-subtitle {
+		@include responsive-spacing(margin-bottom, small);
+		grid-column: 2 / -1 !important;
+	}
+
+	.post-list-items {
+		grid-row: 2;
+	}
+}

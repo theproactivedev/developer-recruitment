@@ -1,0 +1,9 @@
+@import 'single-index-cardguide/single-index-cardguide.scss';
+
+html {
+	body {
+		&.single-index-cardguide {
+			@include single-index-cardguide;
+		}
+	}
+}

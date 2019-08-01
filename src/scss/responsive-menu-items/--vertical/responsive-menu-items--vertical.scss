@@ -1,0 +1,17 @@
+// Responsive menu items vertical
+//
+// Displays menu items vertically when they are active
+
+@import '../../list/--vertical/list--vertical.scss';
+
+@mixin responsive-menu-items--vertical($opener) {
+	@include list--vertical;
+
+	@if ($opener != '') {
+		display: none;
+
+		&.active {
+			display: flex;
+		}
+	}
+}

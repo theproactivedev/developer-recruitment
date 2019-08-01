@@ -1,0 +1,40 @@
+// Post list vertical bordered
+//
+// Displays a post list as a vertical list with borders
+//
+// Used by:
+// - Homepage / Featured / Related
+// - Homepage / Latest on small screens
+// - Homepage / Expiring deals on small screens
+// - Homepage / Frequent Flyer Guides
+
+// @import '../../list/list.scss';
+// @import '../../list/--with-border/list--with-border.scss';
+// @import '../../border/border.scss';
+// @import '../../responsive-spacing/responsive-spacing.scss';
+// @import '../../list-item/list-item.scss';
+@import '../../view-all/view-all.scss';
+
+@mixin post-list--vertical-bordered($items: '.post-list-items', $item: '.post') {
+	#{$items} {
+		@include list;
+		@include list--vertical;
+		@include list--with-border(border-top, true, $item);
+
+		@include border(border-bottom);
+		@include border(border-top);
+		@include responsive-spacing(margin-top, small);
+
+		#{$item} {
+			// Reset
+			width: 100%;
+			margin: 0;
+
+			@include list-item(table);
+		}
+	}
+
+	.view-all {
+		@include view-all;
+	}
+}

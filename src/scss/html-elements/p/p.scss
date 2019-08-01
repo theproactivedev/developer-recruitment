@@ -1,0 +1,18 @@
+// P
+//
+// Displays a paragraph inside long form content
+
+@mixin p {
+	&.image,
+	&.figcaption {
+		max-width: none;
+	}
+
+	&.image > img {
+		line-height: 0;
+	}
+
+	&.figcaption {
+		@include figcaption;
+	}
+}

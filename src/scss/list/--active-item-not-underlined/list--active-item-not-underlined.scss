@@ -1,0 +1,24 @@
+// List active item not underlined
+//
+// Sometimes the active item underline has to be removed
+// Like when the item has a submenu
+
+@mixin list--active-item-not-underlined {
+	li {
+		a,
+		.tab-title {
+			border: none;
+		}
+
+		// TODO: Add animation ....
+		&.active,
+		&.current_page_item,
+		&:hover {
+			// TODO: `a`, `tab-title` must be refactored into a variable
+			a,
+			.tab-title {
+				border: none;
+			}
+		}
+	}
+}

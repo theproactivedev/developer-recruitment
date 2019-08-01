@@ -1,0 +1,20 @@
+@import 'page/page.scss';
+@import './search-container/search-container.scss';
+
+html {
+	body {
+		&.page, &.error404 {
+			@include page;
+		}
+		// TODO: refactor this into it's own component
+		&.search-results {
+			.search.search__form-holder {
+				display: none;
+			}
+			// ais-wrapper is the Algolia default search page
+			#ais-wrapper {
+				@include search-container;
+			}
+		}
+	}
+}

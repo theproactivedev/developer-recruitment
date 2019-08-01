@@ -1,0 +1,22 @@
+// Featured and related posts grid medium
+//
+// Displays the Featured and related posts for Medium screens
+
+@mixin featured-and-related-posts-grid--medium {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: var(--gutter-24);
+
+	.post-list-title,
+	.post-title,
+	.post-author-and-comment-count,
+	.post-excerpt {
+		grid-column: 1;
+	}
+
+	.post-featured-image {
+		grid-column: 2;
+		grid-row: 1 / 5;
+		margin-top: 0;
+	}
+}

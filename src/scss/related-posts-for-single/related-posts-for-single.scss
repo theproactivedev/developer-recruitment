@@ -1,0 +1,68 @@
+// Related posts for single
+//
+// Displays a list of related posts for the single template (Article)
+//
+// `link` and `thumb` are reused by related posts for pages
+
+@import '../post-format-thumb/post-format-thumb.scss';
+@import '--thumb/related-posts-for-single--thumb.scss';
+@import '--link/related-posts-for-single--link.scss';
+@import '../sticky/sticky.scss';
+
+@mixin related-posts-for-single {
+	// We need to overwrite the `single-post-grid`
+	// Lots of overwrites since this post list is embedded into a parent post list
+	padding-right: 0;
+	padding-left: 0;
+
+	@include border(border-top, 5);
+	@include responsive-spacing(padding-top, large);
+	@include responsive-spacing(margin-top, large);
+	@include Sticky;
+
+	&.is-stuck {
+		background: var(--white);
+		max-width: 18.28125em; // max desktop width
+		width: 100vw; // Safari fix
+	}
+
+	.post {
+		&.post-format-thumb {
+			@include post-format-thumb;
+		}
+	}
+
+	@include media('<large-desktop') {
+		@include related-posts-for-single--thumb;
+	}
+
+	@include media($small...) {
+		@include responsive-section('.post-list-items');
+
+		.post-list-items {
+			.post {
+				+ .post {
+					@include responsive-spacing(margin-top, small);
+				}
+			}
+		}
+	}
+
+	@include media($tablet...) {
+		@include responsive-section('.post-list-items');
+	}
+
+	@include media($medium...) {
+		@include responsive-page-grid(medium);
+
+		.post-list-items {
+			.post {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@include media($large...) {
+		@include related-posts-for-single--link;
+	}
+}

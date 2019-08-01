@@ -1,0 +1,49 @@
+// Comment
+//
+// Displays a comment
+//
+// // NOTE:
+// Last styled to match the WordPress commenting system
+// There are some other elements from the old system
+// And some styled elements (Subscribe to comments) are commented out for the v3.0 release
+
+// @import '../text-style/text-style.scss';
+// @import '../link/link.scss';
+@import '../comment-children/comment-children.scss';
+@import '../comment-grid/comment-grid.scss';
+
+@mixin comment {
+	.comment-body {
+		.comment-author {
+			.fn {
+				@include text-style(body-bold);
+				font-style: normal;
+			}
+
+			.says {
+				display: none;
+			}
+		}
+
+		.comment-awaiting-moderation {
+			//
+		}
+
+		.comment-meta {
+			margin-top: var(--spacer-8);
+			margin-bottom: var(--spacer-8);
+		}
+
+		.reply {
+			.comment-reply-link {
+				@include link(link);
+			}
+		}
+	}
+
+	ul.children {
+		@include comment-children;
+	}
+
+	@include comment-grid;
+}

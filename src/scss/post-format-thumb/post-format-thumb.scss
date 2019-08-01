@@ -1,0 +1,45 @@
+// Post format thumb
+//
+// Displays a post as a thumb
+
+// @import '../responsive-spacing/responsive-spacing.scss';
+@import '../post-title/--thumb/post-title--thumb.scss';
+@import '../post-excerpt/--thumb/post-excerpt--thumb.scss';
+@import '../post-author/--without-avatar/post-author--without-avatar.scss';
+
+@mixin post-format-thumb {
+	// `display` must be set in parent
+	// for example on latest posts some thumbs are hidden on smaller viewports
+	// display: flex;
+	flex-direction: column;
+
+	> * {
+		order: 2;
+		@include responsive-spacing(margin-bottom, small);
+	}
+
+	.post-featured-image {
+		order: 1;
+		margin-top: 0;
+
+		.figcaption {
+			display: none;
+		}
+	}
+
+	.post-date {
+		margin-bottom: var(--spacer-16);
+	}
+
+	.post-excerpt {
+		@include post-excerpt--thumb;
+	}
+
+	.post-title {
+		@include post-title--thumb;
+	}
+
+	.post-author {
+		@include post-author--without-avatar;
+	}
+}

@@ -1,0 +1,38 @@
+// Single Home Loan Guide
+//
+// Displays the single Home Loan Guide CPT page
+
+@import '../single-post-main/single-post-main.scss';
+@import '../single-homeloanguide-main-grid/single-homeloanguide-main-grid.scss';
+@import '../post-format-single-homeloanguide/post-format-single-homeloanguide.scss';
+@import '../mortgage-points-calculator/mortgage-points-calculator.scss';
+@import '../related-posts-for-single/related-posts-for-single.scss';
+@import '../post-footer-banner/post-footer-banner.scss';
+@import '../comments/comments.scss';
+
+@mixin single-homeloanguide {
+	.single-homeloanguide-main {
+		@include single-post-main;
+		@include single-homeloanguide-main-grid;
+	}
+
+	.post-format-single-homeloanguide {
+		@include post-format-single-homeloanguide;
+	}
+
+	.mortgage-points-calculator {
+		@include mortgage-points-calculator;
+	}
+
+	.related-posts-for-single {
+		@include related-posts-for-single;
+	}
+
+	.post-footer-banner {
+		@include post-footer-banner;
+	}
+
+	.comments {
+		@include comments;
+	}
+}

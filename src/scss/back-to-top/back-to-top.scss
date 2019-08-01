@@ -1,0 +1,13 @@
+// Back to top
+//
+// Displays a `Back to top` text
+
+// @import '../text-style/text-style.scss';
+// @import '../link/link.scss';
+
+@mixin back-to-top {
+	.text {
+		@include text-style(small-caps);
+		@include link;
+	}
+}

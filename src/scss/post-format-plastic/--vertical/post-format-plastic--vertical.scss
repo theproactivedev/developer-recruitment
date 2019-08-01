@@ -1,0 +1,8 @@
+// Pots format plastic vertical
+//
+// Displays a Plastic post format vertically
+//
+@mixin post-format-plastic--vertical {
+	display: flex;
+	flex-direction: column;
+}

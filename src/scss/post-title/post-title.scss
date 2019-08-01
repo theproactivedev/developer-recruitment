@@ -1,0 +1,15 @@
+// Post title
+//
+// Displays the post title
+
+//@import '../text-style/text-style.scss';
+
+@mixin post-title {
+	.link,
+	.text {
+		@include text-style(h1);
+
+		// Otherwise the line height is too tight and lines are overlapping
+		background-color: transparent;
+	}
+}

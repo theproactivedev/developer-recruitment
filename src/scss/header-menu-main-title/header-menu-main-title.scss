@@ -1,0 +1,18 @@
+// Header menu main title
+//
+// Displays the title of the main menu
+
+@import '--with-icons/header-menu-main-title--with-icons.scss';
+@import '--without-icons/header-menu-main-title--without-icons.scss';
+
+@mixin header-menu-main-title {
+	display: flex;
+
+	@include media('>tablet') {
+		@include header-menu-main-title--without-icons;
+	}
+
+	@include media('<=tablet') {
+		@include header-menu-main-title--with-icons;
+	}
+}

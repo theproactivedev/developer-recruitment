@@ -1,0 +1,17 @@
+@mixin single-index-cardguide-grid--large {
+	.single-index-cardguide-lists {
+		@include responsive-grid;
+
+		.post-list-toc {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.post-list {
+			grid-column: 2 / -1;
+
+			display: flex !important;
+			flex-direction: column;
+		}
+	}
+}

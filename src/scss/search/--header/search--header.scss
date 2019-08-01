@@ -1,0 +1,32 @@
+// Search header
+//
+// Displays the search on the header
+// This mixin mostly overwrites the default search styles
+
+@import '../../container/container.scss';
+@import '../../responsive-spacing/responsive-spacing.scss';
+@import '../../close-link/close-link.scss';
+
+@mixin search--header {
+	@include container($reset: true);
+	@include responsive-spacing(margin-top, none);
+
+	.search-form {
+		border-top: none;
+		width: 100%;
+
+		.search__area {
+			.input {
+				@include media($tablet...) {
+					margin-left: var(--spacer-8);
+				}
+			}
+		}
+	}
+
+	.header-search-close {
+		@include close-link;
+		@include responsive-spacing(margin-top, small);
+		@include responsive-spacing(margin-bottom, small);
+	}
+}

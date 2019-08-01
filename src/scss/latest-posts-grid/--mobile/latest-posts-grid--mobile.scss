@@ -1,0 +1,12 @@
+// Latest posts mobile
+//
+// Displays the grid for latest posts on mobile
+
+// @import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin latest-posts-grid--mobile {
+	.latest-posts-navigation {
+		@include responsive-spacing(margin-top, small);
+		grid-row: 2;
+	}
+}

@@ -1,0 +1,40 @@
+// Collection navigation
+//
+// Displays the navigation for the Collection
+
+@mixin collection-navigation {
+	@include container(margin);
+	@include responsive-spacing(margin-top, small);
+	@include responsive-spacing(padding-top, small);
+
+	.title {
+		display: none;
+	}
+
+	.navigation-items {
+		@include list;
+		@include list--horizontal;
+
+		justify-content: space-between;
+		align-items: center;
+
+		.navigation-item {
+			.paginate {
+				@include button(small);
+				.text {
+					cursor: pointer;
+				}
+
+				&.inactive {
+					@include button(disabled);
+				}
+			}
+
+			.period {
+				.text {
+					@include text-style(body-caps);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+// Header menu close
+//
+// Displays the "Close menu" message
+
+// @import '../close-link/close-link.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+
+@mixin header-menu-close {
+	@include close-link;
+
+	@include responsive-spacing(padding-bottom, small);
+	@include responsive-spacing(padding-top, small);
+}

@@ -1,0 +1,46 @@
+// Search grid horizontal
+//
+// Displays the search grid horizontally
+
+@mixin search-grid--horizontal {
+	@include responsive-grid;
+
+	> * {
+		grid-row: 1;
+		margin-top: var(--spacer-8);
+		margin-bottom: var(--spacer-8);
+	}
+
+	.icon {
+		align-self: center;
+		margin-left: var(--spacer-16);
+		margin-top: var(--spacer-16);
+	}
+
+	.input {
+		margin-left: calc(var(--spacer-24) + var(--spacer-16) * 2);
+	}
+
+	.button {
+		grid-column: -1 / -2;
+		margin-right: var(--spacer-8);
+	}
+
+	@include media($large...) {
+		.input {
+			grid-column: 1 / 4;
+		}
+	}
+
+	@include media($medium...) {
+		.input {
+			grid-column: 1 / 3;
+		}
+	}
+
+	@include media($tablet...) {
+		.input {
+			grid-column: 1 / 2;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+// Post format link
+//
+// Displays a post as a link
+
+@import '../post-title/--no-format/post-title--no-format.scss';
+
+@mixin post-format-link {
+	.post-title {
+		@include post-title--no-format;
+	}
+}

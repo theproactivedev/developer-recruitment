@@ -1,0 +1,11 @@
+// Responsive menu items horizontal
+//
+// Displays menu items horizontally
+
+@import '../../list/--horizontal/list--horizontal.scss';
+@import '../../list/--with-margin-right/list--with-margin-right.scss';
+
+@mixin responsive-menu-items--horizontal {
+	@include list--horizontal;
+	@include list--with-margin-right;
+}

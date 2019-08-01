@@ -1,0 +1,60 @@
+// Post meta box
+//
+// Displays the post meta box
+
+// @import '../text-style/text-style.scss';
+// @import '../list/list.scss';
+// @import '../list-item/list-item.scss';
+@import '../rating-star/rating-star.scss';
+@import '--vertical/post-meta-box--vertical.scss';
+@import '--horizontal/post-meta-box--horizontal.scss';
+
+@mixin post-meta-box {
+	.title {
+		display: none;
+	}
+
+	.entries {
+		@include list;
+
+		.entry {
+			@include list-item(table);
+
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			// Sometimes they are div, sometimes span
+			.entry-title,
+			.entry-detail {
+				display: inline-block;
+			}
+
+			.entry-title {
+				@include text-style(small-caps);
+				margin-right: var(--spacer-8);
+			}
+
+			.entry-detail {
+				@include text-style(small-caps-bold);
+				@include star-rating;
+			}
+		}
+	}
+
+	@include media($tablet...) {
+		@include post-meta-box--horizontal;
+	}
+
+	@include media($medium...) {
+		@include post-meta-box--horizontal;
+	}
+
+	@include media($small...) {
+		@include post-meta-box--vertical;
+	}
+
+	@include media($large...) {
+		@include post-meta-box--vertical;
+	}
+}

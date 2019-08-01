@@ -1,0 +1,45 @@
+// Responsive menu
+//
+// A reusable responsive menu component.
+//
+// Used by the menu in the header, in the footer and the tab header
+//
+// Arguments:
+// - $opener: the element which opens the menu on click
+// - $items: the responsive menu items
+//
+// How it works:
+// - On large screens the opener is hidden
+// - On small screens the opener is visible and the list items are hidden
+// - On small screens if there is no opener the list items are not hidden
+//
+// This is a framework component reused by many other components.
+
+@import '--horizontal/responsive-menu--horizontal';
+@import '--vertical/responsive-menu--vertical.scss';
+@import '../responsive-menu-nav-opener/responsive-menu-nav-opener.scss';
+@import '../responsive-menu-items/responsive-menu-items.scss';
+
+@mixin responsive-menu($opener, $items) {
+	display: flex;
+
+	@if ($opener != '') {
+		#{$opener} {
+			@include responsive-menu-nav-opener;
+		}
+	}
+
+	@if ($items != '') {
+		#{$items} {
+			@include responsive-menu-items($opener, $items);
+		}
+	}
+
+	@include media('<=tablet') {
+		@include responsive-menu--vertical($opener, $items);
+	}
+
+	@include media('>tablet') {
+		@include responsive-menu--horizontal($opener, $items);
+	}
+}

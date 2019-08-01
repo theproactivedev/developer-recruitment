@@ -1,0 +1,51 @@
+// Post content promotions
+//
+// Displays promotions inside post content
+
+// @import '../colors/colors.scss';
+// @import '../text-style/text-style.scss';
+// @import '../button/button.scss';
+// @import '../link/link.scss';
+// @import '../link-as-button/link-as-button';
+
+@import '--vertical/post-content-promotions--vertical.scss';
+@import '--horizontal/post-content-promotions--horizontal.scss';
+
+@mixin post-content-promotions {
+	.row {
+		@include colors(black-on-grey);
+
+		.promotions-content {
+			h3 {
+				a {
+					@include link(default);
+					@include link(transparent-background);
+					@include text-style(h3-content);
+				}
+			}
+
+			.button {
+				@include link-as-button;
+				@include button(small);
+			}
+		}
+
+		.promotions-image {
+			padding: 1px;
+
+			// TODO: This is reused in `reset-typography` ... it should be refactored
+			a {
+				line-height: 0;
+				display: block;
+			}
+		}
+	}
+
+	@include media('<tablet') {
+		@include post-content-promotions--vertical;
+	}
+
+	@include media('>=tablet') {
+		@include post-content-promotions--horizontal;
+	}
+}

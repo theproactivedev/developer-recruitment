@@ -1,0 +1,17 @@
+// Typography setup
+//
+// Sets up the vertical rhythm: http://lamb.cc/typograph/
+// Source: https://app.zeplin.io/project/5c18a6aa62b80caee62dd4d0/screen/5c36f86b2ef387be300a5c43
+//
+// Note: It should be always added to the `<body>` element
+
+// `lem` is for vertical typographic rhythm.
+// See http://metamn.io/react/setting-up-a-typographic-grid-with-react/
+:root {
+	--lem: 1.25em;
+}
+
+@mixin typography-setup {
+	font-size: 100%;
+	line-height: 1.25;
+}

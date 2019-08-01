@@ -1,0 +1,13 @@
+// Post expiring date
+//
+// Displays the post expiring date
+
+// @import '../colors/colors.scss';
+// @import '../text-style/text-style.scss';
+
+@mixin post-expiring-date {
+	.text {
+		@include colors(red-on-white);
+		@include text-style(small);
+	}
+}

@@ -1,0 +1,17 @@
+// Comments active
+//
+// Displays the list of comments
+
+@import '../../icons-chevrons/--active/icons-chevrons--active.scss';
+
+@mixin comments--active {
+	.comments-body-title .icons {
+		@include icons-chevrons--active;
+	}
+
+	.comment-list,
+	.comment-respond,
+	.comments-subscribe {
+		display: grid;
+	}
+}

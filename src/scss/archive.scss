@@ -1,0 +1,13 @@
+@import 'single-collection/single-collection.scss';
+@import 'frequent-flyer-guides/frequent-flyer-guides.scss';
+
+html {
+	body {
+		&.archive {
+			@include single-collection;
+		}
+		.frequent-flyer-guides {
+			@include frequent-flyer-guides(content);
+		}
+	}
+}

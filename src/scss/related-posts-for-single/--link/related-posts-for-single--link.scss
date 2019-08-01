@@ -1,0 +1,36 @@
+// Related posts for single link
+//
+// Displays a list of related posts for the single template as links
+
+@import '../../post-format-thumb/--to-link/post-format-thumb--to-link.scss';
+// @import '../../responsive-spacing/responsive-spacing.scss';
+// @import '../../border/border.scss';
+// @import '../../back-to-top/back-to-top.scss';
+
+@mixin related-posts-for-single--link {
+	// display: flex;
+	// flex-direction: column;
+
+	.post-list-items {
+		display: flex;
+		flex-direction: column;
+		border-top: none;
+
+		@include responsive-spacing(margin-top, small);
+
+		.post {
+			@include post-format-thumb--to-link;
+
+			display: flex;
+			padding-top: 0;
+
+			@include responsive-spacing(padding-bottom, small);
+			@include responsive-spacing(margin-bottom, small);
+			@include border(border-bottom);
+		}
+	}
+
+	.back-to-top {
+		@include back-to-top;
+	}
+}

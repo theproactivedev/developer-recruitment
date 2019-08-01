@@ -1,0 +1,77 @@
+// Page Points vs cash calculator
+//
+// Displays the calculator for http://localhost:8000/community/tools-calculators/frequent-flyer-point-value-calculator-simple/
+//
+//// NOTE: page calculator styles can be refactored
+
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../form/form.scss';
+// @import '../text-style/text-style.scss';
+
+@mixin page-points-vs-cash-calculator {
+	@include responsive-spacing(margin-top, small);
+	@include form(border, var(--spacer-8));
+
+	.field {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: var(--gutter-24);
+		align-items: center;
+
+		.field-label {
+			grid-column: 1 / 2;
+
+			.label {
+				@include text-style(body-bold);
+			}
+		}
+
+		.field-body {
+			grid-column: 2 / -1;
+
+			.control .input,
+			.control .tag {
+				@include text-style(body);
+			}
+		}
+
+		+ .field {
+			@include responsive-spacing(margin-top, small);
+		}
+
+		@include media($small...) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			.field-body {
+				// TODO: In Vue the `.field` is recursive / nested
+				.field {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-column-gap: var(--gutter-16);
+					align-items: center;
+
+					.input {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.message {
+		@include responsive-spacing(margin-top, small);
+		@include responsive-spacing(padding, small);
+		@include colors(black-on-grey);
+		@include border(border-left, 3);
+
+		.message-body {
+			p {
+				+ p {
+					margin-top: var(--lem);
+				}
+			}
+		}
+	}
+}

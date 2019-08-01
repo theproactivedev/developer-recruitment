@@ -1,0 +1,59 @@
+// Comments
+//
+// Displays the comments section
+
+// @import '../container/container.scss';
+// @import '../border/border.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../responsive-section/responsive-section.scss';
+// @import '../post-list-title/post-list-title.scss';
+
+@import '../comments-body-title/comments-body-title.scss';
+@import '../comment-list/comment-list.scss';
+@import '../comment-respond/comment-respond.scss';
+@import '../comments-subscribe/comments-subscribe.scss';
+
+@import '--active/comments--active.scss';
+@import '--inactive/comments--inactive.scss';
+@import '../comments-grid/comments-grid.scss';
+
+@mixin comments {
+	@include container(margin);
+
+	@include border(border-top, 5);
+	@include responsive-spacing(margin-top, large);
+	@include responsive-spacing(padding-top, large);
+
+	.comments-title {
+		@include post-list-title;
+	}
+
+	.comments-body {
+		.comments-body-title {
+			@include comments-body-title;
+		}
+
+		.comment-list {
+			@include comment-list;
+		}
+
+		.comment-respond {
+			@include comment-respond;
+		}
+
+		.comments-subscribe {
+			@include comments-subscribe;
+			@include responsive-spacing(margin-top, small);
+		}
+	}
+
+	&.active {
+		@include comments--active;
+	}
+
+	&.inactive {
+		@include comments--inactive;
+	}
+
+	@include comments-grid;
+}

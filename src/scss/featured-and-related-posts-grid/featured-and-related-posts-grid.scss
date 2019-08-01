@@ -1,0 +1,30 @@
+// Featured and related posts grid
+//
+// Displays the Featured and related posts in a responsive grid
+
+// @import '../responsive-spacing/responsive-spacing.scss';
+@import '--medium/featured-and-related-posts-grid--medium.scss';
+@import '--large/featured-and-related-posts-grid--large.scss';
+
+@mixin featured-and-related-posts-grid {
+	@include responsive-spacing(margin-top, large);
+
+	.post-list-title + .post-title,
+	.post-author-and-comment-count,
+	.post-excerpt,
+	.post-featured-image {
+		@include responsive-spacing(margin-top, small);
+	}
+
+	.related-posts-on-homepage {
+		@include responsive-spacing(margin-top, large);
+	}
+
+	@include media($medium...) {
+		@include featured-and-related-posts-grid--medium;
+	}
+
+	@include media($large...) {
+		@include featured-and-related-posts-grid--large;
+	}
+}

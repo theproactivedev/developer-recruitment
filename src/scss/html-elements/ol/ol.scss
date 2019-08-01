@@ -1,0 +1,18 @@
+// OL
+//
+// Displays an ordered list inside long form content
+
+//@import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin ol {
+	@include responsive-spacing(margin-left, horizontal);
+
+	list-style-position: inside;
+
+	li {
+		+ li {
+			// The same as p + p
+			@include responsive-spacing(margin-top, small, content);
+		}
+	}
+}

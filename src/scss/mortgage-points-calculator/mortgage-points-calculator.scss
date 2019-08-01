@@ -1,0 +1,53 @@
+// Mortgage Points Calculator
+//
+// Also the Vue component was updated to use this Design System's HTML structure
+
+@import '--mobile/mortgage-points-calculator--mobile.scss';
+
+@mixin mortgage-points-calculator {
+	.wrapper {
+		@include colors(black-on-grey);
+		@include responsive-spacing(padding, large);
+		@include responsive-spacing(margin-top, small);
+
+		overflow: hidden;
+		max-width: 700px;
+
+		.vue-slider-component {
+			width: 100% !important;
+			padding: 0 !important;
+
+			.vue-slider {
+				.loan-size-label {
+					cursor: pointer;
+					display: block;
+					position: relative;
+					left: calc(var(--lem) * -2);
+
+					&.label-1500000 {
+						left: calc(var(--lem) * -5);
+					}
+				}
+			}
+		}
+
+		.result {
+			@include responsive-spacing(margin-top, large);
+			@include responsive-spacing(padding-top, large);
+
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: var(--gutter-24);
+
+			.result-item {
+				span {
+					@include text-style(body-bold);
+				}
+			}
+		}
+	}
+
+	@include media($small...) {
+		@include mortgage-points-calculator--mobile;
+	}
+}

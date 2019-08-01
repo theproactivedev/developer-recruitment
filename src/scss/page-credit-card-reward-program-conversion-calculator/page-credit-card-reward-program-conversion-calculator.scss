@@ -1,0 +1,21 @@
+// A special page
+//
+// Displays the same name page template
+
+@mixin page-credit-card-reward-program-conversion-calculator {
+	display: flex;
+	flex-direction: column;
+
+	> * {
+		order: 3;
+	}
+
+	.post-title-and-subtitle {
+		order: 1;
+	}
+
+	.content {
+		order: 2;
+		@include responsive-spacing(margin-top, small);
+	}
+}

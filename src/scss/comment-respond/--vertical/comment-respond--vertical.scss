@@ -1,0 +1,9 @@
+// Comment respond vertical
+//
+// Displays the "Leave a comment" section vertically
+
+@mixin comment-respond--vertical {
+	> * {
+		grid-column: 1 / -1;
+	}
+}

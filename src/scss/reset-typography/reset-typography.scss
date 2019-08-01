@@ -1,0 +1,72 @@
+// Reset typography
+//
+// Resets typographic elements
+// Sits on the top of Normalize.css
+
+@mixin reset-typography {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1em;
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+	}
+
+	p,
+	figure,
+	blockquote,
+	ul,
+	ol,
+	li {
+		margin: 0;
+		padding: 0;
+	}
+
+	// Remove the extra bottom spacing for <img> inside <a>
+	// - Unfortunatelly in WP it breaks the figcaption ...
+	// - The figcaption has to be displayed as block
+	// // TODO: This is reused in `post-content-promotions` ... it should be refactored
+	figure a {
+		line-height: 0;
+		display: block;
+	}
+
+	a {
+		word-wrap: break-word;
+	}
+
+	// https://stackoverflow.com/questions/17838607/making-an-iframe-responsive
+	iframe,
+	object,
+	embed {
+		max-width: 100%;
+	}
+
+	// Reset table
+	// - idea from https://stackoverflow.com/questions/13076227/css-reset-table-to-default-equivalent
+	table,
+	thead,
+	tbody,
+	tfoot,
+	tr,
+	th,
+	td {
+		width: auto;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-collapse: inherit;
+		border-spacing: 0;
+		border-color: inherit;
+		vertical-align: inherit;
+		text-align: left;
+		font-weight: inherit;
+		-webkit-border-horizontal-spacing: 0;
+		-webkit-border-vertical-spacing: 0;
+	}
+}

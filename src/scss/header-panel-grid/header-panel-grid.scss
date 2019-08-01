@@ -1,0 +1,30 @@
+@mixin header-panel-grid {
+	@include media($small...) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@include media($tablet...) {
+		display: grid;
+
+		.plastic-header {
+			@include responsive-spacing(margin-top, large);
+			@include responsive-spacing(padding-top, large);
+			@include border(border-top);
+		}
+	}
+
+	@include media($medium...) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: var(--gutter-24);
+		align-items: center;
+	}
+
+	@include media($large...) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: var(--gutter-24);
+		align-items: center;
+	}
+}

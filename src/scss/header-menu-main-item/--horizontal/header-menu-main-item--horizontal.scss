@@ -1,0 +1,35 @@
+// Header menu main item horizontal
+//
+// Displays an item in the main menu horizontally
+
+@mixin header-menu-main-item--horizontal {
+	@include list-item;
+
+	&.no-padding__bottom.current-menu-item,
+	&.no-padding__bottom:active,
+	&.no-padding__bottom:hover,
+	&.no-padding__bottom {
+		padding-bottom: 0;
+	}
+
+	.header-menu-main-title > .link-has-icon > svg {
+		width: 0.625em;
+		height: 0.625em;
+		fill: currentColor;
+	}
+
+	// Childrens will be positioned absolute
+	position: relative;
+
+	&:hover {
+		.header-menu-main-children {
+			display: flex;
+		}
+	}
+
+	&.current-menu-item,
+	&:hover,
+	&:active {
+		@include list-item(selected);
+	}
+}

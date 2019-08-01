@@ -1,0 +1,81 @@
+// Link
+//
+// Defines all link styles used by the theme
+// All link styles must be defined here first and re-used later where needed
+//
+// Source: https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0be15c1db5628c0b4129
+
+//@import '../colors/colors.scss';
+
+@mixin link($variant: default) {
+	cursor: pointer;
+
+	@if ($variant == link) {
+		@include colors(red-on-white);
+		text-decoration: underline;
+
+		&:hover,
+		&:active {
+			@include colors(red-on-red);
+		}
+	}
+
+	@if ($variant == long-link) {
+		@include colors(default);
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			@include colors(red-on-red);
+			text-decoration: underline;
+		}
+	}
+
+	@if ($variant == small-caps) {
+		@include colors(default);
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			@include colors(red-on-white);
+		}
+	}
+
+	// The following links are not defined by the Design System
+	//
+	//
+
+	// Copied from `small-caps`
+	@if ($variant == default) {
+		@include colors(default);
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			@include colors(red-on-white);
+		}
+	}
+
+	// figcaption
+	// - this is a special link style for links inside a figcaption
+	@if ($variant == figcaption) {
+		@include colors(inverted);
+		text-decoration: underline;
+
+		&:hover,
+		&:active {
+			@include colors(inverted);
+		}
+	}
+
+	// dropdown-selected
+	// - this is a special link style for links in a dropdown menu
+	@if ($variant == transparent-background) {
+		background-color: transparent;
+
+		&:hover,
+		&:active {
+			background-color: transparent;
+		}
+	}
+}

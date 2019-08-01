@@ -1,0 +1,41 @@
+// Single review main grid medium
+//
+// Displays the grid for the single review main - medium screens
+
+@mixin single-review-main-grid--medium {
+	.post-list-items {
+		.post {
+			.post-title-and-subtitle {
+				grid-row: 1;
+			}
+
+			.post-meta {
+				grid-row: 2;
+			}
+
+			.post-featured-image {
+				grid-row: 3;
+			}
+
+			.post-meta-box {
+				grid-row: 4;
+				@include responsive-spacing(margin-top, large);
+				@include responsive-spacing(margin-bottom, large);
+			}
+
+			.post-map {
+				grid-row: 5;
+				margin-top: 0 !important;
+			}
+
+			.post-bookings {
+				grid-column: 2 / 3;
+				grid-row: 6;
+			}
+
+			.related-posts {
+				grid-row: auto;
+			}
+		}
+	}
+}

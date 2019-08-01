@@ -1,0 +1,20 @@
+// Icons chevrons
+//
+// Displays two chevron (up, down) icons
+// One of them is always hidden
+
+@import '../icon/icon.scss';
+@import '../icon-size/icon-size.scss';
+
+@mixin icons-chevrons($size: small) {
+	@include icon-size($size);
+	position: relative;
+
+	.icon {
+		@include icon($size, default);
+
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}

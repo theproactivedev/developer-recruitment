@@ -1,0 +1,26 @@
+@import '--small/single-index-cardguide-grid--small.scss';
+@import '--tablet/single-index-cardguide-grid--tablet.scss';
+@import '--medium/single-index-cardguide-grid--medium.scss';
+@import '--large/single-index-cardguide-grid--large.scss';
+
+@mixin single-index-cardguide-grid {
+	.single-index-cardguide-lists {
+		@include container(margin);
+	}
+
+	@include media($small...) {
+		@include single-index-cardguide-grid--small;
+	}
+
+	@include media($tablet...) {
+		@include single-index-cardguide-grid--tablet;
+	}
+
+	@include media($medium...) {
+		@include single-index-cardguide-grid--medium;
+	}
+
+	@include media($large...) {
+		@include single-index-cardguide-grid--large;
+	}
+}

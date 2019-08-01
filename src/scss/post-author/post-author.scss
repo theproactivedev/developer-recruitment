@@ -1,0 +1,41 @@
+// Post author
+//
+// Displays the post author
+
+// @import '../circle/circle.scss';
+// @import '../text-style/text-style.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+
+@mixin post-author {
+	.post-author-title {
+		display: none;
+	}
+
+	.post-author-avatar {
+		.avatar {
+			@include circle(72px);
+		}
+	}
+
+	.post-author-name {
+		.text {
+			@include text-style(small-bold);
+		}
+	}
+
+	.post-author-description {
+		.who-wrote {
+			.text {
+				@include text-style(body-bold);
+			}
+
+			+ .description,
+			+ .twitter {
+				@include responsive-spacing(margin-top, small);
+				hr {
+					border: none
+				}
+			}
+		}
+	}
+}

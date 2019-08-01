@@ -1,0 +1,44 @@
+// Latest posts grid
+//
+// Displays the grid for the latest posts
+
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../responsive-grid/responsive-grid.scss';
+@import '--mobile/latest-posts-grid--mobile.scss';
+
+@mixin latest-posts-grid {
+	@include responsive-grid;
+	@include responsive-spacing(margin-top, large);
+
+	.latest-posts-navigation {
+		grid-column: -1 / -2;
+		grid-row: 1;
+
+		// Make sure buttons can be pressed
+		z-index: 1;
+	}
+
+	.post-list {
+		grid-column: 1 / -1;
+		grid-row: 1;
+
+		@include responsive-grid;
+
+		.post-list-title {
+			grid-column: 1 / 2;
+		}
+
+		.post-list-items {
+			grid-column: 1 / -1;
+
+			// Make sure posts can be clicked
+			z-index: 2;
+
+			@include responsive-spacing(margin-top, small);
+		}
+	}
+
+	@include media($small...) {
+		@include latest-posts-grid--mobile;
+	}
+}

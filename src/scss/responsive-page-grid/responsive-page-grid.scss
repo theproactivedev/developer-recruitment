@@ -1,0 +1,27 @@
+// Responsive page grid
+//
+// Displays page elements in a CSS grid
+// Used by the single and archive pages
+//
+// This is a framework component reused by many other components.
+//
+// The Medium page grid is strange. It's off the grid.
+// Once this design issue is solved this mixin, reused many times, can be removed.
+//
+// See https://app.zeplin.io/project/5c18a6aa62b80caee62dd4d0/screen/5c18a877def00c2430633c00
+
+@mixin responsive-page-grid($breakpoint) {
+	display: grid;
+
+	// TODO: This is not used
+	@if ($breakpoint == large) {
+		grid-template-columns: 320px 700px auto;
+		grid-column-gap: var(--gutter-24);
+	}
+
+	// This is still used
+	@if ($breakpoint == medium) {
+		grid-template-columns: 150px 700px auto;
+		grid-column-gap: var(--gutter-24);
+	}
+}

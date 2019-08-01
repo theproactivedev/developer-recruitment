@@ -1,0 +1,9 @@
+// H1
+//
+// Displays a heading level 1
+
+// @import '../../text-style/text-style.scss';
+
+@mixin h1 {
+	@include text-style(h1-content);
+}

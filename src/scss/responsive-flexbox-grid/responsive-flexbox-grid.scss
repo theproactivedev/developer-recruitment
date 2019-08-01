@@ -1,0 +1,91 @@
+// Responsive flexbox grid
+//
+// Displays elements in a flexbox grid
+//
+// This is a framework component reused by many other components.
+//
+// It is built on `responsive-grid`.
+// While `responsive-grid` is a general, framework specific mixin this one is specific for PointHacks
+
+// @import '../flexbox-grid/flexbox-grid.scss';
+// @import '../flexbox-grid-borders/flexbox-grid-borders.scss';
+
+@mixin responsive-flexbox-grid(
+	$margin-right: 0,
+	$margin-bottom: 0,
+	$borders: true,
+	$max-items-to-display-map: null,
+	$items-per-row-map: null
+) {
+	@include media($small...) {
+		$max-items-to-display: null;
+		@if ($max-items-to-display-map != null) {
+			$max-items-to-display: map-get($max-items-to-display-map, mobile);
+		}
+
+		$items-per-row: 1;
+		@if ($items-per-row-map != null) {
+			$items-per-row: map-get($items-per-row-map, mobile);
+		}
+
+		@include flexbox-grid($items-per-row, $margin-right, $margin-bottom, $max-items-to-display);
+
+		@if ($borders == true) {
+			@include flexbox-grid-borders($items-per-row, $margin-right);
+		}
+	}
+
+	@include media($tablet...) {
+		$max-items-to-display: null;
+		@if ($max-items-to-display-map != null) {
+			$max-items-to-display: map-get($max-items-to-display-map, tablet);
+		}
+
+		$items-per-row: 2;
+		@if ($items-per-row-map != null) {
+			$items-per-row: map-get($items-per-row-map, tablet);
+		}
+
+		@include flexbox-grid($items-per-row, $margin-right, $margin-bottom, $max-items-to-display);
+
+		@if ($borders == true) {
+			@include flexbox-grid-borders($items-per-row, $margin-right);
+		}
+	}
+
+	@include media($medium...) {
+		$max-items-to-display: null;
+		@if ($max-items-to-display-map != null) {
+			$max-items-to-display: map-get($max-items-to-display-map, laptop);
+		}
+
+		$items-per-row: 3;
+		@if ($items-per-row-map != null) {
+			$items-per-row: map-get($items-per-row-map, laptop);
+		}
+
+		@include flexbox-grid($items-per-row, $margin-right, $margin-bottom, $max-items-to-display);
+
+		@if ($borders == true) {
+			@include flexbox-grid-borders($items-per-row, $margin-right);
+		}
+	}
+
+	@include media($large...) {
+		$max-items-to-display: null;
+		@if ($max-items-to-display-map != null) {
+			$max-items-to-display: map-get($max-items-to-display-map, desktop);
+		}
+
+		$items-per-row: 4;
+		@if ($items-per-row-map != null) {
+			$items-per-row: map-get($items-per-row-map, desktop);
+		}
+
+		@include flexbox-grid($items-per-row, $margin-right, $margin-bottom, $max-items-to-display);
+
+		@if ($borders == true) {
+			@include flexbox-grid-borders($items-per-row, $margin-right);
+		}
+	}
+}

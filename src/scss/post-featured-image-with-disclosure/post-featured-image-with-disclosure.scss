@@ -1,0 +1,10 @@
+@mixin post-featured-image-with-disclosure {
+	.disclosure {
+		@include responsive-spacing(margin-top, small);
+
+		.text {
+			display: inline;
+			margin-right: var(--spacer-8);
+		}
+	}
+}

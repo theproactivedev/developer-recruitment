@@ -1,0 +1,16 @@
+// Community grid vertical
+//
+// Displays the community grid for screens in portrait mode
+//
+@mixin community-grid--vertical {
+	.description,
+	.questions-and-answers,
+	.tools {
+		grid-column: 1 / -1;
+	}
+
+	.description,
+	.questions-and-answers {
+		@include responsive-spacing(margin-bottom, small);
+	}
+}

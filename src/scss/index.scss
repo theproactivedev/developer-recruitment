@@ -1,0 +1,9 @@
+@import 'single-post/single-post.scss';
+
+html {
+	body {
+		&.single-index {
+			@include single-post;
+		}
+	}
+}

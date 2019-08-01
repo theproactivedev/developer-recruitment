@@ -1,0 +1,188 @@
+// Button
+//
+// Displays a button
+//
+// TODO: Make sure buttons are reset first.
+// Right now a `primary` button cannot be safely transformed into a `secondary` button
+// Styles might overlap...
+//
+// Source: https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0be15c1db5628c0b4129
+
+// @import '../colors/colors.scss';
+// @import '../link/link.scss';
+// @import '../border/border.scss';
+
+@mixin button($variant: primary) {
+	cursor: pointer;
+	text-align: center;
+	justify-content: center;
+
+	@include border(null, radius);
+
+	@if ($variant == primary) {
+		@include colors(inverted);
+		@include text-style(body-caps);
+
+		a {
+			@include link-as-button();
+			@include colors(inverted);
+			// Padding calculation:
+			// - the height of the button is 48px
+			// - the text size is 16px
+			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(white-on-red);
+
+			a {
+				@include colors(white-on-red);
+			}
+		}
+	}
+
+	@if ($variant == secondary-grey) {
+		@include colors(black-on-grey);
+		@include text-style(body);
+
+		a {
+			@include link-as-button();
+			@include colors(black-on-grey);
+			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(white-on-red);
+
+			a {
+				@include colors(white-on-red);
+			}
+		}
+	}
+
+	// This button is not in the original styleguide
+	// However it is needed on Article / Comment form
+	@if ($variant == secondary-grey-2) {
+		@include colors(black-on-grey-2);
+		@include text-style(body);
+
+
+		a {
+			@include link-as-button();
+			@include colors(black-on-grey-2);
+			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(inverted);
+
+			a {
+				@include colors(inverted);
+			}
+		}
+	}
+
+	@if ($variant == secondary-red) {
+		@include colors(white-on-red);
+
+		a {
+			@include link-as-button();
+			@include colors(white-on-red);
+			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(inverted);
+
+			a {
+				@include colors(inverted);
+			}
+		}
+	}
+
+	@if ($variant == secondary-white) {
+		@include colors(default);
+
+
+		a {
+			@include link-as-button();
+			@include colors(default);
+			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(white-on-red);
+
+			a {
+				@include colors(white-on-red);
+			}
+		}
+	}
+
+	@if ($variant == small) {
+		@include text-style(tag);
+		@include colors(inverted);
+
+
+		a {
+			@include link-as-button();
+			@include colors(inverted);
+			padding: var(--spacer-8) var(--spacer-16);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(white-on-red);
+
+			a {
+				@include colors(white-on-red);
+			}
+		}
+	}
+
+	@if ($variant == small-secondary-red) {
+		@include text-style(small-caps);
+		@include colors(white-on-red);
+
+
+		a {
+			@include link-as-button();
+			@include colors(white-on-red);
+			padding: var(--spacer-8) var(--spacer-16);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(inverted);
+
+			a {
+				@include colors(inverted);
+			}
+		}
+	}
+
+	@if ($variant == disabled) {
+		cursor: default;
+
+		@include colors(grey-on-grey);
+
+		a {
+			@include link-as-button();
+			@include colors(grey-on-grey);
+		}
+
+		&:hover,
+		&:active {
+			@include colors(grey-on-grey);
+
+			a {
+				@include colors(grey-on-grey);
+			}
+		}
+	}
+}

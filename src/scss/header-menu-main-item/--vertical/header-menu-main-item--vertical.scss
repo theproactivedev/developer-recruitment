@@ -1,0 +1,37 @@
+// Header menu main item vertical
+//
+// Displays an item in the main menu vertically
+
+@import '../../header-menu-main-title-icons/--active/header-menu-main-title-icons--active.scss';
+@import '../../header-menu-main-title-icons/--inactive/header-menu-main-title-icons--inactive.scss';
+
+@mixin header-menu-main-item--vertical {
+	@include header-menu-main-title-icons--inactive;
+
+	.header-menu-main-title > .link-has-icon > svg {
+		width: 0.625em;
+		height: 0.625em;
+		fill: currentColor;
+	}
+
+	a {
+		display: block;
+		width: 100%;
+	}
+
+	&.active {
+		@include header-menu-main-title-icons--active;
+
+		.header-menu-main-title {
+			@include border(border-bottom);
+		}
+
+		.header-menu-main-children {
+			display: flex;
+
+			.header-menu-main-title {
+				border: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+// Header menu main children vertical
+//
+// Displays the header submenu vertically
+
+@mixin header-menu-main-children--vertical {
+	display: none;
+
+	li {
+		padding-left: var(--lem);
+
+		a {
+			display: block;
+		}
+	}
+}

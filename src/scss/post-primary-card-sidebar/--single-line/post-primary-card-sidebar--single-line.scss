@@ -1,0 +1,42 @@
+// Post primary card sidebar single line
+//
+// Displays the post primary card sidebar in a single line
+// See https://app.zeplin.io/project/5c18a6aa62b80caee62dd4d0/screen/5c47e46d3c692ebf5cadea51
+
+@mixin post-primary-card-sidebar--single-line {
+	.post {
+		&.post-format-plastic {
+			// CSS Grid cannot be used here
+			// It overflows on tablet
+			// The grid column sizes were set up ad-hoc
+			// The main goal was to keep the button in a single line on all viewports
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: flex-start;
+
+			.post-featured-image {
+				order: 1;
+				width: calc(15% - var(--spacer-16));
+				margin-top: 0;
+				margin-right: var(--spacer-16);
+			}
+
+			.post-title {
+				order: 2;
+				width: calc(43% - var(--spacer-16));
+				margin-right: var(--spacer-16);
+			}
+
+			.buttons {
+				order: 3;
+				width: 42%;
+				margin-top: 0;
+			}
+
+			.post-content-plastic {
+				display: none;
+			}
+		}
+	}
+}

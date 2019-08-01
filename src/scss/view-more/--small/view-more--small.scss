@@ -1,0 +1,13 @@
+// @import '../../text-style/text-style.scss';
+// @import '../../icon-size/icon-size.scss';
+
+@mixin view-more--small {
+	.text {
+		@include text-style(small-bold);
+	}
+
+	.icon {
+		@include icon-size(smaller);
+		align-self: flex-start;
+	}
+}

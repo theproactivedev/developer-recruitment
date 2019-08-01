@@ -1,0 +1,24 @@
+@mixin post-format-index-cardguide {
+	.post-content {
+		p {
+			&:first-letter {
+				font-size: 6em;
+				line-height: 1em;
+				margin-right: 5px;
+				margin-top: -10px;
+				float: left;
+			}
+		}
+	}
+	.post-disclaimer {
+		@include responsive-spacing(margin-top, small);
+
+		.text {
+			@include text-style(small);
+		}
+
+		a,.text {
+			@include colors(grey-on-white);
+		}
+	}
+}

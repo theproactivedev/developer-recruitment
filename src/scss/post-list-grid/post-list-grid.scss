@@ -1,0 +1,49 @@
+// Post list grid
+//
+// Displays a post list in a grid.
+//
+// Unlike other '-grid' components this one comes in pair with the `--condensed-grid` and '--full-width' components.
+// And it is defined in the Admin interface at the 'Section layout' ACF field
+//
+// Used by:
+// - single-collection
+// - template-single-index-cardguide
+
+@mixin post-list-grid($variant: false) {
+
+	/* Max items to display */
+	$max-items-to-display-map: (
+		mobile: 3,
+		tablet: 8,
+		laptop: 9,
+		desktop: 9
+	);
+
+	@if($variant == deals) {
+		$max-items-to-display-map: (
+			mobile: 50,
+			tablet: 50,
+			laptop: 50,
+			desktop: 50
+		);
+	}
+
+	/* Max items per row */
+	$items-per-row-map: (
+		mobile: 1,
+		tablet: 2,
+		laptop: 3,
+		desktop: 3
+	);
+
+	@if($variant == cardguide) {
+		$items-per-row-map: (
+			mobile: 1,
+			tablet: 2,
+			laptop: 2,
+			desktop: 2
+		);
+	}
+
+	@include responsive-post-list-grid($max-items-to-display-map, $items-per-row-map);
+}

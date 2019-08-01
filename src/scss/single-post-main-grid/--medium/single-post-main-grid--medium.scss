@@ -1,0 +1,115 @@
+// Single post grid medium
+//
+// Displays the grid for the post on the single page for Medium screens
+
+// @import '../../responsive-page-grid/responsive-page-grid.scss';
+// @import '../../html-elements/image/--centered/image--centered.scss';
+
+@mixin single-post-main-grid--medium {
+	@include responsive-page-grid(medium);
+
+	.post-list-title {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.post-list-items,
+	.post {
+		grid-column: 1 / -1;
+		grid-row: 1;
+	}
+
+	.post-list-items,
+	.post,
+	.post-content,
+	.post-content,
+	.post-disclaimer {
+		@include responsive-page-grid(medium);
+	}
+
+	// Needed to do this such that Plastic .text classes weren't styled as if they were in the post body.
+	.post-content {
+		> .text {
+			@include responsive-page-grid(medium);
+		}
+	}
+
+	.post-list-items {
+		.post {
+			grid-column: 1 / -1;
+
+			.post-title-and-subtitle,
+			.post-meta,
+			.post-map,
+			.post-primary-card,
+			.post-card-terms,
+			.post-share,
+			.post-author,
+			.post-categories-and-tags,
+			.post-meta-box,
+			.post-disclaimer .text,
+			.post-primary-card-sidebar {
+				grid-column: 2 / 3;
+			}
+
+			.post-featured-image,
+			.post-content,
+			.post-bookings,
+			.related-posts {
+				grid-column: 1 / -1;
+			}
+
+			.post-title-and-subtitle {
+				grid-row: 1;
+			}
+
+			.post-featured-image {
+				grid-row: 2;
+
+				.link {
+					@include image--centered;
+					flex-direction: column;
+				}
+			}
+
+			.post-meta-box {
+				grid-row: 3;
+			}
+
+			.post-content {
+				.text {
+					grid-column: 1 / -1;
+
+					> * {
+						grid-column: 2 / 3;
+					}
+
+					.image,
+					.figcaption {
+						grid-column: 1 / -1;
+					}
+
+					.image {
+						@include image--centered;
+					}
+				}
+			}
+
+			.related-posts {
+				display: grid;
+				grid-template-columns: 150px 700px auto;
+				grid-column-gap: var(--spacer-30);
+
+				.post-list-title {
+					grid-column: 1;
+				}
+
+				.post-list-items {
+					grid-column: 2 / 3;
+					// For some reason the grid gets broken here ...
+					flex-wrap: nowrap !important;
+				}
+			}
+		}
+	}
+}

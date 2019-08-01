@@ -1,0 +1,52 @@
+// Related posts for single thumb
+//
+// Displays a list of related posts for the single template as thumbs
+
+// @import '../../responsive-flexbox-grid/responsive-flexbox-grid.scss';
+@import '../../post-author-and-comment-count/post-author-and-comment-count.scss';
+
+@mixin related-posts-for-single--thumb {
+	.post-list-items {
+		$max-items-to-display-map: (
+			mobile: 2,
+			tablet: 2,
+			laptop: 2,
+			desktop: 2
+		);
+
+		$items-per-row-map: (
+			mobile: 1,
+			tablet: 2,
+			laptop: 2,
+			desktop: 2
+		);
+
+		@include responsive-flexbox-grid(
+			calc(var(--spacer-24) * 2),
+			0px,
+			true,
+			$max-items-to-display-map,
+			$items-per-row-map
+		);
+
+		.post {
+			&.post-format-thumb {
+				.post-author-and-comment-count {
+					// TODO: Something is broken here ....
+					@include post-author-and-comment-count;
+
+					.post-author {
+						display: flex;
+						padding-top: 0;
+						border-top: 0;
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.back-to-top {
+		display: none;
+	}
+}

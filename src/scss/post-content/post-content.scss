@@ -1,0 +1,93 @@
+// Post content
+//
+// Displays the post content
+
+// @import '../text-style/text-style.scss';
+// @import '../link/link.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+
+@import '../html-elements/html-elements';
+@import '../post-content-promotions/post-content-promotions.scss';
+@import '../plastic-content-single/plastic-content-single.scss';
+@import '../post-format-plastic/post-format-plastic.scss';
+
+@mixin post-content {
+	.text {
+		@include text-style(text);
+		@include html-elements;
+
+		a {
+			@include link(link);
+		}
+
+		> * {
+			max-width: 700px;
+		}
+
+		// Margin reset & default margin
+		> * + * {
+			margin-bottom: 0;
+			@include responsive-spacing(margin-top, small, content);
+		}
+
+		// Special margins
+		.image {
+			@include responsive-spacing(margin-top, large, content);
+
+			+ * {
+				@include responsive-spacing(margin-top, large, content);
+			}
+
+			+ .figcaption,
+			+ p {
+				margin-top: 0;
+			}
+		}
+
+		p {
+			&:first-letter {
+				// this is another way of doing the stylstic first letter
+			}
+		}
+		// special stylstic first letter
+		#first {
+			font-size: 6em;
+			line-height: 1em;
+			margin-right: 5px;
+			margin-top: -10px;
+			float: left;
+		}
+
+		.figcaption {
+			+ * {
+				@include responsive-spacing(margin-top, large, content);
+			}
+		}
+
+		// This are the shortcodes used to link credit cards in content
+		.promotions {
+			@include post-content-promotions;
+			@include responsive-spacing(margin-top, large, content);
+
+			+ * {
+				@include responsive-spacing(margin-top, large, content);
+			}
+		}
+
+		// .mortgage-points-calculator {
+		// 	@include mortgage-points-calculator;
+		// }
+
+		// also part of mortgage points calculator
+		#two-hundred,
+		#five-hundred {
+			h4 + p {
+				@include responsive-spacing(margin-top, small);
+			}
+		}
+
+		.hatom-extra {
+			display: none;
+		}
+	}
+}

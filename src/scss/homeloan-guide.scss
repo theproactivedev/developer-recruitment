@@ -1,0 +1,9 @@
+@import 'single-homeloanguide/single-homeloanguide.scss';
+
+html {
+	body {
+		&.single-homeloanguide {
+			@include single-homeloanguide;
+		}
+	}
+}

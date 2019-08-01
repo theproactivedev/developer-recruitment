@@ -1,0 +1,11 @@
+// Close link
+//
+// Displays a link to close / hide an UI element
+
+//@import '../link/link.scss';
+
+@mixin close-link {
+	.text {
+		@include link(link);
+	}
+}

@@ -1,0 +1,9 @@
+// Post format single Home Loan Guide
+//
+// Displays a Home Loan Guide post
+
+@import '../post-format-single/post-format-single.scss';
+
+@mixin post-format-single-homeloanguide {
+	@include post-format-single;
+}

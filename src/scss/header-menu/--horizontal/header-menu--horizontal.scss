@@ -1,0 +1,15 @@
+// Header menu horizontal
+//
+// Displays the header menu horizontally
+
+@mixin header-menu--horizontal {
+	// Align menu items and social icons
+	// - horizontally
+	display: flex;
+	// - vertically
+	// align-items: center;
+
+	.header-menu-close {
+		display: none;
+	}
+}

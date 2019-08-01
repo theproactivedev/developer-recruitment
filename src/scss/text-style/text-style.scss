@@ -1,0 +1,312 @@
+// Text style
+//
+// Sets up all text styles used across the site
+//
+// This is a framework component reused by many other components.
+//
+// // NOTE:
+// This must be refactored for different line heights.
+// I suggest the `$map: ()` approach seen elsewhere in this code like `responsive-spacing`
+//
+// Source: https://app.zeplin.io/project/5c7e04320037cd178eaf0ed8/screen/5c7e0bdc5ef635623e4a1073
+// For px > em use: http://pxtoem.com/
+
+// @import '../breakpoints/breakpoints.scss';
+// @import '../colors/colors.scss';
+
+@mixin text-style($variant) {
+	// Fonts are coming from Typekit
+	$base-font-sans-serif: 'calluna-sans', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+	$base-font-serif: 'calluna', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+
+	// Reset
+	@if ($variant == reset) {
+		font-size: 1em;
+		font-weight: normal;
+		text-transform: none;
+	}
+
+	// 64px
+	@if ($variant == logo-header) {
+		font-family: $base-font-serif;
+		font-weight: bold;
+		font-size: 4em;
+		line-height: 1;
+
+		// 46px
+		@include media('<tablet') {
+			font-size: 2.875em;
+		}
+	}
+
+	// 42px
+	@if ($variant == h1) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 2.625em;
+		// If line-height set as suggested in the comp the two lines are overlapping: https://imgur.com/a/uw5OQm0
+		// A workaround is to make the H1 background always transparent
+		line-height: 1.05;
+
+		// 32px
+		@include media('<tablet') {
+			font-size: 2em;
+			line-height: 1.13;
+		}
+	}
+
+	// 42px with a 20px line height
+	@if ($variant == h1-content) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 2.1em;
+		// If line-height set as suggested in the comp the two lines are overlapping: https://imgur.com/a/uw5OQm0
+		// A workaround is to make the H1 background always transparent
+		line-height: 1.05;
+
+		// 32px with a 18px line height
+		@include media('<tablet') {
+			font-size: 1.778em;
+			line-height: 1.13;
+		}
+	}
+
+	// 30px
+	@if ($variant == h2) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 1.875em;
+		line-height: 1.2;
+
+		// 24px
+		@include media('<tablet') {
+			font-size: 1.5em;
+			line-height: 1.17;
+		}
+	}
+
+	// 30px with a 20px line height
+	@if ($variant == h2-content) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 1.5em;
+		line-height: 1.2;
+
+		// 24px with a 18px line height
+		@include media('<tablet') {
+			font-size: 1.333em;
+			line-height: 1.17;
+		}
+	}
+
+	// 30px with serif
+	// - Not present in Zeplin
+	// - Added to make the site subtitle and grid work
+	@if ($variant == h2-serif) {
+		font-family: $base-font-serif;
+		font-size: 1.875em;
+		line-height: 1.2;
+
+		// 24px
+		@include media('<tablet') {
+			font-size: 1.5em;
+			line-height: 1.17;
+		}
+	}
+
+	// 24px
+	@if ($variant == h3) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 1.5em;
+		line-height: 1.17;
+
+		// 20px
+		@include media('<tablet') {
+			font-size: 1.25em;
+			line-height: 1.2;
+		}
+	}
+
+	// 24px with a 20px line height
+	@if ($variant == h3-content) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 1.2em;
+		line-height: 1.17;
+
+		// 20px with a 18px line height
+		@include media('<tablet') {
+			font-size: 1.111em;
+			line-height: 1.2;
+		}
+	}
+
+	// 24px
+	// Like h3 but not bold
+	@if ($variant == h4) {
+		font-family: $base-font-sans-serif;
+		font-weight: normal;
+		font-size: 1.5em;
+		line-height: 1.17;
+
+		// 20px
+		@include media('<tablet') {
+			font-size: 1.25em;
+			line-height: 1.2;
+		}
+	}
+
+	// 24px with a 20px line height
+	@if ($variant == h4-content) {
+		font-family: $base-font-sans-serif;
+		font-weight: normal;
+		font-size: 1.2em;
+		line-height: 1.17;
+
+		// 20px with a 18px line height
+		@include media('<tablet') {
+			font-size: 1.111em;
+			line-height: 1.2;
+		}
+	}
+
+	// 20px
+	@if ($variant == text) {
+		font-family: $base-font-serif;
+		font-size: 1.25em;
+		line-height: 1.4;
+
+		// 18px
+		@include media('<tablet') {
+			font-size: 1.125em;
+			line-height: 1.33;
+		}
+	}
+
+	// 20px
+	@if ($variant == text-bold) {
+		font-family: $base-font-serif;
+		font-weight: bold;
+		font-size: 1.25em;
+		line-height: 1.4;
+
+		// 18px
+		@include media('<tablet') {
+			font-size: 1.125em;
+			line-height: 1.33;
+		}
+	}
+
+	// 16px
+	@if ($variant == body) {
+		font-family: $base-font-sans-serif;
+		font-weight: normal;
+		line-height: 1.5;
+		text-transform: none;
+	}
+
+	// 16px with a 20px line height
+	@if ($variant == body-content) {
+		font-family: $base-font-sans-serif;
+		font-size: 0.8em;
+		line-height: 1.5;
+	}
+
+	@if ($variant == body-emphasis) {
+		font-family: $base-font-sans-serif;
+		font-style: italic;
+		line-height: 1.5;
+	}
+
+	// 16px
+	// - Not present explicitely in the Design System but no problem
+	@if ($variant == body-bold) {
+		font-family: $base-font-sans-serif;
+		line-height: 1.5;
+		font-weight: bold;
+	}
+
+	// 16px with a 20px line height
+	// - Not present explicitely in the Design System but no problem
+	@if ($variant == body-bold-content) {
+		font-family: $base-font-sans-serif;
+		font-size: 0.8em;
+		line-height: 1.5;
+		font-weight: bold;
+	}
+
+	// 16px
+	@if ($variant == body-caps) {
+		font-family: $base-font-sans-serif;
+		line-height: 1.5;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	// 14px
+	@if ($variant == small) {
+		font-family: $base-font-sans-serif;
+		font-size: 0.875em;
+		line-height: 1.43;
+	}
+
+	// 14px
+	@if ($variant == small-bold) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 0.875em;
+		line-height: 1.43;
+	}
+
+	// 14px
+	@if ($variant == red-1) {
+		@include colors(red-on-white);
+		font-family: $base-font-sans-serif;
+		font-size: 0.875em;
+		line-height: 1.43;
+	}
+
+	// 14px
+	@if ($variant == small-caps) {
+		font-family: $base-font-sans-serif;
+		font-weight: normal;
+		font-size: 0.875em;
+		line-height: 1.43;
+		text-transform: uppercase;
+	}
+
+	// 14px
+	// - Not present explicitely in the Design System but no problem
+	@if ($variant == small-caps-bold) {
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 0.875em;
+		line-height: 1.43;
+		text-transform: uppercase;
+	}
+
+	// 14px
+	@if ($variant == caption) {
+		@include colors(inverted);
+		padding: var(--spacer-8);
+
+		font-family: $base-font-sans-serif;
+		font-weight: bold;
+		font-size: 0.875em;
+		line-height: 1.43;
+	}
+
+	// 14px
+	@if ($variant == tag) {
+		@include colors(black-on-grey);
+		padding: var(--spacer-8);
+
+		text-transform: uppercase;
+		font-weight: bold;
+
+		font-family: $base-font-sans-serif;
+		font-size: 0.875em;
+		line-height: 1.43;
+	}
+}

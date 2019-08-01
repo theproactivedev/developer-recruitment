@@ -1,0 +1,32 @@
+// Responsive menu items
+//
+// Part of the responsive menu component
+// Styles the menu items
+// Displays the menu items when they become active
+//
+// // NOTE:
+// This is somehow redundant to other responsive grid mixins.
+// Without any analysis the gut feelings is that the responsive menu mixins can all be replaced
+
+@import '--vertical/responsive-menu-items--vertical.scss';
+@import '--horizontal/responsive-menu-items--horizontal.scss';
+
+// @import '../list/list.scss';
+@import '../list/--active-item-underlined/list--active-item-underlined.scss';
+@import '../list/--fixed-height/list--fixed-height.scss';
+
+@mixin responsive-menu-items($opener, $items) {
+	@include list;
+	// TODO: refactor this
+	// commented out otherwise overwrites the main menu child items
+	//@include list--fixed-height;
+	//@include list--active-item-underlined;
+
+	@include media('<=tablet') {
+		@include responsive-menu-items--vertical($opener);
+	}
+
+	@include media('>tablet') {
+		@include responsive-menu-items--horizontal;
+	}
+}

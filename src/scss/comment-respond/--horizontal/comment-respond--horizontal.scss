@@ -1,0 +1,41 @@
+// Comment respond horizontal
+//
+// Displays the "Leave a comment" section horizontally
+
+// @import '../../responsive-spacing/responsive-spacing.scss';
+
+@mixin comment-respond--horizontal {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: var(--gutter-24);
+
+	.comment-reply-title {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.comment-form {
+		grid-column: 1 / -1;
+		grid-row: 1;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: var(--gutter-24);
+
+		> * {
+			grid-column: 1 / -1;
+		}
+
+		.logged-in-as {
+			grid-column: 2 / -1;
+			grid-row: 1;
+			text-align: right;
+			margin-top: 0;
+		}
+
+		.comment-notes {
+			// add extra top spacing to comment reply title
+			@include responsive-spacing(padding-top, small);
+		}
+	}
+}

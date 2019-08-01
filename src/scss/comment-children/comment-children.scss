@@ -1,0 +1,27 @@
+// Comment children
+//
+// Displays a comment children / subcomment
+
+// @import '../border/border.scss';
+// @import '../list/list.scss';
+// @import '../list/--with-border/list--with-border.scss';
+
+@mixin comment-children {
+	// Reset
+	margin: 0;
+	padding: 0;
+
+	width: 100%;
+
+	@include border(border-top);
+	@include responsive-spacing(margin-top, small);
+
+	@include list;
+	@include list--with-border(border-top, true, '.comment');
+
+	li.comment {
+		.comment-body {
+			@include responsive-spacing(margin-left, horizontal);
+		}
+	}
+}

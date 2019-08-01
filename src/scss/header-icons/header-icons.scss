@@ -1,0 +1,22 @@
+// Header icons
+//
+// Displays a set of icons in the header
+
+// @import '../icon/icon.scss';
+// @import '../list/--horizontal/list--horizontal.scss';
+// @import '../list/--with-margin-right/list--with-margin-right.scss';
+
+@mixin header-icons {
+	.title {
+		display: none;
+	}
+
+	.icons {
+		@include list--horizontal;
+		@include list--with-margin-right(small, '.icon', '.icon');
+
+		.icon {
+			@include icon;
+		}
+	}
+}

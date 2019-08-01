@@ -1,0 +1,104 @@
+@import 'form/form.scss';
+@import 'text-style/text-style.scss';
+@import 'button/button.scss';
+@import 'input/checkbox.scss';
+
+.profile {
+  .settings {
+    @include form(border);
+
+    input {
+      width: 100%;
+    }
+
+    .checkbox {
+      @include checkbox;
+    }
+
+    .checkboxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 30em;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-bottom: .5em;
+
+      > .checkbox {
+        margin-right: .5em;
+      }
+    }
+
+    button[type="submit"] {
+      margin-left: auto;
+    }
+  }
+
+  .settings-top__blurb {
+    margin-bottom: 1em;
+  }
+
+  .form-group {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 2em;
+  }
+
+  .form-group > .title {
+    margin-bottom: 1em;
+  }
+
+  .input-control {
+    display: flex;
+    align-items: center;
+	  max-width: 40em;
+    margin-bottom: 1em;
+
+    @include media($small) {
+      align-items: flex-start;
+      flex-flow: column wrap;
+    }
+  }
+
+  .input-control:not(.fullwidth) > label {
+    display: block;
+    @include media('>=tablet') {
+      flex: 0 0 10em;
+    }
+  }
+
+  .input-control > label {
+    margin-right: .5em;
+  }
+
+  button.button {
+    @include button(primary);
+  }
+
+  button[type="submit"] {
+    @include button(primary);
+  }
+
+  .text {
+		@include text-style(body);
+  }
+
+  h1.title {
+    @include text-style(h1);
+  }
+
+  h2.title {
+    @include text-style(h2);
+  }
+
+  h3.title {
+    @include text-style(h3);
+  }
+
+  h4.title {
+    @include text-style(h3);
+  }
+}

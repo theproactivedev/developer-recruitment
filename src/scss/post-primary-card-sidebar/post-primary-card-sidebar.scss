@@ -1,0 +1,59 @@
+// Post primary card sidebar
+//
+// Displays card info for a card guide post in the sidebar
+
+@import '../post-format-plastic/--vertical/post-format-plastic--vertical.scss';
+@import '../post-format-plastic/--spaced/post-format-plastic--spaced.scss';
+@import '../post-format-plastic/post-format-plastic.scss';
+@import '../sticky/sticky.scss';
+
+@mixin post-primary-card-sidebar {
+	> div {
+		@include Sticky;
+	}
+
+	.post {
+		background: white;
+
+
+
+		// For sticky sidebar
+		@include media('>large-desktop') {
+			max-width: 18.5em;
+			width: 100vw; // Safari CSS grid fix
+		}
+
+
+		&.post-format-plastic {
+			@include post-format-plastic--vertical;
+			@include post-format-plastic--spaced(default, complete);
+
+			@include post-format-plastic(sidebar);
+
+			// image initally hidden and shown on scroll
+			@include media($large...) {
+				.post-featured-image {
+					display: none;
+				}
+			}
+
+			.post-content-plastic {
+				margin-top: 0;
+
+				.summary,
+				.list-primary,
+				.list-secondary {
+					display: none;
+				}
+			}
+
+			// TODO: On scroll, fix the sidebar and switch on this class to enable the image
+			&.with-featured-image {
+				.post-featured-image {
+					display: block;
+					margin-top: var(--lem);
+				}
+			}
+		}
+	}
+}

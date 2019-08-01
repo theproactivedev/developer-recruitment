@@ -1,0 +1,9 @@
+@import 'single-collection/single-collection.scss';
+
+html {
+	body {
+		&.single-index-expiring-deals {
+			@include single-collection;
+		}
+	}
+}

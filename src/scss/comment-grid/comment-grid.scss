@@ -1,0 +1,47 @@
+// Comment grid
+//
+// Displays a single comment in a grid
+
+//@import '../responsive-spacing/responsive-spacing.scss';
+
+@mixin comment-grid {
+	@include responsive-spacing(margin-top, small);
+
+	+ .comment {
+		@include responsive-spacing(padding-top, small);
+	}
+
+	.comment-body {
+		display: flex;
+		flex-wrap: wrap;
+
+		> * {
+			order: 4;
+		}
+
+		.comment-author,
+		.comment-content,
+		.comment-awaiting-moderation {
+			width: 100%;
+		}
+
+		.comment-author {
+			order: 1;
+		}
+
+		.comment-meta {
+			order: 2;
+			margin-right: var(--spacer-8);
+		}
+
+		.reply {
+			order: 3;
+			align-self: center;
+		}
+
+		.comment-awaiting-moderation {
+			margin-top: var(--spacer-8);
+			margin-bottom: var(--spacer-8);
+		}
+	}
+}

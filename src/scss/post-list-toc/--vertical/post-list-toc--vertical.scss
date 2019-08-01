@@ -1,0 +1,11 @@
+@mixin post-list-toc--vertical {
+	.post-list-toc-title {
+		@include responsive-spacing(margin-bottom, small);
+	}
+
+	.post-list-toc-items {
+		@include border(border-top);
+		@include border(border-bottom);
+		@include list--with-border(border-top);
+	}
+}

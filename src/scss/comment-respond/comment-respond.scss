@@ -1,0 +1,35 @@
+// Comment respond
+//
+// Displays the "Leave a comment" section
+// Uses the default WordPress comment functionality.
+
+// @import '../colors/colors.scss';
+// @import '../responsive-spacing/responsive-spacing.scss';
+// @import '../text-style/text-style.scss';
+// @import '../list/--with-margin-right/list--with-margin-right.scss';
+// @import '../link/link.scss';
+@import '../comment-form/comment-form.scss';
+@import '--vertical/comment-respond--vertical.scss';
+@import '--horizontal/comment-respond--horizontal.scss';
+
+@mixin comment-respond {
+	@include colors(black-on-grey);
+	@include responsive-spacing(padding, small);
+	@include responsive-spacing(margin-top, large);
+
+	.comment-reply-title {
+		@include text-style(h3);
+	}
+
+	.comment-form {
+		@include comment-form;
+	}
+
+	@include media('<tablet') {
+		@include comment-respond--vertical;
+	}
+
+	@include media('>=tablet') {
+		@include comment-respond--horizontal;
+	}
+}

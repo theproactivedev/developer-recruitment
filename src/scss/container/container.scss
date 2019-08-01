@@ -1,0 +1,60 @@
+// Container
+//
+// Displays site sections inside a container
+//
+// The site has a fixed width, and sometimes a background image spanning from screen edge to edge
+// This container makes the content width fixed, and, centers it on the screen
+
+//@import '../responsive-spacing/responsive-spacing.scss';
+
+@mixin container($variant: padding, $overflow: hidden, $reset: false) {
+	// A necessary precaution ...
+	// Never knows when things go wrong, especially on small screens
+	// This will prevent the content overflow by default
+	@if ($overflow == hidden) {
+		overflow-x: hidden;
+	}
+
+	// This is the default / desired approach
+	@if ($variant == padding) {
+		@include responsive-spacing(padding-left, horizontal);
+		@include responsive-spacing(padding-right, horizontal);
+
+		width: 100%;
+		max-width: 1290px;
+
+		@if ($reset != false) {
+			@include responsive-spacing(padding-left, none);
+			@include responsive-spacing(padding-right, none);
+			max-width: none;
+		}
+	}
+
+	// This is an exception
+	// - It's ugly and depends on `responsive-spacing`
+	// Used on:
+	// - Quick Links to make top border not wider (by the two margins) than the content
+	@if ($variant == margin) {
+		@include responsive-spacing(margin-left, horizontal);
+		@include responsive-spacing(margin-right, horizontal);
+
+		width: calc(100% - var(--spacer-24) * 2);
+		max-width: calc(1290px - var(--spacer-24) * 2);
+
+		@include media($small...) {
+			width: calc(100% - var(--spacer-16) * 2);
+		}
+
+		@if ($reset != false) {
+			@include responsive-spacing(margin-left, none);
+			@include responsive-spacing(margin-right, none);
+
+			width: 100%;
+			max-width: 100%;
+
+			@include media($small...) {
+				width: 100%;
+			}
+		}
+	}
+}

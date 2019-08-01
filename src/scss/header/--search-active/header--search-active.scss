@@ -1,0 +1,19 @@
+// Header search active
+//
+// Manages the state when the header search is active
+
+@import '../../header-icons/--search-active/header-icons--search-active.scss';
+
+@mixin header--search-active {
+	.header-icons {
+		@include header-icons--search-active;
+	}
+
+	.header-menu {
+		display: none;
+	}
+
+	.header-search {
+		display: flex;
+	}
+}

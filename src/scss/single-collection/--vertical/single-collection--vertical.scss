@@ -1,0 +1,10 @@
+@mixin single-collection--vertical {
+	.post-list-subtitle {
+		grid-column: 1 / -1 !important;
+		grid-row: 2;
+	}
+
+	.post-list-items {
+		grid-row: 3;
+	}
+}

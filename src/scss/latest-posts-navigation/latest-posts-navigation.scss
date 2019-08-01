@@ -1,0 +1,33 @@
+// Latest posts navigation
+//
+// Displays the navigation for the latest posts
+
+@mixin latest-posts-navigation {
+	.title {
+		display: none;
+	}
+
+	.navigation-items {
+		@include list;
+		@include list--horizontal;
+
+		justify-content: space-between;
+		align-items: center;
+
+		.navigation-item {
+			.paginate {
+				@include button(small);
+
+				&.inactive {
+					@include button(disabled);
+				}
+			}
+
+			.period {
+				.text {
+					@include text-style(body-caps);
+				}
+			}
+		}
+	}
+}

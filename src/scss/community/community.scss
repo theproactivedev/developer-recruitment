@@ -1,0 +1,40 @@
+// Community
+//
+// Displays the community section on homepage
+// Do not confuse with Community / Comments on single pages
+
+// @import '../container/container.scss';
+// @import '../post-list-title/post-list-title.scss';
+// @import '../post-title-and-subtitle/post-title-and-subtitle.scss';
+@import '../post-list/post-list.scss';
+@import '../post-list/--vertical-bordered/post-list--vertical-bordered.scss';
+@import '../community-grid/community-grid.scss';
+
+@mixin community {
+	@include container;
+
+	// The `post-list` mixin can't be reused here ...
+	// We've just reusing what's possible
+	.community-title {
+		@include post-list-title;
+	}
+
+	.description {
+		@include post-title-and-subtitle('.title', '.subtitle', '.text', 'h2');
+	}
+
+	.questions-and-answers,
+	.tools {
+		@include post-list('.title', null, '.items', '.text', 'h3');
+		@include post-list--vertical-bordered('.items', '.item');
+	}
+
+	.questions-and-answers {
+		.read-more {
+			// TODO: Remove this when the PHP template gets updated
+			display: none;
+		}
+	}
+
+	@include community-grid;
+}

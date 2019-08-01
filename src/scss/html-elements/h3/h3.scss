@@ -1,0 +1,9 @@
+// H3
+//
+// Displays a heading level 3
+
+@import '../../text-style/text-style.scss';
+
+@mixin h3 {
+	@include text-style(h3-content);
+}

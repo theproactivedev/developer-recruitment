@@ -1,0 +1,11 @@
+// Post subtitle
+//
+// Displays the post subtitle
+
+//@import '../text-style/text-style.scss';
+
+@mixin post-subtitle {
+	.text {
+		@include text-style(h4);
+	}
+}

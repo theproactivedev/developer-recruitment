@@ -1,0 +1,11 @@
+// Header menu active
+//
+// Manages the active state for the header menu on small screens
+
+@mixin header-menu--active {
+	display: flex;
+
+	.header-menu-main {
+		display: flex;
+	}
+}

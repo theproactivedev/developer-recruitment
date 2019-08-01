@@ -1,0 +1,30 @@
+// Border
+//
+// Displays a border
+//
+// All border styles must be defined here first and re-used later where needed.
+
+//@import '../colors/colors.scss';
+
+@mixin border($selector: border-bottom, $variant: default) {
+	@if ($variant == none) {
+		border: none;
+	}
+
+	@if ($variant == radius) {
+		border-radius: 3px;
+		overflow: hidden;
+	}
+
+	@if ($variant == default) {
+		#{$selector}: 1px solid var(--grey-2);
+	}
+
+	@if ($variant == 3) {
+		#{$selector}: 3px solid;
+	}
+
+	@if ($variant == 5) {
+		#{$selector}: 5px solid;
+	}
+}

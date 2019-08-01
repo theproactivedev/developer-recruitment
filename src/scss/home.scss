@@ -1,0 +1,10 @@
+@import 'globals';
+@import 'home/home.scss';
+
+html {
+	body {
+		&.home {
+			@include home;
+		}
+	}
+}

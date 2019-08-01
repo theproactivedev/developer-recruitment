@@ -1,0 +1,32 @@
+// Reset basic
+//
+// Resets the grid and the layout
+// Sits on top of normalize.css
+
+@mixin reset-basic {
+	html {
+		box-sizing: border-box;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+
+	* {
+		max-height: 1000000px;
+	}
+
+	// TODO: move these inherited resets elsewhere ...
+	// adaptive images
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	// google map fix
+	.gm-style img {
+		max-width: none;
+	}
+}

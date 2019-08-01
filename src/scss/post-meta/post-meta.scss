@@ -1,0 +1,9 @@
+// Post meta
+//
+// Displays the post meta
+
+@mixin post-meta {
+	.post-meta-title {
+		display: none;
+	}
+}

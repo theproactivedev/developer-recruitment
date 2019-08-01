@@ -1,0 +1,21 @@
+// Post meta box vertical
+//
+// Displays the post meta box vertically
+
+// @import '../../border/border.scss';
+
+@mixin post-meta-box--vertical {
+	.entries {
+		@include border(border-top);
+		@include border(border-bottom);
+		@include list--with-border(border-top, true, '.entry');
+
+		.entry {
+			cursor: default;
+		}
+
+		.entry-placeholder {
+			display: none;
+		}
+	}
+}

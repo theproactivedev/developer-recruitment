@@ -1,0 +1,23 @@
+// Header menu
+//
+// Displays the menu in the header
+//
+// NOTE: The menu is not aligned to the grid, it flows freely
+
+@import '../header-menu-main/header-menu-main.scss';
+@import '--vertical/header-menu--vertical.scss';
+@import '--horizontal/header-menu--horizontal.scss';
+
+@mixin header-menu {
+	.header-menu-main {
+		@include header-menu-main;
+	}
+
+	@include media('<=tablet') {
+		@include header-menu--vertical;
+	}
+
+	@include media('>tablet') {
+		@include header-menu--horizontal;
+	}
+}

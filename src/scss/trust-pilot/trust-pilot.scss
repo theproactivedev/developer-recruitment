@@ -1,0 +1,18 @@
+// Trust pilot
+
+// Displays trust pilot iframe on page
+
+@mixin trust-pilot {
+	@include container;
+	@include responsive-spacing(padding-top, small);
+	.trustpilot-widget {
+		@include border(border-top, 5);
+		@include responsive-spacing(padding-top, smaller);
+
+		@include media('<tablet') {
+			@include border(border-top, 3);
+			@include border(border-bottom, 3);
+			@include responsive-spacing(padding-bottom, smaller);
+		}
+	}
+}

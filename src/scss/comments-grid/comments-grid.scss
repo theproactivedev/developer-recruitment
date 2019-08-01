@@ -1,0 +1,24 @@
+// Comments grid
+//
+// Displays comments in a grid
+
+// @import '../responsive-section/responsive-section.scss';
+// @import '../responsive-page-grid/responsive-page-grid.scss';
+
+@mixin comments-grid {
+	@include media($small...) {
+		@include responsive-section('.comments-body');
+	}
+
+	@include media($tablet...) {
+		@include responsive-section('.comments-body');
+	}
+
+	@include media($medium...) {
+		@include responsive-page-grid(medium);
+	}
+
+	@include media($large...) {
+		@include responsive-section('.comments-body');
+	}
+}

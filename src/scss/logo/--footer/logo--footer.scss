@@ -1,0 +1,10 @@
+// Logo footer
+//
+// Displays the logo in the footer
+
+@mixin logo--footer {
+	img {
+		width: 140px;
+		height: 35px;
+	}
+}

@@ -1,0 +1,19 @@
+// Icon size
+//
+// Sizing icons
+//
+// Used by:
+// - single icon (`icon`)
+// - multiple icons (`icons-chevrons`)
+
+@mixin icon-size($size) {
+	$map: (
+		default: var(--lem),
+		small: 1em,
+		smaller: 0.8em,
+		large: var(--spacer-24)
+	);
+
+	width: map-get($map, $size);
+	height: map-get($map, $size);
+}

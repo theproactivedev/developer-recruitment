@@ -1,0 +1,38 @@
+// Home
+//
+// Displays the homepage
+
+@import '../featured-and-related-posts/featured-and-related-posts.scss';
+@import '../latest-posts-container/latest-posts-container.scss';
+@import '../plastic-homepage-featured/plastic-homepage-featured.scss';
+@import '../expiring-deals/expiring-deals.scss';
+@import '../frequent-flyer-guides/frequent-flyer-guides.scss';
+@import '../community/community.scss';
+@import '../plastic-transition/transition.scss';
+
+@mixin home {
+	.featured-and-related-posts {
+		@include featured-and-related-posts;
+	}
+
+	.latest-posts-container {
+		@include latest-posts-container;
+	}
+
+	.plastic-homepage-featured {
+		@include plastic-homepage-featured;
+		@include plastic-transition;
+	}
+
+	.expiring-deals {
+		@include expiring-deals;
+	}
+
+	.frequent-flyer-guides {
+		@include frequent-flyer-guides;
+	}
+
+	.community {
+		@include community;
+	}
+}

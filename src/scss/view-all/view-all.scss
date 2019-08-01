@@ -1,0 +1,10 @@
+// View all
+//
+// Displays the `View all` link
+
+@import '../post-list-title/post-list-title.scss';
+
+@mixin view-all {
+	@include post-list-title;
+	margin-top: var(--spacer-16);
+}

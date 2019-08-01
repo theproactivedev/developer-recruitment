@@ -1,0 +1,64 @@
+// HTML elements
+//
+// Stylings for HTML elements usied inside a long for content
+// Like `post-content`
+
+@mixin html-elements {
+	hr {
+		@include hr;
+	}
+
+	h1 {
+		@include h1;
+	}
+
+	h2 {
+		@include h2;
+	}
+
+	h3 {
+		@include h3;
+	}
+
+	h4 {
+		@include h4;
+	}
+
+	p {
+		@include p;
+	}
+
+	ul {
+		@include ul;
+	}
+
+	ol {
+		@include ol;
+	}
+
+	table {
+		@include table;
+	}
+
+	.figure,
+	figure {
+		@include figure;
+	}
+
+	figcaption,
+	.figcaption {
+		@include figcaption;
+	}
+
+	.image {
+		@include image;
+	}
+
+	.table-responsive {
+		@include table-responsive;
+	}
+
+	blockquote {
+		@include blockquote;
+	}
+}
