@@ -28,6 +28,9 @@
 		@include colors(default);
 		-webkit-appearance: none;
 		border: none;
-		border-radius: 0;
+
+		&:not(.button) {
+			border-radius: 0;
+		}
 	}
 }

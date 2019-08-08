@@ -12,177 +12,87 @@
 // @import '../link/link.scss';
 // @import '../border/border.scss';
 
-@mixin button($variant: primary) {
-	cursor: pointer;
-	text-align: center;
-	justify-content: center;
+@mixin button-variant($colors, $colors-pseudo, $text-style: false) {
+	&, & a { @include colors($colors); }
+	@if ($text-style != false) { @include text-style($text-style); }
 
-	@include border(null, radius);
+	@content
+	
+	&:hover,
+	&:active {
+		&, & a { @include colors($colors-pseudo); }
+	}
+}
 
-	@if ($variant == primary) {
-		@include colors(inverted);
-		@include text-style(body-caps);
+@mixin button($variant: null, $ext: true) {
+	$padding-normal: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
+	$padding-small: var(--spacer-8) var(--spacer-16);
+	
+	@if ($ext == false) {
+		cursor: pointer;
+		text-align: center;
+		justify-content: center;
+
+		@include border(null, radius);
 
 		a {
 			@include link-as-button();
-			@include colors(inverted);
-			// Padding calculation:
-			// - the height of the button is 48px
-			// - the text size is 16px
-			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
 		}
+	}
 
-		&:hover,
-		&:active {
-			@include colors(white-on-red);
-
-			a {
-				@include colors(white-on-red);
-			}
+	@if ($variant == primary) {
+		@include button-variant(inverted, white-on-red, body-caps) {
+			a { padding: $padding-normal; }
 		}
 	}
 
 	@if ($variant == secondary-grey) {
-		@include colors(black-on-grey);
-		@include text-style(body);
-
-		a {
-			@include link-as-button();
-			@include colors(black-on-grey);
-			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
-		}
-
-		&:hover,
-		&:active {
-			@include colors(white-on-red);
-
-			a {
-				@include colors(white-on-red);
-			}
+		@include button-variant(black-on-grey, white-on-red, body) {
+			a { padding: $padding-normal; }
 		}
 	}
 
-	// This button is not in the original styleguide
-	// However it is needed on Article / Comment form
 	@if ($variant == secondary-grey-2) {
-		@include colors(black-on-grey-2);
-		@include text-style(body);
-
-
-		a {
-			@include link-as-button();
-			@include colors(black-on-grey-2);
-			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
-		}
-
-		&:hover,
-		&:active {
-			@include colors(inverted);
-
-			a {
-				@include colors(inverted);
-			}
+		@include button-variant(black-on-grey-2, inverted, body) {
+			a { padding: $padding-normal; }
 		}
 	}
 
 	@if ($variant == secondary-red) {
-		@include colors(white-on-red);
-
-		a {
-			@include link-as-button();
-			@include colors(white-on-red);
-			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
-		}
-
-		&:hover,
-		&:active {
-			@include colors(inverted);
-
-			a {
-				@include colors(inverted);
-			}
+		@include button-variant(white-on-red, inverted) {
+			a { padding: $padding-normal; }
 		}
 	}
 
 	@if ($variant == secondary-white) {
-		@include colors(default);
-
-
-		a {
-			@include link-as-button();
-			@include colors(default);
-			padding: calc(var(--spacer-16) * 0.75) calc(var(--spacer-16) * 2);
-		}
-
-		&:hover,
-		&:active {
-			@include colors(white-on-red);
-
-			a {
-				@include colors(white-on-red);
-			}
+		@include button-variant(default, white-on-red) {
+			a { padding: $padding-normal; }
 		}
 	}
 
 	@if ($variant == small) {
-		@include text-style(tag);
-		@include colors(inverted);
-
-
-		a {
-			@include link-as-button();
-			@include colors(inverted);
-			padding: var(--spacer-8) var(--spacer-16);
-		}
-
-		&:hover,
-		&:active {
-			@include colors(white-on-red);
-
-			a {
-				@include colors(white-on-red);
-			}
+		@include button-variant(inverted, white-on-red, tag) {
+			a { padding: $padding-small; }
 		}
 	}
 
 	@if ($variant == small-secondary-red) {
-		@include text-style(small-caps);
-		@include colors(white-on-red);
-
-
-		a {
-			@include link-as-button();
-			@include colors(white-on-red);
-			padding: var(--spacer-8) var(--spacer-16);
-		}
-
-		&:hover,
-		&:active {
-			@include colors(inverted);
-
-			a {
-				@include colors(inverted);
-			}
+		@include button-variant(white-on-red, inverted, small-caps) {
+			a { padding: $padding-small; }
 		}
 	}
 
 	@if ($variant == disabled) {
 		cursor: default;
 
-		@include colors(grey-on-grey);
+		@include button-variant(grey-on-grey, grey-on-grey);
+	}
+}
 
-		a {
-			@include link-as-button();
-			@include colors(grey-on-grey);
-		}
-
-		&:hover,
-		&:active {
-			@include colors(grey-on-grey);
-
-			a {
-				@include colors(grey-on-grey);
-			}
-		}
+.button {	
+	@include button(null, false);
+	
+	&--primary {
+		@include button(primary);
 	}
 }

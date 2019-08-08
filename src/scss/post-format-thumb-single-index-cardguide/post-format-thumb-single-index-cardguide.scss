@@ -3,8 +3,8 @@
 
 	.buttons {
 		.button {
-			&.primary {
-				@include button();
+			&--primary {
+				@include button(primary);
 			}
 			+ .button {
 				margin-top: var(--spacer-8);

@@ -45,8 +45,8 @@
 	.buttons {
 		// Buttons, shared accross all plastic items
 		.button {
-			&.primary {
-				@include text-style(body-caps);
+			&--primary {
+				//@include text-style(body-caps);
 				@include button(secondary-red);
 			}
 

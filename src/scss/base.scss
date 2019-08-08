@@ -33,41 +33,46 @@ html {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+}
 
-		a {
-			@include link(default);
+a {
+	@include link(default);
 
-			&.drip-toggle {
-				background: none; // safe :not
-			}
-		}
+	&.drip-toggle {
+		background: none; // safe :not
+	}
+}
 
-		.header {
-			@include header;
-		}
+.header {
+	@include header;
+}
 
-		.header-panel {
-			@include header-panel;
-		}
+.header-panel {
+	@include header-panel;
+}
 
+// |> .trust-pilot
+html {
+	body {
 		.trust-pilot {
 			@include trust-pilot;
 		}
-
-		.search {
-			@include search;
-		}
-
-		.newsletter {
-			@include newsletter;
-		}
-
-		.quick-links {
-			@include quick-links;
-		}
-
-		.footer {
-			@include footer;
-		}
 	}
+}
+
+.search {
+	@include search;
+}
+
+.newsletter {
+	@include newsletter;
+}
+
+.quick-links {
+	@include quick-links;
+}
+
+.footer {
+	@include footer;
 }

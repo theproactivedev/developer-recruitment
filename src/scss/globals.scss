@@ -3,6 +3,7 @@
 @import "text-style/text-style.scss"; // colors; breakpoints
 @import "link/link.scss"; // colors
 @import "border/border.scss"; // colors
+@import "link-as-button/link-as-button.scss";
 @import "button/button.scss"; // colors; link; border
 @import "icon-size/icon-size.scss";
 @import "icon/icon.scss"; // icon-size; colors
@@ -52,6 +53,6 @@
 @import "logo/logo.scss";
 @import "form/form.scss"; // reset-form; colors; button
 @import "back-to-top/back-to-top.scss"; // text-style; link
-@import "link-as-button/link-as-button.scss";
+// @import "link-as-button/link-as-button.scss";
 @import "post-meta-box/post-meta-box.scss";
 @import "single-post-main-grid/single-post-main-grid.scss";
