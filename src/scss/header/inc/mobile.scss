@@ -1,0 +1,89 @@
+// Header vertical
+//
+// Displays the header vertically
+
+// oorkan: moved from header.scss, because it's only related to mobile
+@import '../../header-menu-close/header-menu-close.scss';
+
+
+@import '../--menu-active/header--menu-active.scss';
+@import '../--default-state/header--default-state.scss';
+@import '../--search-active/header--search-active.scss';
+
+@mixin header-mobile {
+	//>> MOVED FROM HEADER.SCSS
+	
+	// The header overflows because of the submenus
+	// By default overflows are hidden, but we will make an exception here
+	//@include container($variant: margin, $overflow: auto);
+
+	margin-top: var(--spacer-32);
+	justify-content: space-between;
+
+	// @include responsive-spacing(margin-top, large);
+	@include responsive-menu('.header-icons', '.header-menu-main');
+	//@include responsive-menu--with-border;
+	@include border;
+	//>> END OF MOVED FROM HEADER.SCSS
+	
+	@include header--default-state;
+
+	&.menu-active {
+		@include header--menu-active;
+	}
+
+	&.search-active {
+		@include header--search-active;
+	}
+
+	.social-icons {
+		align-items: center;
+	}
+
+
+
+	//>> MOVED FROM HEADER.SCSS
+	.logo {
+		@include logo;
+		@include list-item;
+		@include border(border-bottom, none);
+
+		.link {
+			@include list-item(selected);
+		}
+	}
+
+	.header-icons {
+		@include header-icons;
+	}
+	
+	.header-menu {
+		// oorkan: we must get rid from this later and do more accurate DI (dependency injection)
+		@include header-menu;
+		
+		@include border(border-top);
+		@include border(border-bottom);
+
+		// Will be displayed elsewhere
+		display: none;
+		flex-direction: column;
+		width: 100%;
+
+		.header-menu-main {
+			display: flex;
+    	}
+	}
+
+	.header-menu-close {
+		@include header-menu-close;
+	}
+
+	.social-icons {
+		@include social-icons;
+	}
+
+	.header-search {
+		@include header-search;
+	}
+	//>> END OF MOVED FROM HEADER.SCSS
+}

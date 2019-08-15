@@ -1,0 +1,39 @@
+@mixin header-desktop-s() {
+
+	@include media('>tablet') {
+		// Align menu bottom to header's border-bottom
+		align-items: flex-end;
+
+	
+		.header-menu {
+			// Align menu items and social icons
+			// - horizontally
+			display: flex;
+			// - vertically
+			// align-items: center;
+			// oorkan: take a look on border mixin and understand how it works
+			@include border(border-top, none);
+			@include border(border-bottom, none);
+
+			.header-menu-close {
+				display: none;
+			}
+		}
+		
+		.header-menu-close {
+			display: none;
+		}
+
+		.social-icons {
+			// oorkan:
+			display: block;
+
+			.list {
+				li {
+					// Align to menu items
+					@include list-item;
+				}
+			}
+		}
+    }
+}

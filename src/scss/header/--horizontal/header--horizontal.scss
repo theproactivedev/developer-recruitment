@@ -7,6 +7,8 @@
 // @import '../../list-item/list-item.scss';
 
 @mixin header--horizontal {
+	// oorkan: moved to header.scss
+	/*
 	@include media($large...) {
 		display: grid;
 		$columns: 8;
@@ -24,17 +26,25 @@
 			grid-column: 8 / 9;
 		}
 	}
+	*/
 
+	/* // oorkan: completely removed this media query
 	@include media($medium...) {
-		display: flex;
-		justify-content: space-between;
+		// display: flex;
+		// justify-content: space-between;
 	}
+	*/
 
+	// oorkan: moved to header.scss	
+	/*
 	.header-menu-close {
 		display: none;
 	}
 
 	.social-icons {
+		// oorkan:
+		display: block;
+
 		.list {
 			li {
 				// Align to menu items
@@ -45,4 +55,5 @@
 
 	// Align menu bottom to header's border-bottom
 	align-items: flex-end;
+	*/
 }

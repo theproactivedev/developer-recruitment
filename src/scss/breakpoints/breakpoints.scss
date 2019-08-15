@@ -26,10 +26,10 @@ $queries: ( // x16px
 	'<tablet': (
 		max-width: 47.9375em
 	),
-	'<=tablet': (
+	'<=tablet': ( // 768px-
 		max-width: 48em
 	),
-	'>tablet': (
+	'>tablet': ( // 769px+
 		min-width: 48.0625em
 	),
 	'>=tablet': (

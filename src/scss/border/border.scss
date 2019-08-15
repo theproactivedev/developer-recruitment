@@ -7,6 +7,10 @@
 //@import '../colors/colors.scss';
 
 @mixin border($selector: border-bottom, $variant: default) {
+	@if ($variant == 'none+s') {
+		$selector: none;
+	}
+	
 	@if ($variant == none) {
 		border: none;
 	}

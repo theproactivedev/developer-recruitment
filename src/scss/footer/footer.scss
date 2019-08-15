@@ -12,7 +12,7 @@
 @import '../logo/--footer/logo--footer.scss';
 
 @import '../responsive-menu/responsive-menu.scss';
-@import '../responsive-menu/--with-border/responsive-menu--with-border.scss';
+//@import '../responsive-menu/--with-border/responsive-menu--with-border.scss';
 
 @import '../footer-grid/footer-grid.scss';
 
@@ -22,7 +22,8 @@
 	.holder {
 		@include border(border-top, 5);
 		@include responsive-menu('', '.menu-container');
-		@include responsive-menu--with-border;
+		//@include responsive-menu--with-border;
+		@include border;
 		align-items: center;
 
 		@include responsive-section('.menu-container');
