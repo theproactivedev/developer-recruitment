@@ -20,54 +20,52 @@
 @include normalize;
 @include reset-basic;
 
-html {
-	body {
-		@include reset-typography;
-		@include reset-wp;
-		@include reset-typekit;
-		@include reset-form;
-		@include typography-setup;
-		@include text-style(body);
-		@include colors(default);
+body {
+	@include reset-typography;
+	@include reset-wp;
+	@include reset-typekit;
+	@include reset-form;
+	@include typography-setup;
+	@include text-style(body);
+	@include colors(default);
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-		a {
-			@include link(default);
+	a {
+		@include link(default);
 
-			&.drip-toggle {
-				background: none; // safe :not
-			}
+		&.drip-toggle {
+			background: none; // safe :not
 		}
+	}
 
-		.header {
-			@include header;
-		}
+	.header {
+		@include header;
+	}
 
-		.header-panel {
-			@include header-panel;
-		}
+	.header-panel {
+		@include header-panel;
+	}
 
-		.trust-pilot {
-			@include trust-pilot;
-		}
+	.trust-pilot {
+		@include trust-pilot;
+	}
 
-		.search {
-			@include search;
-		}
+	.search {
+		@include search;
+	}
 
-		.newsletter {
-			@include newsletter;
-		}
+	.newsletter {
+		@include newsletter;
+	}
 
-		.quick-links {
-			@include quick-links;
-		}
+	.quick-links {
+		@include quick-links;
+	}
 
-		.footer {
-			@include footer;
-		}
+	.footer {
+		@include footer;
 	}
 }

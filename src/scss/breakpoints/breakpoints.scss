@@ -7,9 +7,9 @@
 
 // Use aliases if possible instead of breakpoints
 $breakpoints: (
-	'tablet': 768px,
-	'small-desktop': 1024px,
-	'large-desktop': 1280px
+	'tablet': 48em,
+	'small-desktop': 64em,
+	'large-desktop': 80em
 );
 
 // Aliases
@@ -24,40 +24,40 @@ $large: '>large-desktop';
 // Once the breakpoints / aliases updated these should be too
 $queries: (
 	'<tablet': (
-		max-width: 767px
+		max-width: 47.9375em
 	),
 	'<=tablet': (
-		max-width: 768px
+		max-width: 48em
 	),
 	'>tablet': (
-		min-width: 769px
+		min-width: 48.0625em
 	),
 	'>=tablet': (
-		min-width: 768px
+		min-width: 48em
 	),
 	'<small-desktop': (
-		max-width: 1023px
+		max-width: 63.9375em
 	),
 	'<=small-desktop': (
-		max-width: 1024px
+		max-width: 64em
 	),
 	'>small-desktop': (
-		min-width: 1025px
+		min-width: 64.0625em
 	),
 	'>=small-desktop': (
-		min-width: 1024px
+		min-width: 64em
 	),
 	'<large-desktop': (
-		max-width: 1279px
+		max-width: 79.9375em
 	),
 	'<=large-desktop': (
-		max-width: 1280px
+		max-width: 80em
 	),
 	'>large-desktop': (
-		min-width: 1281px
+		min-width: 80.0625em
 	),
 	'>=large-desktop': (
-		min-width: 1280px
+		min-width: 80em
 	)
 );
 
