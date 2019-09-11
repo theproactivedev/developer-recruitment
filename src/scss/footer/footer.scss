@@ -49,7 +49,7 @@
 
 	.info {
 		@include responsive-section('.text');
-		@include responsive-spacing(margin-top, small);
+		@include responsive-spacing(margin-top, medium);
 		@include responsive-spacing(margin-bottom, large);
 
 		.text {

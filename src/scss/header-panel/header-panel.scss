@@ -11,9 +11,9 @@
 
 @mixin header-panel {
 	@include container;
-	@include responsive-spacing(margin-top, small);
+	@include responsive-spacing(margin-top, medium);
 
-	overflow-y: hidden;
+	// overflow-y: hidden;
 
 	.title-and-subtitle {
 		@include post-title-and-subtitle('.title', '.subtitle', '.text', 'logo-header', 'h2-serif');

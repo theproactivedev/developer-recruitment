@@ -29,7 +29,7 @@
 
 	.container {
 		@include container;
-		@include responsive-spacing(padding-top, small);
+		@include responsive-spacing(padding-top, medium);
 		@include post-list('.frequent-flyer-guides-title', null, '.guides');
 
 		.guides {

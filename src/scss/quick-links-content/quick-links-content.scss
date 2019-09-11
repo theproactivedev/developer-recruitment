@@ -6,17 +6,17 @@
 @import '../plastic-transition/transition.scss';
 
 @mixin quick-links-content {
-	@include responsive-spacing(padding-bottom, small);
+	@include responsive-spacing(padding-bottom, medium);
 
 	.plastic-footer {
 		@include plastic-footer;
 		@include plastic-transition;
-		@include responsive-spacing(margin-top, small);
+		@include responsive-spacing(margin-top, medium);
 	}
 
 	.quick-link-content {
 		@include border(border-top);
-		@include responsive-spacing(padding-top, small);
+		@include responsive-spacing(padding-top, medium);
 
 		display: none;
 		&.active {

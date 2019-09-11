@@ -13,7 +13,7 @@
 
 @mixin search {
 	@include container;
-	@include responsive-spacing(margin-top, smaller);
+	@include responsive-spacing(margin-top, small);
 
 	.title {
 		// Used only to make the site semantically valid in the W3C checker

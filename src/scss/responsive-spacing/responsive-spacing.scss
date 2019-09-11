@@ -18,22 +18,22 @@
 	// Before items removed / modified make a search code-wide to see where these variables are used directly.
 	:root {
 		// Line height 16px
-		--spacer-4: 0.25em;
-		--spacer-8: 0.5em;
-		--spacer-12: 0.75em;
-		--spacer-16: 1em;
-		--spacer-24: 1.5em;
-		--spacer-32: 2em;
-		--gutter-16: 1em;
-		--gutter-24: 1.5em;
+		--spacer-4: 0.25rem;
+		--spacer-8: 0.5rem;
+		--spacer-12: 0.75rem;
+		--spacer-16: 1rem;
+		--spacer-24: 1.5rem;
+		--spacer-32: 2rem;
+		--gutter-16: 1rem;
+		--gutter-24: 1.5rem;
 
 		// Line height 20px
-		--spacer-24-20: 1.2em;
-		--spacer-32-20: 1.6em;
+		--spacer-24-20: 1.2rem;
+		--spacer-32-20: 1.6rem;
 
 		// Line height 18px;
-		--spacer-16-18: 1em;
-		--spacer-32-18: 1.778em;
+		--spacer-16-18: 1rem;
+		--spacer-32-18: 1.778rem;
 	}
 }
 
@@ -48,21 +48,21 @@
 
 	$map: (
 		large: var(--spacer-32#{$line-height}),
-		small: var(--spacer-24#{$line-height}),
-		smaller: var(--spacer-16#{$line-height}),
+		medium: var(--spacer-24#{$line-height}),
+		small: var(--spacer-16#{$line-height}),
 		horizontal: var(--gutter-24),
 		none: 0
 	);
 
 	$map-mobile: (
 		large: var(--spacer-32#{$line-height-mobile}),
-		small: var(--spacer-16#{$line-height-mobile}),
-		smaller: var(--spacer-8#{$line-height-mobile}),
+		medium: var(--spacer-16#{$line-height-mobile}),
+		small: var(--spacer-8#{$line-height-mobile}),
 		horizontal: var(--gutter-16),
 		none: 0
 	);
 
-	@include media('<tablet') {
+	@include media($small...) {
 		#{$selector}: map-get($map-mobile, $variant);
 	}
 

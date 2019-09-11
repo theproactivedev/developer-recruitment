@@ -8,7 +8,7 @@
 @mixin footer-grid {
 	.holder {
 		@include responsive-section('.menu-container');
-		@include responsive-spacing(padding-top, small);
+		@include responsive-spacing(padding-top, medium);
 
 		@include media($large...) {
 			// The margin is given from the section above
@@ -35,7 +35,7 @@
 				@include list--with-border(border-top, true, '.menu-item');
 
 				.menu-item {
-					@include responsive-spacing(padding-top, small);
+					@include responsive-spacing(padding-top, medium);
 				}
 			}
 		}
