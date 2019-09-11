@@ -8,6 +8,11 @@
 //@import '../responsive-spacing/responsive-spacing.scss';
 
 @mixin container($variant: padding, $overflow: hidden, $reset: false) {
+	:root {
+		--horizontal: var(--gutter-24);
+		--horizontal-mobile: var(--gutter-16);
+	}
+
 	// A necessary precaution ...
 	// Never knows when things go wrong, especially on small screens
 	// This will prevent the content overflow by default
@@ -34,15 +39,16 @@
 	// - It's ugly and depends on `responsive-spacing`
 	// Used on:
 	// - Quick Links to make top border not wider (by the two margins) than the content
+	// - Header
 	@if ($variant == margin) {
 		@include responsive-spacing(margin-left, horizontal);
 		@include responsive-spacing(margin-right, horizontal);
 
-		width: calc(100% - var(--spacer-24) * 2);
-		max-width: calc(1290px - var(--spacer-24) * 2);
+		width: calc(100% - var(--horizontal) * 2);
+		max-width: calc(1290px - var(--horizontal) * 2);
 
 		@include media($small...) {
-			width: calc(100% - var(--spacer-16) * 2);
+			width: calc(100% - var(--horizontal-mobile) * 2);
 		}
 
 		@if ($reset != false) {
